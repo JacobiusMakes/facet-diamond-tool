@@ -53,7 +53,7 @@
     .feedback{min-height:18px;margin:8px 0 0;font:11px/1.4 Verdana,sans-serif;color:var(--green)}
     .bookmark{margin:18px 0 0;padding:14px;border:1px dashed var(--blue2);background:#f5f8fb;font-size:13px;line-height:1.45}
     .bookmark .drag{display:inline-block;margin:8px 6px 0 0;background:white;border:1px solid var(--blue);border-radius:20px;padding:7px 12px;text-decoration:none;font:600 10px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.08em}
-    .sections{border-top:1px solid var(--line);padding:58px 0 74px;display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
+    .sections{border-top:1px solid var(--line);padding:58px 0 74px;display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
     .sections h3{font-size:20px;font-weight:400;margin:0 0 10px}
     .sections p{font-size:15px;line-height:1.6;color:#334553;margin:0}
     .labs{padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:20px}
@@ -100,6 +100,7 @@
             <a id="match" class="button" href="#">Browse this shape</a>
             <button class="secondary" id="copy" type="button">Copy comparison brief</button>
           </div>
+          <button class="secondary" id="share" type="button">Share this size check</button>
           <button class="secondary" id="install" type="button" hidden>Install Facet on this device</button>
           <p class="feedback" id="feedback" aria-live="polite"></p>
           <div class="bookmark"><strong>Use Facet while you shop:</strong> drag this button to your bookmarks bar, then click it on a diamond listing. The scan runs in your browser and sends Facet only the shape and carat it finds.<br><a class="drag" id="bookmarklet" href="#">Facet this listing</a> <a href="https://github.com/JacobiusMakes/facet-diamond-tool/releases/latest">Get the browser extension</a></div>
@@ -110,6 +111,7 @@
         <article><h3>Compare what the eye sees</h3><p>Two stones can share a carat weight and face up at different sizes. Facet makes the millimeter estimate visible so weight does not masquerade as size.</p></article>
         <article><h3>Carry one clean brief</h3><p>Copy the shape, weight, estimated dimensions, and verification checks into a note. Use the same brief when you compare listings or ask a jeweler a question.</p></article>
         <article><h3>Keep the seller out of the check</h3><p>Verify the report number on the grading lab's own site. Then match the girdle inscription and exact measurements to the stone itself.</p></article>
+        <article><h3>Put it inside a useful article</h3><p>Publishers can <a href="embed.html?partner=preview">embed the calculator</a> without cookies or a script running in the parent page. Each publisher uses a distinct public attribution slug.</p></article>
       </section>
 
       <section class="labs">
@@ -153,7 +155,7 @@
         stone.style.clipPath = result.shape === 'dutch_marquise'
           ? 'polygon(0 50%, 20% 0, 80% 0, 100% 50%, 80% 100%, 20% 100%)'
           : (result.shape === 'emerald' ? 'polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%)' : 'none');
-        const surface = params.get('via') === 'bookmarklet' ? 'bookmarklet_match' : (params.get('via') === 'pwa' ? 'pwa_match' : 'web_match');
+        const surface = params.get('via') === 'bookmarklet' ? 'bookmarklet_match' : (params.get('via') === 'pwa' ? 'pwa_match' : (params.get('via') === 'share' ? 'shared_brief_match' : 'web_match'));
         match.href = trackedCollectionUrl({ shape: result.shape, carat: result.carat, content: surface });
         match.textContent = 'Browse ' + SHAPES[result.shape].label + ' diamonds';
       }
@@ -165,6 +167,29 @@
           feedback.textContent = 'Comparison brief copied.';
         } catch (error) {
           feedback.textContent = 'Copy was blocked by the browser. Select the measurements above instead.';
+        }
+      });
+      document.getElementById('share').addEventListener('click', async () => {
+        const result = faceUpSize(shape.value, carat.value);
+        const shareUrl = new URL(location.origin + location.pathname);
+        shareUrl.searchParams.set('carat', result.carat.toFixed(2));
+        shareUrl.searchParams.set('shape', result.shape);
+        shareUrl.searchParams.set('via', 'share');
+        const shareData = {
+          title: 'Facet diamond size check',
+          text: SHAPES[result.shape].label + ', ' + result.carat.toFixed(2) + ' ct, about ' + result.lengthMm.toFixed(1) + ' x ' + result.widthMm.toFixed(1) + ' mm face-up.',
+          url: shareUrl.toString(),
+        };
+        try {
+          if (navigator.share) {
+            await navigator.share(shareData);
+            feedback.textContent = 'Size check shared.';
+          } else {
+            await navigator.clipboard.writeText(shareUrl.toString());
+            feedback.textContent = 'Share link copied.';
+          }
+        } catch (error) {
+          if (error && error.name !== 'AbortError') feedback.textContent = 'Sharing was blocked by the browser.';
         }
       });
 

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Facet diamond size check</title>
+  <style>
+    *{box-sizing:border-box}html{background:#fffdfa;color:#091d2e;font:15px/1.45 Georgia,serif}body{margin:0;padding:20px;max-width:460px}h1{font-size:25px;font-weight:400;margin:0 0 3px}.sub{font:10px Verdana,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#6d675f;margin:0 0 18px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}label{display:block;font:600 9px Verdana,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:#6d675f;margin-bottom:5px}input,select{width:100%;border:1px solid #d9d1c4;border-radius:3px;padding:10px;background:white;color:#091d2e;font:15px Georgia,serif}.result{margin:18px 0;padding:16px 0;border-top:1px solid #d9d1c4;border-bottom:1px solid #d9d1c4}.result b{font-size:29px;font-weight:400}.result small{display:block;font:10px/1.45 Verdana,sans-serif;color:#6d675f}.note{font-size:12px;color:#6d675f}.button{display:block;margin-top:14px;padding:11px;background:#091d2e;color:white;border-radius:3px;text-align:center;text-decoration:none;font:600 10px Verdana,sans-serif;text-transform:uppercase;letter-spacing:.09em}.credit{margin-top:14px;font:10px/1.5 Verdana,sans-serif;color:#6d675f}.credit a{color:#173f70}
+  </style>
+</head>
+<body>
+  <h1>How big is it, really?</h1>
+  <p class="sub">Facet diamond listing decoder</p>
+  <div class="fields">
+    <div><label for="carat">Carat weight</label><input id="carat" type="number" min="0.1" max="20" step="0.01" value="1.50"></div>
+    <div><label for="shape">Shape</label><select id="shape"><option value="round">Round</option><option value="oval" selected>Oval</option><option value="emerald">Emerald</option><option value="dutch_marquise">Dutch Marquise</option></select></div>
+  </div>
+  <div class="result"><b id="measurement">9.2 x 6.3 mm</b><small id="weight-label">Typical face-up size for 1.50 ct</small></div>
+  <p class="note">Approximate, based on typical proportions. Confirm the exact measurements on the stone's grading report.</p>
+  <a class="button" id="match" target="_blank" rel="noopener">Browse this shape at Stienhardt</a>
+  <p class="credit">Private by default. No listing URL or report number collected. <a href="./" target="_blank" rel="noopener">Facet by Stienhardt</a></p>
+  <script src="core.js"></script>
+  <script>
+    (() => {
+      const params = new URLSearchParams(location.search);
+      const partner = (params.get('partner') || 'publisher').replace(/[^a-z0-9_-]/gi, '_').toLowerCase().slice(0, 48);
+      const carat = document.getElementById('carat');
+      const shape = document.getElementById('shape');
+      function render() {
+        const result = FacetCore.faceUpSize(shape.value, carat.value) || FacetCore.faceUpSize('oval', 1.5);
+        document.getElementById('measurement').textContent = result.lengthMm.toFixed(1) + ' x ' + result.widthMm.toFixed(1) + ' mm';
+        document.getElementById('weight-label').textContent = 'Typical face-up size for ' + result.carat.toFixed(2) + ' ct';
+        const link = document.getElementById('match');
+        link.href = FacetCore.trackedCollectionUrl({ shape: result.shape, carat: result.carat, content: 'embed_' + partner });
+        link.textContent = 'Browse ' + FacetCore.SHAPES[result.shape].label + ' diamonds';
+      }
+      carat.addEventListener('input', render);
+      shape.addEventListener('change', render);
+      render();
+    })();
+  </script>
+</body>
+</html>

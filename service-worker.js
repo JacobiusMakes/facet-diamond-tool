@@ -1,9 +1,10 @@
-const CACHE = "facet-v1";
+const CACHE = "facet-v2";
 const ASSETS = [
   "./",
   "./index.html",
   "./core.js",
   "./privacy.html",
+  "./embed.html",
   "./manifest.webmanifest",
   "./icons/icon128.png",
   "./icons/icon.svg",

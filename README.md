@@ -4,7 +4,7 @@ A quiet diamond-shopping companion. On any listing, anywhere: how big the stone 
 millimeters (the number carat weight hides), a one-click scan of the page for the carat and
 shape, a reusable comparison brief, and the grading labs' own verification pages.
 
-Facet is usable now in three forms:
+Facet is usable now in four forms:
 
 1. The public calculator at <https://jacobiusmakes.github.io/facet-diamond-tool/>.
 2. An installable web app offered directly by the calculator on supported browsers.
@@ -16,6 +16,10 @@ the background. It runs only when clicked (`activeTab`) and stores nothing. The 
 the calculator only a detected shape and carat weight, never the page URL, seller, or report
 number. Every Stienhardt click carries `utm_source=facet` plus shape and carat intent, so visits
 and orders can be attributed without collecting browsing history.
+
+The public tool can also create a shareable shape-and-carat check for a shopper's partner. A compact
+iframe version is documented in [EMBED.md](EMBED.md) for publishers that want to place the tool in
+an article. Shared briefs and each publisher slug remain separate in `utm_content`.
 
 Same math and data as diamond-mcp (facts.json anchors: round 6.5, oval 8.0x5.5, emerald 7.0x5.0,
 Dutch Marquise 9.0x5.0 at 1 carat; cube-root scaling), same honesty note.

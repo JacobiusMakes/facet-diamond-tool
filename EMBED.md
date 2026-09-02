@@ -25,6 +25,19 @@ ES module delivery is available at
 `https://esm.sh/gh/JacobiusMakes/facet-diamond-tool@v0.3.0/facet-widget.js`. The same standalone
 file and an npm-ready package archive are attached to the v0.3.0 GitHub Release.
 
+## WordPress
+
+Install the ZIP from
+<https://github.com/JacobiusMakes/facet-diamond-tool/releases/tag/wordpress-v0.1.0>, then place the
+shortcode in any post, page, or Shortcode block:
+
+```text
+[facet_diamond_size publisher="YOUR_PUBLICATION" shape="oval" carat="1.50" theme="light"]
+```
+
+If `publisher` is omitted, the plugin derives a public attribution slug from the site's hostname.
+The plugin loads the same versioned jsDelivr component and stores no customer data.
+
 ## Sandboxed iframe
 
 Publishers can place the private-by-default size checker inside an article without an SDK,

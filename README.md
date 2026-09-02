@@ -45,7 +45,7 @@ repository release tag. Shared briefs and each publisher slug remain separate in
 ## Publisher web component
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/JacobiusMakes/facet-diamond-tool@v0.3.0/facet-widget.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JacobiusMakes/facet-diamond-tool@v0.3.1/facet-widget.js"></script>
 <facet-diamond-size publisher="your-publication" shape="oval" carat="1.50"></facet-diamond-size>
 ```
 
@@ -54,12 +54,12 @@ The component has isolated styles, no runtime dependency, and no background trac
 `utm_content=web_component_<publisher>` plus normalized shape and carat intent.
 
 The same tagged release is also available as an ES module through
-`https://esm.sh/gh/JacobiusMakes/facet-diamond-tool@v0.3.0/facet-widget.js` and as a standalone
+`https://esm.sh/gh/JacobiusMakes/facet-diamond-tool@v0.3.1/facet-widget.js` and as a standalone
 file or npm-ready package archive from GitHub Releases.
 
 ### WordPress
 
-Install `facet-diamond-size-wordpress-0.1.0.zip` from the WordPress release, then place this in any
+Install `facet-diamond-size-wordpress-0.1.1.zip` from the WordPress release, then place this in any
 post, page, or Shortcode block:
 
 ```text
@@ -67,7 +67,7 @@ post, page, or Shortcode block:
 ```
 
 If `publisher` is omitted, the plugin derives a public attribution slug from the site's hostname.
-Download: <https://github.com/JacobiusMakes/facet-diamond-tool/releases/tag/wordpress-v0.1.0>
+Download: <https://github.com/JacobiusMakes/facet-diamond-tool/releases/tag/wordpress-v0.1.1>
 
 Same math and data as diamond-mcp (facts.json anchors: round 6.5, oval 8.0x5.5, emerald 7.0x5.0,
 Dutch Marquise 9.0x5.0 at 1 carat; cube-root scaling), same honesty note.

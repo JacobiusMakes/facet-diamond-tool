@@ -3,7 +3,7 @@
  * Plugin Name: Facet Diamond Size
  * Plugin URI: https://jacobiusmakes.github.io/facet-diamond-tool/widget-demo.html
  * Description: Add a private diamond face-up size calculator with the [facet_diamond_size] shortcode.
- * Version: 0.1.0
+ * Version: 0.1.1
  * Author: Stienhardt & Stones
  * Author URI: https://stienhardt.com/
  * License: MIT
@@ -49,9 +49,9 @@ function facet_diamond_size_shortcode($attributes) {
 
     wp_enqueue_script(
         'facet-diamond-size',
-        'https://cdn.jsdelivr.net/gh/JacobiusMakes/facet-diamond-tool@v0.3.0/facet-widget.js',
+        'https://cdn.jsdelivr.net/gh/JacobiusMakes/facet-diamond-tool@v0.3.1/facet-widget.js',
         array(),
-        '0.3.0',
+        '0.3.1',
         true
     );
 

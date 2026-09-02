@@ -6,7 +6,7 @@ The web component has isolated styles, no runtime dependency, and no background 
 sit directly inside an article, guide, resource page, or application.
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/JacobiusMakes/facet-diamond-tool@v0.3.0/facet-widget.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JacobiusMakes/facet-diamond-tool@v0.3.1/facet-widget.js"></script>
 <facet-diamond-size
   publisher="YOUR_PUBLICATION"
   shape="oval"
@@ -22,13 +22,13 @@ when a reader deliberately opens matching inventory.
 Live example: <https://jacobiusmakes.github.io/facet-diamond-tool/widget-demo.html>
 
 ES module delivery is available at
-`https://esm.sh/gh/JacobiusMakes/facet-diamond-tool@v0.3.0/facet-widget.js`. The same standalone
-file and an npm-ready package archive are attached to the v0.3.0 GitHub Release.
+`https://esm.sh/gh/JacobiusMakes/facet-diamond-tool@v0.3.1/facet-widget.js`. The same standalone
+file and an npm-ready package archive are attached to the v0.3.1 GitHub Release.
 
 ## WordPress
 
 Install the ZIP from
-<https://github.com/JacobiusMakes/facet-diamond-tool/releases/tag/wordpress-v0.1.0>, then place the
+<https://github.com/JacobiusMakes/facet-diamond-tool/releases/tag/wordpress-v0.1.1>, then place the
 shortcode in any post, page, or Shortcode block:
 
 ```text

@@ -1,6 +1,6 @@
 {
   "name": "facet-diamond-size",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A private diamond face-up size web component and shopping tool by Stienhardt.",
   "main": "facet-widget.js",
   "browser": "facet-widget.js",

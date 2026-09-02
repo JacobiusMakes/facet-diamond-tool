@@ -1,4 +1,4 @@
-const CACHE = "facet-v7";
+const CACHE = "facet-v8";
 const ASSETS = [
   "./",
   "./index.html",

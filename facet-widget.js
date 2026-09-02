@@ -1,7 +1,7 @@
 (function (root) {
   "use strict";
 
-  const VERSION = "0.3.0";
+  const VERSION = "0.3.1";
   const ANCHORS = Object.freeze({
     round: [6.5, 6.5],
     oval: [8.0, 5.5],
@@ -61,6 +61,12 @@
     return '<ellipse cx="110" cy="55" rx="' + (shape === "round" ? "45" : "88") + '" ry="43"/>';
   }
 
+  function facetLines(shape) {
+    const left = shape === "round" ? 68 : 22;
+    const right = shape === "round" ? 152 : 198;
+    return '<path class="facet" d="M' + left + ' 55 L110 16 L' + right + ' 55 L110 94 Z M110 16 L110 94 M' + left + ' 55 L' + right + ' 55"/>';
+  }
+
   const BaseElement = root.HTMLElement || class {};
 
   class FacetDiamondSize extends BaseElement {
@@ -107,7 +113,7 @@
               </div>
               <div class="measure"><strong>${result.lengthMm.toFixed(1)} x ${result.widthMm.toFixed(1)} mm</strong><span>Approximate face-up size for ${result.carat.toFixed(2)} ct. Confirm the exact grading-report measurements.</span></div>
             </div>
-            <div class="stone" aria-hidden="true"><svg viewBox="0 0 220 110">${outline(result.shape)}<path class="facet" d="M22 55 L110 16 L198 55 L110 94 Z M110 16 L110 94 M22 55 L198 55"/></svg></div>
+            <div class="stone" aria-hidden="true"><svg viewBox="0 0 220 110">${outline(result.shape)}${facetLines(result.shape)}</svg></div>
           </div>
           <a class="button" href="${trackedUrl(result.shape, result.carat, publisher)}" target="_blank" rel="noopener">Browse ${SHAPES[result.shape].label} diamonds</a>
           <p class="fine">Facet sets no cookies and collects no customer data. The inventory link contains only publisher, shape, and carat. <a href="${facetUrl.toString()}" target="_blank" rel="noopener">Open the full Facet tool</a></p>
@@ -132,7 +138,7 @@
     }
   }
 
-  const api = Object.freeze({ VERSION, ANCHORS, SHAPES, normalizeShape, clampCarat, sanitizePublisher, faceUpSize, trackedUrl, FacetDiamondSize });
+  const api = Object.freeze({ VERSION, ANCHORS, SHAPES, normalizeShape, clampCarat, sanitizePublisher, faceUpSize, trackedUrl, outline, facetLines, FacetDiamondSize });
   root.FacetWidgetCore = api;
   if (root.customElements && !root.customElements.get("facet-diamond-size")) root.customElements.define("facet-diamond-size", FacetDiamondSize);
   if (typeof module !== "undefined" && module.exports) module.exports = api;

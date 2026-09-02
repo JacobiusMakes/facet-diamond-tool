@@ -3,7 +3,7 @@ Contributors: stienhardt
 Tags: diamond, carat, engagement ring, calculator, shortcode
 Requires at least: 6.0
 Requires PHP: 7.4
-Stable tag: 0.1.0
+Stable tag: 0.1.1
 License: MIT
 
 A private diamond face-up size calculator for articles and resource pages.
@@ -38,6 +38,9 @@ no customer data. The inventory link contains only a public publisher slug,
 shape, and carat weight.
 
 == Changelog ==
+
+= 0.1.1 =
+* Uses Facet component 0.3.1 with corrected round-shape artwork.
 
 = 0.1.0 =
 * First public package.

@@ -4,7 +4,7 @@ A quiet diamond-shopping companion. On any listing, anywhere: how big the stone 
 millimeters (the number carat weight hides), a one-click scan of the page for the carat and
 shape, a reusable comparison brief, and the grading labs' own verification pages.
 
-Facet is usable now in seven forms:
+Facet is usable now in eight forms:
 
 1. The public calculator at <https://jacobiusmakes.github.io/facet-diamond-tool/>.
 2. An installable web app offered directly by the calculator on supported browsers.
@@ -13,6 +13,7 @@ Facet is usable now in seven forms:
 5. A true-size printable comparison sheet with a 50 mm calibration check and a QR return path.
 6. A downloadable diamond shortlist workbook with one attributable Facet link per candidate.
 7. Same Stone, a local-only duplicate listing detector for report and measurement matches across sellers.
+8. Stone on Hand, a credit-card-calibrated diamond footprint preview that keeps the hand photo on-device.
 
 The extension never names or targets a competitor, never sends page text, and never tracks in
 the background. It runs only when clicked (`activeTab`) and stores nothing. The bookmarklet sends
@@ -25,6 +26,11 @@ Its capture bookmarklet passes page text directly between browser tabs, parses i
 not upload or retain the captured text. Exact certificate matches and possible measurement matches
 remain separate. Inventory clicks use `same_stone_duplicate_match` or `same_stone_candidate_match`
 and carry only shape and carat intent.
+
+Stone on Hand uses the 85.60 mm long edge of an ISO ID-1 payment card to translate photo pixels
+into an approximate physical scale. The hand photo is decoded and rendered on an in-browser canvas,
+then discarded when the tab closes. Direct and shared-preview inventory clicks remain separate as
+`hand_preview_match` and `hand_preview_shared_match`.
 
 The public tool can also create a shareable shape-and-carat check for a shopper's partner. The
 print sheet returns through `via=print`, and its Stienhardt clicks use `utm_content=print_chart_match`.

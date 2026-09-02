@@ -4,7 +4,7 @@
   "private": true,
   "description": "A private-by-default diamond listing decoder and face-up size tool by Stienhardt.",
   "scripts": {
-    "test": "node tests/core.test.js && node tests/same-stone.test.js"
+    "test": "node tests/core.test.js && node tests/same-stone.test.js && node tests/hand-preview.test.js"
   },
   "license": "MIT"
 }

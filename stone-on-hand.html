@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Stone on Hand: private true-size diamond photo preview</title>
+  <meta name="description" content="Place an approximate true-size diamond footprint on your own hand photo. Credit-card calibrated, private, and processed entirely in the browser.">
+  <meta property="og:title" content="Stone on Hand by Facet">
+  <meta property="og:description" content="Use a card in your hand photo to preview a diamond's approximate real-world footprint. Your photo never leaves the browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jacobiusmakes.github.io/facet-diamond-tool/stone-on-hand.html">
+  <meta name="theme-color" content="#091d2e">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon128.png" type="image/png">
+  <style>
+    :root{--ink:#091d2e;--blue:#173f70;--blue2:#6f86a8;--paper:#f8f5ef;--card:#fffdfa;--line:#d9d1c4;--muted:#6d675f;--green:#2e624b}
+    *{box-sizing:border-box}html{background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif}body{margin:0}a{color:var(--blue)}
+    .wrap{width:min(1160px,calc(100% - 32px));margin:auto}header{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}.mark{width:30px;height:30px;display:grid;place-items:center;border:1px solid var(--blue2);transform:rotate(45deg);background:#fff}.mark span{transform:rotate(-45deg);font:11px Verdana,sans-serif}.brand strong{font-size:20px;font-weight:400}.by{font:10px/1.3 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}nav a{font:11px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.09em;text-decoration:none;margin-left:20px}
+    .hero{display:grid;grid-template-columns:1.12fr .88fr;gap:55px;padding:68px 0 44px;align-items:center}.eyebrow{font:11px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.18em;color:var(--green);margin:0 0 20px}h1{font-size:clamp(44px,6vw,76px);font-weight:400;line-height:.98;letter-spacing:-.035em;margin:0 0 24px}.lede{font-size:20px;line-height:1.55;margin:0;max-width:680px;color:#263847}.trust{font:12px/1.5 Verdana,sans-serif;color:var(--muted);margin-top:22px;display:flex;gap:18px;flex-wrap:wrap}.trust span:before{content:'✓';color:var(--green);margin-right:6px}.setup{background:var(--card);border:1px solid var(--line);box-shadow:0 18px 48px rgba(9,29,46,.07);padding:28px;border-radius:7px}.setup h2{font-size:25px;font-weight:400;margin:0 0 10px}.setup ol{margin:0;padding-left:20px;color:#334553}.setup li{margin:9px 0;line-height:1.45}.fine{font:11px/1.5 Verdana,sans-serif;color:var(--muted);margin:15px 0 0}
+    .studio{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;padding:40px 0 68px;border-top:1px solid var(--line);align-items:start}.stage{background:#e9e5dd;border:1px solid var(--line);min-height:520px;display:grid;place-items:center;position:relative;border-radius:7px;overflow:hidden}.stage canvas{display:block;max-width:100%;max-height:78vh;cursor:crosshair}.placeholder{padding:44px;text-align:center;max-width:520px}.placeholder b{display:block;font-size:27px;font-weight:400;margin-bottom:12px}.placeholder p{color:var(--muted);line-height:1.6}.controls{background:var(--card);border:1px solid var(--line);padding:24px;border-radius:7px;position:sticky;top:16px}.controls h2{font-size:24px;font-weight:400;margin:0 0 5px}.status{font:12px/1.5 Verdana,sans-serif;color:var(--green);margin:0 0 20px;padding-bottom:16px;border-bottom:1px solid var(--line)}label{display:block;font:600 10px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.11em;color:var(--muted);margin:15px 0 7px}input,select{width:100%;font:15px Georgia,serif;color:var(--ink);background:white;border:1px solid var(--line);border-radius:3px;padding:11px}input[type=range]{padding:0;accent-color:var(--blue)}input[type=file]{font:11px Verdana,sans-serif}.readout{background:#f5f8fb;border:1px solid #dbe4ee;margin:18px 0;padding:13px;font-size:14px;line-height:1.5}.button-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}button,.button{display:block;width:100%;border:1px solid var(--ink);border-radius:3px;padding:11px 12px;background:var(--ink);color:white;text-align:center;text-decoration:none;cursor:pointer;font:600 9px/1.2 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.08em}button.secondary,.button.secondary{color:var(--ink);background:transparent}button:disabled,.button.disabled{opacity:.4;cursor:not-allowed}.feedback{min-height:18px;margin:10px 0 0;font:11px/1.5 Verdana,sans-serif;color:var(--green)}
+    .how{border-top:1px solid var(--line);padding:52px 0 70px;display:grid;grid-template-columns:repeat(3,1fr);gap:34px}.how h3{font-size:21px;font-weight:400;margin:0 0 9px}.how p{font-size:15px;line-height:1.65;color:#334553;margin:0}footer{border-top:1px solid var(--line);padding:30px 0 44px;display:flex;justify-content:space-between;gap:24px;font:11px/1.6 Verdana,sans-serif;color:var(--muted)}footer p{margin:0;max-width:760px}
+    @media(max-width:820px){nav{display:none}.hero,.studio{grid-template-columns:1fr}.hero{gap:30px;padding-top:48px}.controls{position:static}.stage{min-height:360px}.how{grid-template-columns:1fr}footer{align-items:flex-start;flex-direction:column}}
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Stone on Hand by Facet","applicationCategory":"ShoppingApplication","operatingSystem":"Any","description":"A private credit-card-calibrated diamond footprint preview for hand photos.","url":"https://jacobiusmakes.github.io/facet-diamond-tool/stone-on-hand.html","author":{"@type":"Organization","name":"Stienhardt & Stones","url":"https://stienhardt.com/"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="./"><span class="mark"><span>F</span></span><span><strong>Facet</strong><br><span class="by">By Stienhardt</span></span></a>
+      <nav><a href="./">Size check</a><a href="same-stone.html">Same Stone</a><a href="#how">Accuracy</a><a href="privacy.html">Privacy</a></nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">A private calibrated photo tool</p>
+          <h1>Put the stone on your hand before the ring exists.</h1>
+          <p class="lede">A standard card gives the photo a physical scale. Mark its long edge, tap your ring finger, and preview the selected diamond's approximate face-up footprint on your own hand.</p>
+          <div class="trust"><span>No account</span><span>No photo upload</span><span>Exports on your device</span></div>
+        </div>
+        <aside class="setup">
+          <h2>Take one useful photo</h2>
+          <ol>
+            <li>Lay your hand and a standard credit or debit card flat on the same surface.</li>
+            <li>Keep the camera directly above them to limit perspective distortion.</li>
+            <li>Choose the photo, mark the card's 85.60 mm long edge, then place the stone.</li>
+          </ol>
+          <p class="fine">The result is an approximate footprint, not a rendering of a finished setting or an appraisal.</p>
+        </aside>
+      </section>
+
+      <section class="studio">
+        <div class="stage" id="stage">
+          <div class="placeholder" id="placeholder"><b>Your photo stays here.</b><p>Choose a hand photo from the controls. It is decoded, calibrated, rendered, and exported inside this browser tab.</p></div>
+          <canvas id="canvas" hidden aria-label="Private hand photo diamond preview"></canvas>
+        </div>
+        <aside class="controls">
+          <h2>Build the preview</h2>
+          <p class="status" id="status" aria-live="polite">Start with a hand photo that includes a standard card.</p>
+
+          <label for="photo">Hand photo</label>
+          <input id="photo" type="file" accept="image/*" capture="environment">
+
+          <label for="shape">Diamond shape</label>
+          <select id="shape"><option value="round">Round</option><option value="oval" selected>Oval</option><option value="emerald">Emerald</option><option value="dutch_marquise">Dutch Marquise</option></select>
+
+          <label for="carat">Carat weight</label>
+          <input id="carat" type="number" min="0.1" max="20" step="0.01" value="1.50">
+
+          <label for="rotation">Rotation on hand</label>
+          <input id="rotation" type="range" min="-90" max="90" step="1" value="0">
+
+          <label for="opacity">Stone opacity</label>
+          <input id="opacity" type="range" min="30" max="95" step="1" value="72">
+
+          <div class="readout" id="readout">Oval, 1.50 ct<br>Approximately 9.2 x 6.3 mm face-up</div>
+
+          <div class="button-grid">
+            <button class="secondary" id="recalibrate" type="button" disabled>Mark card again</button>
+            <button class="secondary" id="reposition" type="button" disabled>Move stone</button>
+            <button id="save-preview" type="button" disabled>Save preview</button>
+            <button id="share-preview" type="button" disabled>Share preview</button>
+          </div>
+          <a class="button disabled" id="browse" href="#" aria-disabled="true">Browse this shape</a>
+          <p class="feedback" id="feedback" aria-live="polite"></p>
+        </aside>
+      </section>
+
+      <section class="how" id="how">
+        <article><h3>The card sets the scale</h3><p>The long edge of an ISO ID-1 payment card is 85.60 mm. Two clicks translate photo pixels into approximate millimeters at the card's plane.</p></article>
+        <article><h3>Camera angle still matters</h3><p>The card and finger must be flat on the same surface, with the camera directly above them. Perspective, lens distortion, and finger curvature can change the apparent scale.</p></article>
+        <article><h3>The footprint is literal</h3><p>Facet uses typical face-up dimensions for the chosen shape and carat. It does not simulate prongs, band width, setting height, sparkle, color, or exact stone proportions.</p></article>
+      </section>
+    </main>
+
+    <footer>
+      <p>Stone on Hand is an open-source education tool made by Stienhardt & Stones, a New York City jeweler that sources certified Lab Grown Diamonds and hand-sets and finishes rings in NYC. Always compare the preview with the exact measurements on the stone's grading report.</p>
+      <p><a href="privacy.html">Privacy</a><br><a href="mailto:jgalperin@stienhardt.com">Contact</a></p>
+    </footer>
+  </div>
+
+  <script src="core.js"></script>
+  <script src="hand-preview-core.js"></script>
+  <script>
+    (() => {
+      const canvas = document.getElementById('canvas');
+      const context = canvas.getContext('2d');
+      const placeholder = document.getElementById('placeholder');
+      const status = document.getElementById('status');
+      const feedback = document.getElementById('feedback');
+      const shape = document.getElementById('shape');
+      const carat = document.getElementById('carat');
+      const rotation = document.getElementById('rotation');
+      const opacity = document.getElementById('opacity');
+      const browse = document.getElementById('browse');
+      const params = new URLSearchParams(location.search);
+      let sourceImage = null;
+      let cardPoints = [];
+      let stoneCenter = null;
+      let mode = 'waiting';
+
+      const startingShape = FacetCore.normalizeShape(params.get('shape'));
+      const startingCarat = FacetCore.clampCarat(params.get('carat'));
+      if (startingShape) shape.value = startingShape;
+      if (startingCarat !== null) carat.value = startingCarat.toFixed(2);
+
+      function currentScale() {
+        return cardPoints.length === 2 ? HandPreviewCore.pixelsPerMillimeter(cardPoints[0], cardPoints[1]) : null;
+      }
+
+      function currentSize() {
+        const scale = currentScale();
+        return scale ? HandPreviewCore.overlaySize(shape.value, carat.value, scale) : null;
+      }
+
+      function updateReadout() {
+        const size = FacetCore.faceUpSize(shape.value, carat.value) || FacetCore.faceUpSize('oval', 1.5);
+        document.getElementById('readout').innerHTML = `${FacetCore.SHAPES[size.shape].label}, ${size.carat.toFixed(2)} ct<br>Approximately ${size.lengthMm.toFixed(1)} x ${size.widthMm.toFixed(1)} mm face-up`;
+        const shared = params.get('via') === 'share';
+        browse.href = FacetCore.trackedCollectionUrl({ shape: size.shape, carat: size.carat, content: shared ? 'hand_preview_shared_match' : 'hand_preview_match' });
+        browse.textContent = `Browse ${FacetCore.SHAPES[size.shape].label} diamonds`;
+        draw();
+      }
+
+      function canvasPoint(event) {
+        const bounds = canvas.getBoundingClientRect();
+        return {
+          x: (event.clientX - bounds.left) * canvas.width / bounds.width,
+          y: (event.clientY - bounds.top) * canvas.height / bounds.height,
+        };
+      }
+
+      function traceStone(size) {
+        context.beginPath();
+        if (size.shape === 'round' || size.shape === 'oval') {
+          context.ellipse(0, 0, size.lengthPx / 2, size.widthPx / 2, 0, 0, Math.PI * 2);
+          return;
+        }
+        const points = HandPreviewCore.shapePoints(size.shape, size.lengthPx, size.widthPx);
+        context.moveTo(points[0][0], points[0][1]);
+        points.slice(1).forEach((point) => context.lineTo(point[0], point[1]));
+        context.closePath();
+      }
+
+      function drawStone(size) {
+        context.save();
+        context.translate(stoneCenter.x, stoneCenter.y);
+        context.rotate(Number(rotation.value) * Math.PI / 180);
+        const gradient = context.createLinearGradient(-size.lengthPx / 2, -size.widthPx / 2, size.lengthPx / 2, size.widthPx / 2);
+        gradient.addColorStop(0, `rgba(255,255,255,${Number(opacity.value) / 100})`);
+        gradient.addColorStop(.45, `rgba(190,222,250,${Number(opacity.value) / 100})`);
+        gradient.addColorStop(.53, `rgba(255,255,255,${Number(opacity.value) / 100})`);
+        gradient.addColorStop(1, `rgba(142,184,225,${Number(opacity.value) / 100})`);
+        traceStone(size);
+        context.fillStyle = gradient;
+        context.fill();
+        context.strokeStyle = 'rgba(23,63,112,.95)';
+        context.lineWidth = Math.max(2, Math.min(size.lengthPx, size.widthPx) * .035);
+        context.stroke();
+        context.beginPath();
+        context.moveTo(-size.lengthPx * .34, 0);
+        context.lineTo(size.lengthPx * .34, 0);
+        context.moveTo(0, -size.widthPx * .34);
+        context.lineTo(0, size.widthPx * .34);
+        context.strokeStyle = 'rgba(255,255,255,.8)';
+        context.lineWidth = Math.max(1, Math.min(size.lengthPx, size.widthPx) * .012);
+        context.stroke();
+        context.restore();
+      }
+
+      function drawGuides() {
+        if (!cardPoints.length) return;
+        context.save();
+        context.strokeStyle = '#f4b942';
+        context.fillStyle = '#f4b942';
+        context.lineWidth = Math.max(2, canvas.width / 500);
+        context.setLineDash([10, 8]);
+        if (cardPoints.length === 2) {
+          context.beginPath();
+          context.moveTo(cardPoints[0].x, cardPoints[0].y);
+          context.lineTo(cardPoints[1].x, cardPoints[1].y);
+          context.stroke();
+        }
+        context.setLineDash([]);
+        for (const point of cardPoints) {
+          context.beginPath();
+          context.arc(point.x, point.y, Math.max(6, canvas.width / 170), 0, Math.PI * 2);
+          context.fill();
+        }
+        context.restore();
+      }
+
+      function drawBrand(size) {
+        const label = `Stone on Hand by Facet | ${FacetCore.SHAPES[size.shape].label} ${size.carat.toFixed(2)} ct | ${size.lengthMm.toFixed(1)} x ${size.widthMm.toFixed(1)} mm`;
+        context.save();
+        context.font = `${Math.max(16, canvas.width / 65)}px Arial`;
+        const padding = Math.max(12, canvas.width / 90);
+        const textWidth = context.measureText(label).width;
+        const x = canvas.width - textWidth - padding * 2;
+        const y = canvas.height - padding * 3;
+        context.fillStyle = 'rgba(9,29,46,.82)';
+        context.fillRect(Math.max(0, x), y - padding, Math.min(canvas.width, textWidth + padding * 2), padding * 3);
+        context.fillStyle = '#ffffff';
+        context.fillText(label, Math.max(padding, x + padding), y + padding * .45);
+        context.restore();
+      }
+
+      function draw(showGuides = true, showBrand = false) {
+        if (!sourceImage) return;
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.drawImage(sourceImage, 0, 0, canvas.width, canvas.height);
+        const size = currentSize();
+        if (size && stoneCenter) drawStone(size);
+        if (showGuides) drawGuides();
+        if (showBrand && size && stoneCenter) drawBrand(size);
+      }
+
+      function readyState() {
+        const ready = Boolean(sourceImage && currentSize() && stoneCenter);
+        document.getElementById('recalibrate').disabled = !sourceImage;
+        document.getElementById('reposition').disabled = !currentScale();
+        document.getElementById('save-preview').disabled = !ready;
+        document.getElementById('share-preview').disabled = !ready;
+        browse.classList.toggle('disabled', !ready);
+        browse.setAttribute('aria-disabled', String(!ready));
+      }
+
+      function resetCalibration() {
+        cardPoints = [];
+        stoneCenter = null;
+        mode = 'calibration';
+        status.textContent = 'Click one end of the card\'s long edge.';
+        feedback.textContent = '';
+        readyState();
+        draw();
+      }
+
+      document.getElementById('photo').addEventListener('change', (event) => {
+        const file = event.target.files && event.target.files[0];
+        if (!file || !file.type.startsWith('image/')) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          const image = new Image();
+          image.onload = () => {
+            const fit = HandPreviewCore.fitInside(image.naturalWidth, image.naturalHeight, 1600, 1600);
+            canvas.width = fit.width;
+            canvas.height = fit.height;
+            sourceImage = image;
+            placeholder.hidden = true;
+            canvas.hidden = false;
+            resetCalibration();
+          };
+          image.src = reader.result;
+        };
+        reader.readAsDataURL(file);
+      });
+
+      canvas.addEventListener('click', (event) => {
+        if (!sourceImage) return;
+        const point = canvasPoint(event);
+        if (mode === 'calibration') {
+          cardPoints.push(point);
+          if (cardPoints.length === 1) {
+            status.textContent = 'Click the other end of the same 85.60 mm card edge.';
+          } else {
+            const scale = currentScale();
+            if (!scale) {
+              cardPoints = [];
+              status.textContent = 'Those marks are too close. Mark both ends of the long card edge again.';
+            } else {
+              mode = 'placement';
+              status.textContent = 'Calibration set. Tap the center of your ring finger.';
+            }
+          }
+        } else {
+          stoneCenter = point;
+          status.textContent = 'Preview placed. Change shape, carat, rotation, or opacity at any time.';
+        }
+        readyState();
+        draw();
+      });
+
+      document.getElementById('recalibrate').addEventListener('click', resetCalibration);
+      document.getElementById('reposition').addEventListener('click', () => {
+        stoneCenter = null;
+        mode = 'placement';
+        status.textContent = 'Tap the new center position on your ring finger.';
+        readyState();
+        draw();
+      });
+      [shape, carat, rotation, opacity].forEach((control) => control.addEventListener('input', updateReadout));
+
+      function canvasBlob() {
+        return new Promise((resolve) => {
+          draw(false, true);
+          canvas.toBlob((blob) => {
+            draw(true, false);
+            resolve(blob);
+          }, 'image/png', .95);
+        });
+      }
+
+      document.getElementById('save-preview').addEventListener('click', async () => {
+        const blob = await canvasBlob();
+        const url = URL.createObjectURL(blob);
+        const anchor = document.createElement('a');
+        anchor.href = url;
+        anchor.download = `stone-on-hand-${shape.value}-${Number(carat.value).toFixed(2)}ct.png`;
+        anchor.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        feedback.textContent = 'Preview saved locally.';
+      });
+
+      document.getElementById('share-preview').addEventListener('click', async () => {
+        const size = FacetCore.faceUpSize(shape.value, carat.value);
+        const shareUrl = new URL(location.origin + location.pathname);
+        shareUrl.searchParams.set('shape', size.shape);
+        shareUrl.searchParams.set('carat', size.carat.toFixed(2));
+        shareUrl.searchParams.set('via', 'share');
+        const blob = await canvasBlob();
+        const file = new File([blob], `stone-on-hand-${size.shape}-${size.carat.toFixed(2)}ct.png`, { type: 'image/png' });
+        const payload = { title: 'Stone on Hand preview', text: `${FacetCore.SHAPES[size.shape].label}, ${size.carat.toFixed(2)} ct, approximately ${size.lengthMm.toFixed(1)} x ${size.widthMm.toFixed(1)} mm face-up.`, url: shareUrl.toString() };
+        try {
+          if (navigator.share && navigator.canShare && navigator.canShare({ files: [file] })) {
+            await navigator.share({ ...payload, files: [file] });
+            feedback.textContent = 'Preview shared.';
+          } else if (navigator.share) {
+            await navigator.share(payload);
+            feedback.textContent = 'Size choice shared. Save the preview separately if you want to attach it.';
+          } else {
+            await navigator.clipboard.writeText(`${payload.text}\n${payload.url}`);
+            feedback.textContent = 'Share text and link copied. The preview can be saved separately.';
+          }
+        } catch (error) {
+          if (error.name !== 'AbortError') feedback.textContent = 'Sharing was blocked. Save the preview instead.';
+        }
+      });
+
+      browse.addEventListener('click', (event) => {
+        if (browse.getAttribute('aria-disabled') === 'true') event.preventDefault();
+      });
+
+      if ('serviceWorker' in navigator) navigator.serviceWorker.register('service-worker.js');
+      updateReadout();
+      readyState();
+    })();
+  </script>
+</body>
+</html>

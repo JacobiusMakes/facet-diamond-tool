@@ -1,4 +1,5 @@
 dist/
 tmp/
+*.inspect.ndjson
 .DS_Store
 Thumbs.db

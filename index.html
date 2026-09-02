@@ -103,7 +103,7 @@
           <button class="secondary" id="share" type="button">Share this size check</button>
           <button class="secondary" id="install" type="button" hidden>Install Facet on this device</button>
           <p class="feedback" id="feedback" aria-live="polite"></p>
-          <div class="bookmark"><strong>Use Facet while you shop:</strong> drag this button to your bookmarks bar, then click it on a diamond listing. The scan runs in your browser and sends Facet only the shape and carat it finds.<br><a class="drag" id="bookmarklet" href="#">Facet this listing</a> <a href="https://github.com/JacobiusMakes/facet-diamond-tool/releases/latest">Get the browser extension</a> <a href="output/pdf/facet-diamond-size-chart.pdf">Print the true-size comparison sheet</a></div>
+          <div class="bookmark"><strong>Use Facet while you shop:</strong> drag this button to your bookmarks bar, then click it on a diamond listing. The scan runs in your browser and sends Facet only the shape and carat it finds.<br><a class="drag" id="bookmarklet" href="#">Facet this listing</a> <a href="https://github.com/JacobiusMakes/facet-diamond-tool/releases/latest">Get the browser extension</a> <a href="output/pdf/facet-diamond-size-chart.pdf">Print the true-size comparison sheet</a> <a href="outputs/facet-acquisition-2026-09-02/facet-diamond-shortlist.xlsx">Download the diamond shortlist workbook</a></div>
         </div>
       </section>
 
@@ -144,6 +144,7 @@
       if (Number.isFinite(startingCarat) && startingCarat >= .1 && startingCarat <= 20) carat.value = startingCarat;
       if (params.get('via') === 'bookmarklet') document.getElementById('via-note').textContent = 'Facet found these details on the listing. Confirm them before comparing.';
       if (params.get('via') === 'print') document.getElementById('via-note').textContent = 'You came from the true-size print sheet. Enter any shape and carat weight to continue the comparison.';
+      if (params.get('via') === 'sheet') document.getElementById('via-note').textContent = 'You came from your shortlist workbook. Confirm this candidate before comparing.';
 
       function render() {
         const result = faceUpSize(shape.value, carat.value) || faceUpSize('oval', 1.5);
@@ -161,6 +162,7 @@
           pwa: 'pwa_match',
           share: 'shared_brief_match',
           print: 'print_chart_match',
+          sheet: 'shortlist_sheet_match',
         };
         const surface = surfaceByEntry[params.get('via')] || 'web_match';
         match.href = trackedCollectionUrl({ shape: result.shape, carat: result.carat, content: surface });

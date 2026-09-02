@@ -7,8 +7,9 @@ shape, a reusable comparison brief, and the grading labs' own verification pages
 Facet is usable now in three forms:
 
 1. The public calculator at <https://jacobiusmakes.github.io/facet-diamond-tool/>.
-2. A zero-install bookmarklet, available on that page, that scans the visible listing locally.
-3. A browser extension, available from GitHub Releases while store review is pending.
+2. An installable web app offered directly by the calculator on supported browsers.
+3. A zero-install bookmarklet, available on that page, that scans the visible listing locally.
+4. A browser extension, available from GitHub Releases while store review is pending.
 
 The extension never names or targets a competitor, never sends page text, and never tracks in
 the background. It runs only when clicked (`activeTab`) and stores nothing. The bookmarklet sends

@@ -1,0 +1,24 @@
+{
+  "name": "Facet: Diamond Listing Decoder",
+  "short_name": "Facet",
+  "description": "Decode a diamond listing's carat weight into approximate face-up size and carry a clean comparison brief.",
+  "start_url": "./?via=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f8f5ef",
+  "theme_color": "#091d2e",
+  "icons": [
+    {
+      "src": "icons/icon128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

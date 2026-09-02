@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Facet">
+  <rect width="512" height="512" rx="72" fill="#f8f5ef"/>
+  <path d="M256 62 424 256 256 450 88 256Z" fill="#fffdfa" stroke="#6f86a8" stroke-width="16"/>
+  <path d="m88 256 168-88 168 88-168 88Z" fill="#e7eef6" stroke="#6f86a8" stroke-width="10"/>
+  <path d="M256 62v106M256 344v106M88 256h336" fill="none" stroke="#173f70" stroke-width="9"/>
+  <circle cx="256" cy="256" r="22" fill="#173f70"/>
+</svg>

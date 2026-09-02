@@ -1,0 +1,10 @@
+{
+  "name": "facet-diamond-tool",
+  "version": "0.2.0",
+  "private": true,
+  "description": "A private-by-default diamond listing decoder and face-up size tool by Stienhardt.",
+  "scripts": {
+    "test": "node tests/core.test.js"
+  },
+  "license": "MIT"
+}

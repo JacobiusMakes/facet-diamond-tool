@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Facet: decode a diamond listing</title>
+  <meta name="description" content="Turn a diamond listing's carat weight into an approximate face-up size, make a clean comparison brief, and verify the report on the grading lab's own site.">
+  <meta property="og:title" content="Facet: decode a diamond listing">
+  <meta property="og:description" content="Carat is weight. What you see is millimeters. Check a listing without sending its page or report number anywhere.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jacobiusmakes.github.io/facet-diamond-tool/">
+  <style>
+    :root{--ink:#091d2e;--blue:#173f70;--blue2:#6f86a8;--paper:#f8f5ef;--card:#fffdfa;--line:#d9d1c4;--muted:#6d675f;--green:#2e624b}
+    *{box-sizing:border-box}
+    html{background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+    body{margin:0}
+    a{color:var(--blue)}
+    .wrap{width:min(1080px,calc(100% - 32px));margin:auto}
+    header{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+    .mark{width:30px;height:30px;display:grid;place-items:center;border:1px solid var(--blue2);transform:rotate(45deg);background:#fff}
+    .mark span{transform:rotate(-45deg);font-size:11px;font-family:Verdana,sans-serif;letter-spacing:.04em}
+    .brand strong{font-size:20px;font-weight:400}
+    .by{font:10px/1.3 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+    nav a{font:11px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.09em;text-decoration:none;margin-left:20px}
+    .hero{display:grid;grid-template-columns:1.04fr .96fr;gap:58px;padding:76px 0 54px;align-items:center}
+    .eyebrow{font:11px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.18em;color:var(--green);margin:0 0 20px}
+    h1{font-size:clamp(44px,6vw,78px);font-weight:400;line-height:.98;letter-spacing:-.035em;margin:0 0 24px}
+    .lede{font-size:20px;line-height:1.55;margin:0;max-width:610px;color:#263847}
+    .trust{font:12px/1.5 Verdana,sans-serif;color:var(--muted);margin-top:22px;display:flex;gap:18px;flex-wrap:wrap}
+    .trust span:before{content:'✓';color:var(--green);margin-right:6px}
+    .tool{background:var(--card);border:1px solid var(--line);box-shadow:0 18px 48px rgba(9,29,46,.08);padding:28px;border-radius:7px}
+    .tool h2{font-size:24px;font-weight:400;margin:0 0 6px}
+    .tool .sub{font-size:14px;color:var(--muted);margin:0 0 20px}
+    label{display:block;font:600 10px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:7px}
+    .fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    input,select{width:100%;font:16px Georgia,serif;color:var(--ink);background:white;border:1px solid var(--line);border-radius:3px;padding:12px}
+    .answer{border-top:1px solid var(--line);margin-top:22px;padding-top:22px;display:grid;grid-template-columns:1fr 150px;gap:14px;align-items:center}
+    .answer b{font-size:30px;font-weight:400;display:block}
+    .answer small{font:11px/1.5 Verdana,sans-serif;color:var(--muted)}
+    .scale{height:92px;position:relative}
+    .stone{position:absolute;left:4px;top:4px;border:2px solid var(--blue2);background:linear-gradient(140deg,#fff 0,#dfeaf5 48%,#fff 52%,#e9f0f7 100%);box-shadow:inset 0 0 0 4px rgba(255,255,255,.7)}
+    .ruler{position:absolute;bottom:3px;left:3px;width:70px;height:10px;border-left:1px solid var(--muted);border-right:1px solid var(--muted);border-bottom:1px solid var(--muted)}
+    .ruler:after{content:'10 mm';position:absolute;left:79px;top:-4px;font:10px Verdana,sans-serif;color:var(--muted);white-space:nowrap}
+    .note{font-size:12px;line-height:1.5;color:var(--muted);margin:13px 0 0}
+    .actions{display:grid;grid-template-columns:1.15fr .85fr;gap:10px;margin-top:18px}
+    button,.button{display:block;width:100%;border:1px solid var(--ink);border-radius:3px;padding:12px 14px;background:var(--ink);color:white;text-align:center;text-decoration:none;cursor:pointer;font:600 10px/1.2 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.1em}
+    button.secondary,.button.secondary{color:var(--ink);background:transparent}
+    .feedback{min-height:18px;margin:8px 0 0;font:11px/1.4 Verdana,sans-serif;color:var(--green)}
+    .bookmark{margin:18px 0 0;padding:14px;border:1px dashed var(--blue2);background:#f5f8fb;font-size:13px;line-height:1.45}
+    .bookmark .drag{display:inline-block;margin:8px 6px 0 0;background:white;border:1px solid var(--blue);border-radius:20px;padding:7px 12px;text-decoration:none;font:600 10px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.08em}
+    .sections{border-top:1px solid var(--line);padding:58px 0 74px;display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
+    .sections h3{font-size:20px;font-weight:400;margin:0 0 10px}
+    .sections p{font-size:15px;line-height:1.6;color:#334553;margin:0}
+    .labs{padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:20px}
+    .labs h2{font-size:25px;font-weight:400;margin:0}
+    .lablinks{display:flex;gap:12px;flex-wrap:wrap}
+    .lablinks a{font:600 10px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.1em;padding:10px 13px;border:1px solid var(--blue);border-radius:3px;text-decoration:none}
+    footer{padding:30px 0 44px;display:flex;justify-content:space-between;gap:24px;font:11px/1.6 Verdana,sans-serif;color:var(--muted)}
+    footer p{margin:0;max-width:720px}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;gap:34px;padding-top:48px}.sections{grid-template-columns:1fr}.fields,.actions{grid-template-columns:1fr}.answer{grid-template-columns:1fr}.labs,footer{align-items:flex-start;flex-direction:column}nav{display:none}}
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Facet","applicationCategory":"ShoppingApplication","operatingSystem":"Any","description":"A private-by-default diamond listing decoder and face-up size comparison tool.","url":"https://jacobiusmakes.github.io/facet-diamond-tool/","author":{"@type":"Organization","name":"Stienhardt & Stones","url":"https://stienhardt.com/"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="./"><span class="mark"><span>F</span></span><span><strong>Facet</strong><br><span class="by">By Stienhardt</span></span></a>
+      <nav><a href="#how">How it works</a><a href="privacy.html">Privacy</a><a href="https://github.com/JacobiusMakes/facet-diamond-tool">Source</a></nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">A diamond listing decoder</p>
+          <h1>Carat is weight.<br>What you see is millimeters.</h1>
+          <p class="lede">Turn a listing's carat weight into its approximate face-up size, then leave with a clean brief you can use to compare stones across sellers.</p>
+          <div class="trust"><span>No account</span><span>No listing URL collected</span><span>No report number collected</span></div>
+        </div>
+
+        <div class="tool" aria-label="Diamond size calculator">
+          <h2>Decode the listing</h2>
+          <p class="sub" id="via-note">Enter the shape and carat weight shown on the listing.</p>
+          <div class="fields">
+            <div><label for="carat">Carat weight</label><input id="carat" type="number" min="0.1" max="20" step="0.01" value="1.50"></div>
+            <div><label for="shape">Shape</label><select id="shape"><option value="round">Round</option><option value="oval" selected>Oval</option><option value="emerald">Emerald</option><option value="dutch_marquise">Dutch Marquise</option></select></div>
+          </div>
+          <div class="answer">
+            <div><b id="measurement">9.2 x 6.3 mm</b><small id="weight-label">Typical face-up size for 1.50 ct</small></div>
+            <div class="scale" aria-hidden="true"><div class="stone" id="stone"></div><div class="ruler"></div></div>
+          </div>
+          <p class="note">Approximate, based on typical proportions and cube-root scaling from vetted one-carat anchors. Always use the exact measurements on the stone's grading report.</p>
+          <div class="actions">
+            <a id="match" class="button" href="#">Browse this shape</a>
+            <button class="secondary" id="copy" type="button">Copy comparison brief</button>
+          </div>
+          <p class="feedback" id="feedback" aria-live="polite"></p>
+          <div class="bookmark"><strong>Use Facet while you shop:</strong> drag this button to your bookmarks bar, then click it on a diamond listing. The scan runs in your browser and sends Facet only the shape and carat it finds.<br><a class="drag" id="bookmarklet" href="#">Facet this listing</a> <a href="https://github.com/JacobiusMakes/facet-diamond-tool/releases/latest">Get the browser extension</a></div>
+        </div>
+      </section>
+
+      <section class="sections" id="how">
+        <article><h3>Compare what the eye sees</h3><p>Two stones can share a carat weight and face up at different sizes. Facet makes the millimeter estimate visible so weight does not masquerade as size.</p></article>
+        <article><h3>Carry one clean brief</h3><p>Copy the shape, weight, estimated dimensions, and verification checks into a note. Use the same brief when you compare listings or ask a jeweler a question.</p></article>
+        <article><h3>Keep the seller out of the check</h3><p>Verify the report number on the grading lab's own site. Then match the girdle inscription and exact measurements to the stone itself.</p></article>
+      </section>
+
+      <section class="labs">
+        <h2>Verify on the lab's own site</h2>
+        <div class="lablinks"><a href="https://www.gia.edu/report-check" rel="noopener">GIA Report Check</a><a href="https://www.igi.org/verify-your-report/" rel="noopener">IGI Verify</a><a href="https://www.gcalusa.com/certificate-search.html" rel="noopener">GCAL Search</a></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Facet is an open-source education tool made by Stienhardt & Stones, a New York City jeweler that sources certified Lab Grown Diamonds and hand-sets and finishes rings in NYC. Facet is not an appraisal and does not verify a grading report itself.</p>
+      <p><a href="privacy.html">Privacy</a><br><a href="mailto:jgalperin@stienhardt.com">Contact</a></p>
+    </footer>
+  </div>
+
+  <script src="core.js"></script>
+  <script>
+    (() => {
+      const { SHAPES, faceUpSize, trackedCollectionUrl, comparisonBrief, normalizeShape } = FacetCore;
+      const carat = document.getElementById('carat');
+      const shape = document.getElementById('shape');
+      const measurement = document.getElementById('measurement');
+      const weightLabel = document.getElementById('weight-label');
+      const stone = document.getElementById('stone');
+      const match = document.getElementById('match');
+      const feedback = document.getElementById('feedback');
+      const params = new URLSearchParams(location.search);
+      const startingShape = normalizeShape(params.get('shape'));
+      const startingCarat = Number.parseFloat(params.get('carat'));
+      if (startingShape) shape.value = startingShape;
+      if (Number.isFinite(startingCarat) && startingCarat >= .1 && startingCarat <= 20) carat.value = startingCarat;
+      if (params.get('via') === 'bookmarklet') document.getElementById('via-note').textContent = 'Facet found these details on the listing. Confirm them before comparing.';
+
+      function render() {
+        const result = faceUpSize(shape.value, carat.value) || faceUpSize('oval', 1.5);
+        measurement.textContent = result.lengthMm.toFixed(1) + ' x ' + result.widthMm.toFixed(1) + ' mm';
+        weightLabel.textContent = 'Typical face-up size for ' + result.carat.toFixed(2) + ' ct';
+        const px = 7;
+        stone.style.width = result.lengthMm * px + 'px';
+        stone.style.height = result.widthMm * px + 'px';
+        stone.style.borderRadius = result.shape === 'round' ? '50%' : (result.shape === 'emerald' ? '3px' : '50% / 50%');
+        stone.style.clipPath = result.shape === 'dutch_marquise'
+          ? 'polygon(0 50%, 20% 0, 80% 0, 100% 50%, 80% 100%, 20% 100%)'
+          : (result.shape === 'emerald' ? 'polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%)' : 'none');
+        match.href = trackedCollectionUrl({ shape: result.shape, carat: result.carat, content: params.get('via') === 'bookmarklet' ? 'bookmarklet_match' : 'web_match' });
+        match.textContent = 'Browse ' + SHAPES[result.shape].label + ' diamonds';
+      }
+      carat.addEventListener('input', render);
+      shape.addEventListener('change', render);
+      document.getElementById('copy').addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(comparisonBrief(shape.value, carat.value));
+          feedback.textContent = 'Comparison brief copied.';
+        } catch (error) {
+          feedback.textContent = 'Copy was blocked by the browser. Select the measurements above instead.';
+        }
+      });
+
+      const bookmarkletCode = "javascript:(()=>{const t=(document.body&&document.body.innerText||'').slice(0,250000),r=/(\\d{1,2}(?:\\.\\d{1,3})?)\\s*(?:ct\\b|cts\\b|carat\\b|carats\\b|-carat\\b)/gi,a=[['dutch_marquise',['hexagonal modified brilliant','dutch marquise','elongated hexagon']],['emerald',['emerald cut','emerald']],['oval',['oval brilliant','oval']],['round',['round brilliant','round']]];let m=null,s=null,c;while(c=r.exec(t)){if(!m)m=c;const n=t.slice(Math.max(0,c.index-180),c.index+180).toLowerCase(),z=a.find(e=>e[1].some(x=>n.includes(x)));if(z){m=c;s=z;break}}const u=new URL('https://jacobiusmakes.github.io/facet-diamond-tool/');if(m)u.searchParams.set('carat',m[1]);if(s)u.searchParams.set('shape',s[0]);u.searchParams.set('via','bookmarklet');window.open(u.toString(),'_blank','noopener')})()";
+      document.getElementById('bookmarklet').href = bookmarkletCode;
+      render();
+    })();
+  </script>
+</body>
+</html>

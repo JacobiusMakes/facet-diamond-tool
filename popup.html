@@ -1,0 +1,58 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Facet</title>
+<style>
+  body{width:340px;margin:0;padding:16px 16px 14px;font:14px/1.5 Georgia,'Times New Roman',serif;color:#0A1D2E;background:#FAF8F5}
+  h1{font:400 20px/1.2 Georgia,serif;margin:0 0 2px}
+  .sub{font:11px/1.4 Verdana,Geneva,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#6b6459;margin:0 0 14px}
+  label{font:600 11px/1 Verdana,Geneva,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#6b6459;display:block;margin:10px 0 4px}
+  input,select{width:100%;box-sizing:border-box;padding:8px 10px;border:1px solid #d9d2c5;border-radius:3px;font:14px Georgia,serif;background:#fff;color:#0A1D2E}
+  .row{display:flex;gap:8px}.row>div{flex:1}
+  .out{margin:14px 0 6px;padding:12px 14px;border:1px solid #e0dacd;border-radius:4px;background:#fff}
+  .out b{font-size:22px}
+  .ruler{height:56px;margin:10px 0 4px;position:relative}
+  .ruler .stone{position:absolute;left:0;top:0;border:1.5px solid #6f86a8;background:#eef3fa;box-shadow:inset 0 0 0 3px #f8fafd}
+  .ruler .ten{position:absolute;left:0;bottom:0;width:40px;height:8px;border-left:1px solid #6b6459;border-right:1px solid #6b6459;border-bottom:1px solid #6b6459}
+  .ruler .ten:after{content:"10 mm";position:absolute;left:46px;top:-4px;font:10px Verdana,sans-serif;color:#6b6459}
+  .note{font-size:12px;color:#6b6459;margin:6px 0 0;line-height:1.45}
+  button{margin-top:10px;width:100%;padding:9px;border:1px solid #0A1D2E;background:#0A1D2E;color:#FAF8F5;border-radius:3px;font:600 11px/1 Verdana,Geneva,sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+  button.ghost{background:transparent;color:#0A1D2E}
+  .match{display:block;margin-top:10px;padding:10px;border:1px solid #113174;background:#113174;color:#fff;border-radius:3px;text-align:center;font:600 11px/1 Verdana,Geneva,sans-serif;letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
+  .labs a{display:inline-block;margin:6px 10px 0 0;font:600 11px/1 Verdana,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#113174;text-decoration:none;border-bottom:1px solid #113174;padding-bottom:2px}
+  .foot{margin-top:14px;padding-top:10px;border-top:1px solid #e0dacd;font-size:12px;color:#6b6459}
+  .foot a{color:#113174;text-decoration:none;border-bottom:1px solid #113174}
+  #scan-out{font-size:12px;margin-top:6px;color:#0A1D2E}
+</style></head>
+<body>
+  <h1>Facet</h1>
+  <p class="sub">How big is it, really</p>
+  <div class="row">
+    <div><label>Carat</label><input id="ct" type="number" step="0.01" min="0.1" max="20" value="1.5"></div>
+    <div><label>Shape</label>
+      <select id="shape">
+        <option value="round">Round</option>
+        <option value="oval" selected>Oval</option>
+        <option value="emerald">Emerald</option>
+        <option value="dutch_marquise">Dutch Marquise (elongated hexagon)</option>
+      </select></div>
+  </div>
+  <div class="out">
+    <div><b id="mm">9.2 x 6.3 mm</b> <span id="ctlbl" style="color:#6b6459"></span></div>
+    <div class="ruler"><div class="ten"></div><div class="stone" id="stone"></div></div>
+    <p class="note" id="note">Approximate, for typical proportions: a 1 carat round runs about 6.5 mm across, and size grows with the cube root of weight. Always check the millimeters on the stone's own grading report.</p>
+  </div>
+  <button id="scan" class="ghost">Scan this page for a carat and shape</button>
+  <div id="scan-out"></div>
+  <a id="match" class="match" target="_blank" rel="noopener">Browse this shape at Stienhardt</a>
+  <button id="copy" class="ghost">Copy comparison brief</button>
+  <div id="copy-out"></div>
+  <label style="margin-top:14px">Verify a grading report (on the lab's own site)</label>
+  <div class="labs">
+    <a href="https://www.gia.edu/report-check" target="_blank" rel="noopener">GIA</a>
+    <a href="https://www.igi.org/verify-your-report/" target="_blank" rel="noopener">IGI</a>
+    <a href="https://www.gcalusa.com/certificate-search.html" target="_blank" rel="noopener">GCAL</a>
+  </div>
+  <p class="note">Never trust a screenshot or a seller's PDF. Match the report number, the girdle inscription, and the measurements to the stone in front of you.</p>
+  <div class="foot">Made by <a href="https://stienhardt.com/?utm_source=facet&utm_medium=shopping_tool&utm_campaign=diamond_size_check&utm_content=extension_credit" target="_blank" rel="noopener">Stienhardt</a>, a New York jeweler. Education, not appraisal. Prefer to judge a stone in person? <a href="https://stienhardt.com/pages/book-an-appointment?utm_source=facet&utm_medium=shopping_tool&utm_campaign=diamond_size_check&utm_content=extension_appointment" target="_blank" rel="noopener">By appointment in NYC</a>.</div>
+  <script src="core.js"></script>
+  <script src="popup.js"></script>
+</body></html>

@@ -1,10 +1,33 @@
 {
-  "name": "facet-diamond-tool",
-  "version": "0.2.0",
-  "private": true,
-  "description": "A private-by-default diamond listing decoder and face-up size tool by Stienhardt.",
+  "name": "facet-diamond-size",
+  "version": "0.3.0",
+  "description": "A private diamond face-up size web component and shopping tool by Stienhardt.",
+  "main": "facet-widget.js",
+  "browser": "facet-widget.js",
+  "exports": "./facet-widget.js",
+  "files": [
+    "facet-widget.js",
+    "README.md",
+    "EMBED.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "test": "node tests/core.test.js && node tests/same-stone.test.js && node tests/hand-preview.test.js"
+    "test": "node tests/core.test.js && node tests/same-stone.test.js && node tests/hand-preview.test.js && node tests/widget.test.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JacobiusMakes/facet-diamond-tool.git"
+  },
+  "homepage": "https://jacobiusmakes.github.io/facet-diamond-tool/widget-demo.html",
+  "bugs": "https://github.com/JacobiusMakes/facet-diamond-tool/issues",
+  "author": "Stienhardt & Stones <jgalperin@stienhardt.com> (https://stienhardt.com/)",
+  "keywords": [
+    "diamond",
+    "carat",
+    "jewelry",
+    "web-component",
+    "calculator",
+    "engagement-ring"
+  ],
   "license": "MIT"
 }

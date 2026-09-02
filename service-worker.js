@@ -1,4 +1,4 @@
-const CACHE = "facet-v6";
+const CACHE = "facet-v7";
 const ASSETS = [
   "./",
   "./index.html",
@@ -7,6 +7,8 @@ const ASSETS = [
   "./same-stone-core.js",
   "./stone-on-hand.html",
   "./hand-preview-core.js",
+  "./widget-demo.html",
+  "./facet-widget.js",
   "./privacy.html",
   "./embed.html",
   "./manifest.webmanifest",

@@ -112,7 +112,7 @@
         <article><h3>Compare what the eye sees</h3><p>Two stones can share a carat weight and face up at different sizes. Facet makes the millimeter estimate visible so weight does not masquerade as size.</p></article>
         <article><h3>Carry one clean brief</h3><p>Copy the shape, weight, estimated dimensions, and verification checks into a note. Use the same brief when you compare listings or ask a jeweler a question.</p></article>
         <article><h3>Keep the seller out of the check</h3><p>Verify the report number on the grading lab's own site. Then match the girdle inscription and exact measurements to the stone itself.</p></article>
-        <article><h3>Put it inside a useful article</h3><p>Publishers can <a href="embed.html?partner=preview">embed the calculator</a> without cookies or a script running in the parent page. Each publisher uses a distinct public attribution slug.</p></article>
+        <article><h3>Put it inside a useful article</h3><p>Publishers can use the <a href="widget-demo.html">one-tag web component</a> or sandboxed iframe. Each placement gets a distinct public attribution slug.</p></article>
       </section>
 
       <section class="utility">
@@ -170,7 +170,8 @@
           print: 'print_chart_match',
           sheet: 'shortlist_sheet_match',
         };
-        const surface = surfaceByEntry[params.get('via')] || 'web_match';
+        const partner = (params.get('partner') || 'publisher').replace(/[^a-z0-9_-]/gi, '_').toLowerCase().slice(0, 48);
+        const surface = params.get('via') === 'widget' ? 'web_component_' + partner : (surfaceByEntry[params.get('via')] || 'web_match');
         match.href = trackedCollectionUrl({ shape: result.shape, carat: result.carat, content: surface });
         match.textContent = 'Browse ' + SHAPES[result.shape].label + ' diamonds';
       }

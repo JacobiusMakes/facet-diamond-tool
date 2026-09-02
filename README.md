@@ -4,7 +4,7 @@ A quiet diamond-shopping companion. On any listing, anywhere: how big the stone 
 millimeters (the number carat weight hides), a one-click scan of the page for the carat and
 shape, a reusable comparison brief, and the grading labs' own verification pages.
 
-Facet is usable now in eight forms:
+Facet is usable now in nine forms:
 
 1. The public calculator at <https://jacobiusmakes.github.io/facet-diamond-tool/>.
 2. An installable web app offered directly by the calculator on supported browsers.
@@ -14,6 +14,7 @@ Facet is usable now in eight forms:
 6. A downloadable diamond shortlist workbook with one attributable Facet link per candidate.
 7. Same Stone, a local-only duplicate listing detector for report and measurement matches across sellers.
 8. Stone on Hand, a credit-card-calibrated diamond footprint preview that keeps the hand photo on-device.
+9. A drop-in web component that publishers and developers can install with one script tag.
 
 The extension never names or targets a competitor, never sends page text, and never tracks in
 the background. It runs only when clicked (`activeTab`) and stores nothing. The bookmarklet sends
@@ -37,9 +38,20 @@ print sheet returns through `via=print`, and its Stienhardt clicks use `utm_cont
 The shortlist workbook returns through `via=sheet`, and its Stienhardt clicks use
 `utm_content=shortlist_sheet_match` without sending the candidate's seller, listing URL, price,
 report number, or notes.
-A compact
-iframe version is documented in [EMBED.md](EMBED.md) for publishers that want to place the tool in
-an article. Shared briefs and each publisher slug remain separate in `utm_content`.
+A compact iframe and a drop-in web component are documented in [EMBED.md](EMBED.md) for publishers
+that want to place the tool in an article. The component is also available from jsDelivr using the
+repository release tag. Shared briefs and each publisher slug remain separate in `utm_content`.
+
+## Publisher web component
+
+```html
+<script src="https://cdn.jsdelivr.net/gh/JacobiusMakes/facet-diamond-tool@v0.3.0/facet-widget.js"></script>
+<facet-diamond-size publisher="your-publication" shape="oval" carat="1.50"></facet-diamond-size>
+```
+
+The component has isolated styles, no runtime dependency, and no background tracking. It accepts
+`publisher`, `shape`, `carat`, and `theme="dark"` attributes. Inventory clicks use
+`utm_content=web_component_<publisher>` plus normalized shape and carat intent.
 
 Same math and data as diamond-mcp (facts.json anchors: round 6.5, oval 8.0x5.5, emerald 7.0x5.0,
 Dutch Marquise 9.0x5.0 at 1 carat; cube-root scaling), same honesty note.

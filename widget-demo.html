@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Facet Publisher Kit: embed a diamond size calculator</title>
+  <meta name="description" content="Add a private diamond face-up size calculator to any article or resource page with one script tag. Publisher-specific attribution is built in.">
+  <meta property="og:title" content="Facet Publisher Kit">
+  <meta property="og:description" content="One script tag adds a useful diamond size calculator with isolated styles, no customer tracking, and publisher-specific attribution.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jacobiusmakes.github.io/facet-diamond-tool/widget-demo.html">
+  <link rel="icon" href="icons/icon128.png" type="image/png">
+  <style>
+    :root{--ink:#091d2e;--blue:#173f70;--paper:#f8f5ef;--card:#fffdfa;--line:#d9d1c4;--muted:#6d675f;--green:#2e624b}*{box-sizing:border-box}html{background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif}body{margin:0}.wrap{width:min(1060px,calc(100% - 32px));margin:auto}a{color:var(--blue)}header{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid var(--line)}.brand{text-decoration:none;color:var(--ink);font-size:20px}.brand small{display:block;font:9px Verdana,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}nav a{font:10px Verdana,sans-serif;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;margin-left:20px}.hero{padding:70px 0 46px;max-width:900px}.eyebrow{font:10px Verdana,sans-serif;text-transform:uppercase;letter-spacing:.16em;color:var(--green)}h1{font-size:clamp(46px,7vw,78px);font-weight:400;line-height:.98;letter-spacing:-.035em;margin:18px 0 24px}.lede{font-size:21px;line-height:1.55;max-width:750px;color:#314453}.demo{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:40px;padding:42px 0 68px;border-top:1px solid var(--line);align-items:start}.install{background:var(--card);border:1px solid var(--line);padding:25px;border-radius:7px}.install h2{font-size:26px;font-weight:400;margin:0 0 8px}.install p{font-size:14px;line-height:1.55;color:#334553}.step{margin:22px 0}.step b{display:block;font:600 9px Verdana,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:7px}pre{background:#091d2e;color:#eaf1f7;padding:14px;border-radius:4px;overflow:auto;font:11px/1.6 Consolas,monospace;white-space:pre-wrap;word-break:break-word}.copy{border:1px solid var(--ink);background:transparent;color:var(--ink);padding:9px 11px;border-radius:3px;font:600 9px Verdana,sans-serif;text-transform:uppercase;letter-spacing:.08em;cursor:pointer}.feedback{font:10px Verdana,sans-serif;color:var(--green);min-height:16px}.contract{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;padding:48px 0 66px;border-top:1px solid var(--line)}.contract h3{font-size:20px;font-weight:400;margin:0 0 8px}.contract p{font-size:14px;line-height:1.6;color:#334553;margin:0}footer{border-top:1px solid var(--line);padding:28px 0 44px;font:10px/1.6 Verdana,sans-serif;color:var(--muted)}@media(max-width:800px){nav{display:none}.demo{grid-template-columns:1fr}.contract{grid-template-columns:1fr}}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"Facet Diamond Size Web Component","codeRepository":"https://github.com/JacobiusMakes/facet-diamond-tool","programmingLanguage":"JavaScript","runtimePlatform":"Web browser","author":{"@type":"Organization","name":"Stienhardt & Stones","url":"https://stienhardt.com/"},"license":"https://opensource.org/licenses/MIT"}</script>
+</head>
+<body>
+  <div class="wrap">
+    <header><a class="brand" href="./">Facet<small>By Stienhardt</small></a><nav><a href="./">Calculator</a><a href="stone-on-hand.html">Stone on Hand</a><a href="privacy.html">Privacy</a><a href="https://github.com/JacobiusMakes/facet-diamond-tool">Source</a></nav></header>
+    <main>
+      <section class="hero"><p class="eyebrow">Facet Publisher Kit</p><h1>One tag. Your page. Measurable diamond intent.</h1><p class="lede">Add the calculator to an article, guide, resource library, or storefront without an iframe or a JavaScript dependency. Styles stay isolated. Facet sets no cookies. Every inventory click carries the publisher, shape, and carat.</p></section>
+      <section class="demo">
+        <div><facet-diamond-size publisher="facet_demo" shape="oval" carat="1.50"></facet-diamond-size></div>
+        <aside class="install">
+          <h2>Install it anywhere</h2>
+          <p>Replace <code>your-publication</code> with a short public slug. That slug becomes the placement dimension in attributed visits and orders.</p>
+          <div class="step"><b>1. Load the component</b><pre id="script-code">&lt;script src="https://cdn.jsdelivr.net/gh/JacobiusMakes/facet-diamond-tool@v0.3.0/facet-widget.js"&gt;&lt;/script&gt;</pre></div>
+          <div class="step"><b>2. Place the calculator</b><pre id="tag-code">&lt;facet-diamond-size publisher="your-publication" shape="oval" carat="1.50"&gt;&lt;/facet-diamond-size&gt;</pre></div>
+          <button class="copy" id="copy" type="button">Copy both tags</button><p class="feedback" id="feedback" aria-live="polite"></p>
+        </aside>
+      </section>
+      <section class="contract">
+        <article><h3>Private by construction</h3><p>The component makes no background requests, sets no cookie, loads no font, and stores no customer data. Only a deliberate inventory click leaves the host page.</p></article>
+        <article><h3>Attribution survives</h3><p>The destination URL records <code>web_component_&lt;publisher&gt;</code>, normalized shape, and two-decimal carat weight for aggregate Shopify session and order reporting.</p></article>
+        <article><h3>Publisher-controlled</h3><p>Set the starting shape, carat, publisher slug, and light or dark theme with HTML attributes. The component emits a <code>facet-change</code> event when the selection changes.</p></article>
+      </section>
+    </main>
+    <footer>MIT licensed. Built by Stienhardt & Stones, a New York City jeweler that sources certified Lab Grown Diamonds and hand-sets and finishes rings in NYC. Contact: <a href="mailto:jgalperin@stienhardt.com">jgalperin@stienhardt.com</a>.</footer>
+  </div>
+  <script src="facet-widget.js"></script>
+  <script>
+    document.getElementById('copy').addEventListener('click', async () => {
+      const code = document.getElementById('script-code').textContent + '\n' + document.getElementById('tag-code').textContent;
+      try { await navigator.clipboard.writeText(code); document.getElementById('feedback').textContent = 'Install tags copied.'; }
+      catch (error) { document.getElementById('feedback').textContent = 'Copy was blocked. Select the two snippets above.'; }
+    });
+  </script>
+</body>
+</html>

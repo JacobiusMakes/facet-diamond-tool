@@ -1,8 +1,10 @@
-const CACHE = "facet-v4";
+const CACHE = "facet-v5";
 const ASSETS = [
   "./",
   "./index.html",
   "./core.js",
+  "./same-stone.html",
+  "./same-stone-core.js",
   "./privacy.html",
   "./embed.html",
   "./manifest.webmanifest",

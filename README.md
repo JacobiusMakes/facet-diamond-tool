@@ -4,7 +4,7 @@ A quiet diamond-shopping companion. On any listing, anywhere: how big the stone 
 millimeters (the number carat weight hides), a one-click scan of the page for the carat and
 shape, a reusable comparison brief, and the grading labs' own verification pages.
 
-Facet is usable now in six forms:
+Facet is usable now in seven forms:
 
 1. The public calculator at <https://jacobiusmakes.github.io/facet-diamond-tool/>.
 2. An installable web app offered directly by the calculator on supported browsers.
@@ -12,12 +12,19 @@ Facet is usable now in six forms:
 4. A browser extension, available from GitHub Releases while store review is pending.
 5. A true-size printable comparison sheet with a 50 mm calibration check and a QR return path.
 6. A downloadable diamond shortlist workbook with one attributable Facet link per candidate.
+7. Same Stone, a local-only duplicate listing detector for report and measurement matches across sellers.
 
 The extension never names or targets a competitor, never sends page text, and never tracks in
 the background. It runs only when clicked (`activeTab`) and stores nothing. The bookmarklet sends
 the calculator only a detected shape and carat weight, never the page URL, seller, or report
 number. Every Stienhardt click carries `utm_source=facet` plus shape and carat intent, so visits
 and orders can be attributed without collecting browsing history.
+
+Same Stone stores seller, URL, price, report, measurements, and notes only in the shopper's browser.
+Its capture bookmarklet passes page text directly between browser tabs, parses it locally, and does
+not upload or retain the captured text. Exact certificate matches and possible measurement matches
+remain separate. Inventory clicks use `same_stone_duplicate_match` or `same_stone_candidate_match`
+and carry only shape and carat intent.
 
 The public tool can also create a shareable shape-and-carat check for a shopper's partner. The
 print sheet returns through `via=print`, and its Stienhardt clicks use `utm_content=print_chart_match`.

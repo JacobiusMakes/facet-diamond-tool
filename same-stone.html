@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Same Stone: private duplicate diamond listing detector</title>
+  <meta name="description" content="Capture diamond listings across sellers and privately detect matching grading reports or measurements. No account, upload, or remote database.">
+  <meta property="og:title" content="Same Stone by Facet">
+  <meta property="og:description" content="Catch the same certified diamond appearing behind different storefronts and prices. The vault stays in your browser.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jacobiusmakes.github.io/facet-diamond-tool/same-stone.html">
+  <meta name="theme-color" content="#091d2e">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon128.png" type="image/png">
+  <style>
+    :root{--ink:#091d2e;--blue:#173f70;--blue2:#6f86a8;--paper:#f8f5ef;--card:#fffdfa;--line:#d9d1c4;--muted:#6d675f;--green:#2e624b;--amber:#9a5b00;--red:#8c2d2d}
+    *{box-sizing:border-box}html{background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif}body{margin:0}a{color:var(--blue)}
+    .wrap{width:min(1180px,calc(100% - 32px));margin:auto}header{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}.mark{width:30px;height:30px;display:grid;place-items:center;border:1px solid var(--blue2);transform:rotate(45deg);background:#fff}.mark span{transform:rotate(-45deg);font:11px Verdana,sans-serif}.brand strong{font-size:20px;font-weight:400}.by{font:10px/1.3 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+    nav a{font:11px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.09em;text-decoration:none;margin-left:20px}
+    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:54px;padding:70px 0 42px;align-items:center}.eyebrow{font:11px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.18em;color:var(--green);margin:0 0 20px}h1{font-size:clamp(44px,6vw,76px);font-weight:400;line-height:.98;letter-spacing:-.035em;margin:0 0 24px}.lede{font-size:20px;line-height:1.55;margin:0;max-width:700px;color:#263847}.trust{font:12px/1.5 Verdana,sans-serif;color:var(--muted);margin-top:22px;display:flex;gap:18px;flex-wrap:wrap}.trust span:before{content:'✓';color:var(--green);margin-right:6px}
+    .capture-card,.panel{background:var(--card);border:1px solid var(--line);box-shadow:0 18px 48px rgba(9,29,46,.07);padding:28px;border-radius:7px}.capture-card h2,.panel h2{font-size:25px;font-weight:400;margin:0 0 8px}.capture-card p,.sub{font-size:14px;line-height:1.55;color:var(--muted);margin:0 0 18px}.drag{display:inline-block;background:var(--ink);color:#fff;border-radius:24px;padding:11px 16px;text-decoration:none;font:600 10px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.09em}.fine{font:11px/1.5 Verdana,sans-serif;color:var(--muted);margin-top:13px}
+    .workspace{border-top:1px solid var(--line);padding:44px 0}.paste{display:grid;grid-template-columns:1fr 180px;gap:10px;align-items:end}.paste textarea{min-height:110px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:20px}.wide{grid-column:span 2}label{display:block;font:600 10px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.11em;color:var(--muted);margin-bottom:7px}input,select,textarea{width:100%;font:15px Georgia,serif;color:var(--ink);background:white;border:1px solid var(--line);border-radius:3px;padding:11px}textarea{resize:vertical}.actions{display:flex;gap:10px;align-items:center;margin-top:18px;flex-wrap:wrap}button,.button{border:1px solid var(--ink);border-radius:3px;padding:11px 14px;background:var(--ink);color:white;text-align:center;text-decoration:none;cursor:pointer;font:600 10px/1.2 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.09em}button.secondary,.button.secondary{color:var(--ink);background:transparent}.feedback{min-height:18px;margin:10px 0 0;font:11px/1.5 Verdana,sans-serif;color:var(--green)}
+    .metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:24px 0}.metric{background:#fff;border:1px solid var(--line);padding:17px}.metric span{display:block;font:9px/1.3 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:9px}.metric b{font-size:25px;font-weight:400}
+    .vault-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin:38px 0 14px}.vault-head h2{font-size:30px;font-weight:400;margin:0}.vault-actions{display:flex;gap:8px;flex-wrap:wrap}.vault-actions button{font-size:9px;padding:9px 11px}
+    .table-wrap{overflow-x:auto;border:1px solid var(--line);background:#fff}table{width:100%;border-collapse:collapse;min-width:1030px}th{background:var(--ink);color:#fff;font:600 9px/1.3 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.08em;text-align:left;padding:11px}td{padding:12px 11px;border-bottom:1px solid #e5e0d7;font-size:13px;vertical-align:top}td small{display:block;color:var(--muted);font:10px/1.5 Verdana,sans-serif;margin-top:3px}.status{display:inline-block;border-radius:15px;padding:6px 9px;font:600 9px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.05em}.exact{background:#f7dddd;color:var(--red)}.possible{background:#fff0cf;color:var(--amber)}.unique{background:#e1f0e6;color:var(--green)}.row-actions{display:flex;gap:6px;flex-wrap:wrap}.row-actions .button,.row-actions button{padding:7px 9px;font-size:8px}.empty{padding:38px;text-align:center;color:var(--muted)}
+    .how{border-top:1px solid var(--line);padding:52px 0 70px;display:grid;grid-template-columns:repeat(3,1fr);gap:34px}.how h3{font-size:21px;font-weight:400;margin:0 0 9px}.how p{font-size:15px;line-height:1.65;color:#334553;margin:0}footer{border-top:1px solid var(--line);padding:30px 0 44px;display:flex;justify-content:space-between;gap:24px;font:11px/1.6 Verdana,sans-serif;color:var(--muted)}footer p{margin:0;max-width:760px}
+    @media(max-width:800px){nav{display:none}.hero{grid-template-columns:1fr;gap:30px;padding-top:48px}.paste{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.wide{grid-column:span 2}.metrics{grid-template-columns:1fr 1fr}.how{grid-template-columns:1fr}.vault-head,footer{align-items:flex-start;flex-direction:column}}
+    @media(max-width:520px){.grid{grid-template-columns:1fr}.wide{grid-column:span 1}.metrics{grid-template-columns:1fr}}
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Same Stone by Facet","applicationCategory":"ShoppingApplication","operatingSystem":"Any","description":"A private duplicate diamond listing detector that runs entirely in the browser.","url":"https://jacobiusmakes.github.io/facet-diamond-tool/same-stone.html","author":{"@type":"Organization","name":"Stienhardt & Stones","url":"https://stienhardt.com/"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="./"><span class="mark"><span>F</span></span><span><strong>Facet</strong><br><span class="by">By Stienhardt</span></span></a>
+      <nav><a href="./">Size check</a><a href="#how">How it works</a><a href="privacy.html">Privacy</a><a href="https://github.com/JacobiusMakes/facet-diamond-tool">Source</a></nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Private cross-seller comparison</p>
+          <h1>Is it a different deal, or the same stone?</h1>
+          <p class="lede">Diamond inventory is syndicated. One certified stone can appear behind more than one storefront and more than one price. Same Stone catches exact report matches and possible measurement matches without building a remote database of your shopping.</p>
+          <div class="trust"><span>No account</span><span>No upload</span><span>Vault stays in this browser</span></div>
+        </div>
+        <aside class="capture-card">
+          <h2>Capture listings as you shop</h2>
+          <p>Drag this to your bookmarks bar. Click it on any diamond listing. Visible page text moves directly between your two browser tabs, gets parsed locally, and is never submitted to Facet or Stienhardt.</p>
+          <a class="drag" id="capture-bookmarklet" href="#">Save to Same Stone</a>
+          <p class="fine">The captured text is discarded after the form is filled. Confirm every extracted field before saving it to your local vault.</p>
+        </aside>
+      </section>
+
+      <section class="workspace">
+        <div class="panel">
+          <h2>Capture a candidate</h2>
+          <p class="sub">Paste listing text, or use the bookmarklet. The parser looks for shape, carat, measurements, grading lab, report number, and a displayed price.</p>
+          <div class="paste">
+            <div><label for="listing-text">Listing text</label><textarea id="listing-text" placeholder="Paste the listing details here. Nothing in this box is uploaded."></textarea></div>
+            <button class="secondary" id="extract" type="button">Extract fields locally</button>
+          </div>
+          <form id="candidate-form">
+            <div class="grid">
+              <div><label for="seller">Seller or source</label><input id="seller" name="seller" autocomplete="organization"></div>
+              <div class="wide"><label for="listing-url">Listing URL</label><input id="listing-url" name="listingUrl" type="url" inputmode="url"></div>
+              <div><label for="lab">Grading lab</label><select id="lab" name="lab"><option value="">Unknown</option><option>GIA</option><option>IGI</option><option>GCAL</option><option>Other</option></select></div>
+              <div><label for="report-number">Report number</label><input id="report-number" name="reportNumber" autocomplete="off"></div>
+              <div><label for="shape">Shape</label><select id="shape" name="shape" required><option value="">Choose</option><option value="round">Round</option><option value="oval">Oval</option><option value="emerald">Emerald</option><option value="dutch_marquise">Dutch Marquise</option></select></div>
+              <div><label for="carat">Carat</label><input id="carat" name="carat" type="number" min="0.1" max="20" step="0.001" required></div>
+              <div><label for="length">Length mm</label><input id="length" name="length" type="number" min="0" step="0.01"></div>
+              <div><label for="width">Width mm</label><input id="width" name="width" type="number" min="0" step="0.01"></div>
+              <div><label for="depth">Depth mm</label><input id="depth" name="depth" type="number" min="0" step="0.01"></div>
+              <div><label for="price">Displayed price</label><input id="price" name="price" type="number" min="0" step="0.01"></div>
+              <div class="wide"><label for="notes">Private notes</label><input id="notes" name="notes" maxlength="500" placeholder="Bow tie, windowing, setting fit, questions"></div>
+            </div>
+            <div class="actions"><button type="submit">Save to this browser</button><button class="secondary" id="reset-form" type="button">Reset form</button></div>
+            <p class="feedback" id="feedback" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="metrics" aria-label="Vault summary">
+          <div class="metric"><span>Candidates</span><b id="candidate-count">0</b></div>
+          <div class="metric"><span>Sellers</span><b id="seller-count">0</b></div>
+          <div class="metric"><span>Exact report matches</span><b id="exact-count">0</b></div>
+          <div class="metric"><span>Possible measurement matches</span><b id="possible-count">0</b></div>
+          <div class="metric"><span>Largest listed price spread</span><b id="largest-spread">$0</b></div>
+        </div>
+
+        <div class="vault-head">
+          <div><p class="eyebrow">Local candidate vault</p><h2>Your comparisons</h2></div>
+          <div class="vault-actions">
+            <button class="secondary" id="export-csv" type="button">Export CSV</button>
+            <button class="secondary" id="export-json" type="button">Backup JSON</button>
+            <button class="secondary" id="import-button" type="button">Import JSON</button>
+            <input id="import-file" type="file" accept="application/json,.json" hidden>
+            <button class="secondary" id="clear-vault" type="button">Clear vault</button>
+          </div>
+        </div>
+        <div class="table-wrap" id="vault-output"></div>
+      </section>
+
+      <section class="how" id="how">
+        <article><h3>Exact means exact</h3><p>The same grading lab and normalized report number is an exact certificate match. That is the strongest signal that two listings point to one physical stone.</p></article>
+        <article><h3>Measurements are a warning</h3><p>Shape, carat, length, width, and depth can flag a possible match when a report number is missing. It is a prompt to investigate, not proof by itself.</p></article>
+        <article><h3>Nothing becomes a lead silently</h3><p>Seller, URL, price, report number, notes, and captured text stay in your browser. A Stienhardt visit carries only shape, carat, and whether Same Stone found a match.</p></article>
+      </section>
+    </main>
+
+    <footer>
+      <p>Same Stone is an open-source education tool made by Stienhardt & Stones, a New York City jeweler that sources certified Lab Grown Diamonds and hand-sets and finishes rings in NYC. Matching measurements are not proof of identity. Verify the grading report and girdle inscription.</p>
+      <p><a href="privacy.html">Privacy</a><br><a href="mailto:jgalperin@stienhardt.com">Contact</a></p>
+    </footer>
+  </div>
+
+  <script src="core.js"></script>
+  <script src="same-stone-core.js"></script>
+  <script>
+    (() => {
+      const storageKey = 'facet_same_stone_v1';
+      const form = document.getElementById('candidate-form');
+      const feedback = document.getElementById('feedback');
+      const listingText = document.getElementById('listing-text');
+      let candidates = readVault();
+      let captureReceived = false;
+
+      function readVault() {
+        try {
+          const parsed = JSON.parse(localStorage.getItem(storageKey) || '[]');
+          return Array.isArray(parsed) ? parsed.slice(0, 500) : [];
+        } catch (error) {
+          return [];
+        }
+      }
+
+      function saveVault() {
+        localStorage.setItem(storageKey, JSON.stringify(candidates));
+      }
+
+      function numberOrNull(value) {
+        const parsed = Number.parseFloat(value);
+        return Number.isFinite(parsed) ? parsed : null;
+      }
+
+      function safeUrl(value) {
+        try {
+          const url = new URL(String(value || '').trim());
+          return url.protocol === 'http:' || url.protocol === 'https:' ? url.toString() : '';
+        } catch (error) {
+          return '';
+        }
+      }
+
+      function escapeHtml(value) {
+        return String(value == null ? '' : value).replace(/[&<>"']/g, (character) => ({
+          '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+        })[character]);
+      }
+
+      function money(value) {
+        const parsed = Number.parseFloat(value);
+        return Number.isFinite(parsed) ? new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(parsed) : 'Not entered';
+      }
+
+      function fillFromText(text) {
+        const parsed = SameStoneCore.parseListingDetails(text);
+        if (parsed.shape) document.getElementById('shape').value = parsed.shape;
+        for (const [field, value] of Object.entries({ carat: parsed.carat, length: parsed.length, width: parsed.width, depth: parsed.depth, price: parsed.price })) {
+          if (value !== null) document.getElementById(field).value = value;
+        }
+        if (parsed.lab) document.getElementById('lab').value = parsed.lab;
+        if (parsed.reportNumber) document.getElementById('report-number').value = parsed.reportNumber;
+        feedback.textContent = 'Fields extracted locally. Confirm them against the listing before saving.';
+      }
+
+      function download(content, name, type) {
+        const url = URL.createObjectURL(new Blob([content], { type }));
+        const anchor = document.createElement('a');
+        anchor.href = url;
+        anchor.download = name;
+        anchor.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+      }
+
+      function render() {
+        const groups = SameStoneCore.duplicateGroups(candidates);
+        const summary = SameStoneCore.vaultSummary(candidates, groups);
+        document.getElementById('candidate-count').textContent = summary.candidates;
+        document.getElementById('seller-count').textContent = summary.sellers;
+        document.getElementById('exact-count').textContent = summary.exactGroups;
+        document.getElementById('possible-count').textContent = summary.possibleGroups;
+        document.getElementById('largest-spread').textContent = money(summary.largestSpread);
+        const output = document.getElementById('vault-output');
+        if (!candidates.length) {
+          output.innerHTML = '<div class="empty">Your vault is empty. Capture two listings to start checking whether inventory overlaps.</div>';
+          return;
+        }
+        const rows = candidates.map((candidate) => {
+          const match = SameStoneCore.matchFor(candidate.id, groups);
+          const duplicate = Boolean(match);
+          const statusClass = !match ? 'unique' : (match.kind === 'exact_certificate' ? 'exact' : 'possible');
+          const statusLabel = !match ? 'No match yet' : (match.kind === 'exact_certificate' ? 'Exact report match' : 'Possible measurement match');
+          const spread = match && match.spread && match.spread.difference > 0 ? `${money(match.spread.difference)} listed spread` : '';
+          const content = duplicate ? 'same_stone_duplicate_match' : 'same_stone_candidate_match';
+          const stienhardtUrl = FacetCore.trackedCollectionUrl({ shape: candidate.shape, carat: candidate.carat, content });
+          const originalUrl = safeUrl(candidate.listingUrl);
+          const dimensions = [candidate.length, candidate.width, candidate.depth].filter((value) => value !== null && value !== '').join(' x ');
+          return `<tr>
+            <td><strong>${escapeHtml(candidate.seller || 'Unlabeled seller')}</strong>${originalUrl ? `<small><a href="${escapeHtml(originalUrl)}" target="_blank" rel="noopener">Open original listing</a></small>` : ''}</td>
+            <td>${escapeHtml(candidate.lab || 'Unknown')}<small>${escapeHtml(candidate.reportNumber || 'No report number')}</small></td>
+            <td>${escapeHtml(FacetCore.SHAPES[candidate.shape] ? FacetCore.SHAPES[candidate.shape].label : candidate.shape)}<small>${escapeHtml(Number(candidate.carat).toFixed(3))} ct</small></td>
+            <td>${escapeHtml(dimensions || 'Not entered')}<small>millimeters</small></td>
+            <td>${escapeHtml(money(candidate.price))}</td>
+            <td><span class="status ${statusClass}">${statusLabel}</span>${spread ? `<small>${escapeHtml(spread)}</small>` : ''}</td>
+            <td>${escapeHtml(candidate.notes || '')}</td>
+            <td><div class="row-actions"><a class="button" href="${escapeHtml(stienhardtUrl)}" target="_blank" rel="noopener">Compare at Stienhardt</a><button class="secondary remove" type="button" data-id="${escapeHtml(candidate.id)}">Remove</button></div></td>
+          </tr>`;
+        }).join('');
+        output.innerHTML = `<table><thead><tr><th>Seller</th><th>Certificate</th><th>Stone</th><th>Measurements</th><th>Price</th><th>Match signal</th><th>Private notes</th><th>Actions</th></tr></thead><tbody>${rows}</tbody></table>`;
+      }
+
+      document.getElementById('extract').addEventListener('click', () => fillFromText(listingText.value));
+      document.getElementById('reset-form').addEventListener('click', () => { form.reset(); listingText.value = ''; feedback.textContent = ''; });
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const data = new FormData(form);
+        const shape = String(data.get('shape') || '');
+        const carat = numberOrNull(data.get('carat'));
+        if (!FacetCore.normalizeShape(shape) || carat === null) {
+          feedback.textContent = 'Shape and carat are required.';
+          return;
+        }
+        candidates.unshift({
+          id: crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`,
+          createdAt: new Date().toISOString(),
+          seller: String(data.get('seller') || '').trim().slice(0, 200),
+          listingUrl: safeUrl(data.get('listingUrl')),
+          lab: String(data.get('lab') || '').trim().slice(0, 20),
+          reportNumber: String(data.get('reportNumber') || '').trim().slice(0, 50),
+          shape: FacetCore.normalizeShape(shape),
+          carat,
+          length: numberOrNull(data.get('length')),
+          width: numberOrNull(data.get('width')),
+          depth: numberOrNull(data.get('depth')),
+          price: numberOrNull(data.get('price')),
+          notes: String(data.get('notes') || '').trim().slice(0, 500),
+        });
+        saveVault();
+        form.reset();
+        listingText.value = '';
+        feedback.textContent = 'Candidate saved locally. Nothing was uploaded.';
+        render();
+      });
+
+      document.getElementById('vault-output').addEventListener('click', (event) => {
+        const button = event.target.closest('.remove');
+        if (!button) return;
+        candidates = candidates.filter((candidate) => candidate.id !== button.dataset.id);
+        saveVault();
+        render();
+      });
+      document.getElementById('export-csv').addEventListener('click', () => download(SameStoneCore.toCsv(candidates), 'facet-same-stone-vault.csv', 'text/csv;charset=utf-8'));
+      document.getElementById('export-json').addEventListener('click', () => download(JSON.stringify(candidates, null, 2), 'facet-same-stone-vault.json', 'application/json'));
+      document.getElementById('import-button').addEventListener('click', () => document.getElementById('import-file').click());
+      document.getElementById('import-file').addEventListener('change', async (event) => {
+        const file = event.target.files && event.target.files[0];
+        if (!file) return;
+        try {
+          const imported = JSON.parse(await file.text());
+          if (!Array.isArray(imported)) throw new Error('Expected an array');
+          candidates = imported.slice(0, 500).filter((candidate) => candidate && FacetCore.normalizeShape(candidate.shape) && Number.isFinite(Number.parseFloat(candidate.carat)));
+          saveVault();
+          render();
+          feedback.textContent = `${candidates.length} candidates imported into this browser.`;
+        } catch (error) {
+          feedback.textContent = 'That file is not a valid Same Stone backup.';
+        }
+        event.target.value = '';
+      });
+      document.getElementById('clear-vault').addEventListener('click', () => {
+        if (!candidates.length || !window.confirm('Clear every candidate stored by Same Stone in this browser?')) return;
+        candidates = [];
+        saveVault();
+        render();
+      });
+
+      const captureOrigin = 'https://jacobiusmakes.github.io';
+      const bookmarkletCode = "javascript:(()=>{const o='https://jacobiusmakes.github.io',p={type:'facet-same-stone-capture',text:(document.body&&document.body.innerText||'').slice(0,250000),sourceUrl:location.href,seller:location.hostname},w=window.open(o+'/facet-diamond-tool/same-stone.html?via=capture','_blank');let n=0;const i=setInterval(()=>{if(!w||w.closed||n++>20){clearInterval(i);return}w.postMessage(p,o)},400)})()";
+      document.getElementById('capture-bookmarklet').href = bookmarkletCode;
+      window.addEventListener('message', (event) => {
+        if (new URLSearchParams(location.search).get('via') !== 'capture' || event.source !== window.opener) return;
+        const data = event.data;
+        if (captureReceived || !data || data.type !== 'facet-same-stone-capture' || typeof data.text !== 'string') return;
+        captureReceived = true;
+        listingText.value = data.text.slice(0, 250000);
+        document.getElementById('seller').value = String(data.seller || '').slice(0, 200);
+        document.getElementById('listing-url').value = safeUrl(data.sourceUrl);
+        fillFromText(listingText.value);
+        feedback.textContent = 'Listing captured directly between browser tabs and parsed locally. Confirm the fields before saving.';
+      });
+
+      if ('serviceWorker' in navigator) navigator.serviceWorker.register('service-worker.js');
+      render();
+    })();
+  </script>
+</body>
+</html>

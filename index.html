@@ -60,9 +60,10 @@
     .labs h2{font-size:25px;font-weight:400;margin:0}
     .lablinks{display:flex;gap:12px;flex-wrap:wrap}
     .lablinks a{font:600 10px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.1em;padding:10px 13px;border:1px solid var(--blue);border-radius:3px;text-decoration:none}
+    .utility{padding:34px;margin:0 0 44px;background:var(--ink);color:white;display:flex;align-items:center;justify-content:space-between;gap:28px;border-radius:7px}.utility h2{font-size:27px;font-weight:400;margin:0 0 8px}.utility p{margin:0;max-width:720px;color:#dce5ed;line-height:1.55}.utility .button{width:auto;background:white;color:var(--ink);white-space:nowrap}
     footer{padding:30px 0 44px;display:flex;justify-content:space-between;gap:24px;font:11px/1.6 Verdana,sans-serif;color:var(--muted)}
     footer p{margin:0;max-width:720px}
-    @media(max-width:760px){.hero{grid-template-columns:1fr;gap:34px;padding-top:48px}.sections{grid-template-columns:1fr}.fields,.actions{grid-template-columns:1fr}.answer{grid-template-columns:1fr}.labs,footer{align-items:flex-start;flex-direction:column}nav{display:none}}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;gap:34px;padding-top:48px}.sections{grid-template-columns:1fr}.fields,.actions{grid-template-columns:1fr}.answer{grid-template-columns:1fr}.labs,.utility,footer{align-items:flex-start;flex-direction:column}nav{display:none}}
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebApplication","name":"Facet","applicationCategory":"ShoppingApplication","operatingSystem":"Any","description":"A private-by-default diamond listing decoder and face-up size comparison tool.","url":"https://jacobiusmakes.github.io/facet-diamond-tool/","author":{"@type":"Organization","name":"Stienhardt & Stones","url":"https://stienhardt.com/"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
@@ -72,7 +73,7 @@
   <div class="wrap">
     <header>
       <a class="brand" href="./"><span class="mark"><span>F</span></span><span><strong>Facet</strong><br><span class="by">By Stienhardt</span></span></a>
-      <nav><a href="#how">How it works</a><a href="privacy.html">Privacy</a><a href="https://github.com/JacobiusMakes/facet-diamond-tool">Source</a></nav>
+      <nav><a href="same-stone.html">Same Stone</a><a href="#how">How it works</a><a href="privacy.html">Privacy</a><a href="https://github.com/JacobiusMakes/facet-diamond-tool">Source</a></nav>
     </header>
 
     <main>
@@ -103,7 +104,7 @@
           <button class="secondary" id="share" type="button">Share this size check</button>
           <button class="secondary" id="install" type="button" hidden>Install Facet on this device</button>
           <p class="feedback" id="feedback" aria-live="polite"></p>
-          <div class="bookmark"><strong>Use Facet while you shop:</strong> drag this button to your bookmarks bar, then click it on a diamond listing. The scan runs in your browser and sends Facet only the shape and carat it finds.<br><a class="drag" id="bookmarklet" href="#">Facet this listing</a> <a href="https://github.com/JacobiusMakes/facet-diamond-tool/releases/latest">Get the browser extension</a> <a href="output/pdf/facet-diamond-size-chart.pdf">Print the true-size comparison sheet</a> <a href="outputs/facet-acquisition-2026-09-02/facet-diamond-shortlist.xlsx">Download the diamond shortlist workbook</a></div>
+          <div class="bookmark"><strong>Use Facet while you shop:</strong> drag this button to your bookmarks bar, then click it on a diamond listing. The scan runs in your browser and sends Facet only the shape and carat it finds.<br><a class="drag" id="bookmarklet" href="#">Facet this listing</a> <a href="same-stone.html">Detect duplicate listings</a> <a href="https://github.com/JacobiusMakes/facet-diamond-tool/releases/latest">Get the browser extension</a> <a href="output/pdf/facet-diamond-size-chart.pdf">Print the true-size comparison sheet</a> <a href="outputs/facet-acquisition-2026-09-02/facet-diamond-shortlist.xlsx">Download the diamond shortlist workbook</a></div>
         </div>
       </section>
 
@@ -112,6 +113,11 @@
         <article><h3>Carry one clean brief</h3><p>Copy the shape, weight, estimated dimensions, and verification checks into a note. Use the same brief when you compare listings or ask a jeweler a question.</p></article>
         <article><h3>Keep the seller out of the check</h3><p>Verify the report number on the grading lab's own site. Then match the girdle inscription and exact measurements to the stone itself.</p></article>
         <article><h3>Put it inside a useful article</h3><p>Publishers can <a href="embed.html?partner=preview">embed the calculator</a> without cookies or a script running in the parent page. Each publisher uses a distinct public attribution slug.</p></article>
+      </section>
+
+      <section class="utility">
+        <div><h2>Catch one stone behind two storefronts.</h2><p>Same Stone keeps a private local vault of candidates and flags exact grading-report matches or possible measurement matches across sellers.</p></div>
+        <a class="button" href="same-stone.html">Open Same Stone</a>
       </section>
 
       <section class="labs">

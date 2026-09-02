@@ -16,6 +16,9 @@
   <p>The browser extension runs only when the user opens it. Its optional page scan reads visible text in the active tab to find a diamond shape and carat weight. That text stays in the browser. Facet does not use a background process, analytics SDK, cookie, account, or remote code.</p>
   <h2>Bookmarklet</h2>
   <p>The bookmarklet follows the same rule. It reads visible page text locally and opens the public Facet calculator with only the detected shape and carat weight. It does not send the source page URL, seller name, page text, or report number.</p>
+  <h2>Same Stone</h2>
+  <p>Same Stone stores saved candidates in local browser storage on the user's device. Seller name, listing URL, displayed price, grading lab, report number, measurements, and private notes are not uploaded to Facet or Stienhardt. The optional capture bookmarklet moves visible page text directly between the listing tab and the Same Stone tab inside the browser. Same Stone extracts candidate fields and discards the captured page text instead of storing it.</p>
+  <p>Exported CSV and JSON files are created locally. Clearing the vault or the browser's site data removes the locally stored candidates. A Stienhardt inventory link from Same Stone contains only shape, carat weight, and whether the local vault found a possible match.</p>
   <h2>Attributed links</h2>
   <p>Links from Facet to stienhardt.com include campaign parameters so Stienhardt can measure visits and orders attributed to the tool. Those parameters contain the selected shape and carat weight, not identity or browsing history. Stienhardt's own privacy policy applies after a user chooses to visit stienhardt.com.</p>
   <p>Questions: <a href="mailto:jgalperin@stienhardt.com">jgalperin@stienhardt.com</a></p>

@@ -40,3 +40,7 @@ npm test
 
 The tool intentionally supports only shapes with vetted one-carat anchors: round, oval, emerald,
 and Dutch Marquise. More shapes belong only after their anchors are reviewed.
+
+New and materially updated public pages are submitted through IndexNow using the repository's
+path-scoped verification key. IndexNow acceptance means the update was received, not that a search
+engine promises to crawl or rank it.

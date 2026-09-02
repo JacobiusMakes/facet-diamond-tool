@@ -21,6 +21,10 @@ when a reader deliberately opens matching inventory.
 
 Live example: <https://jacobiusmakes.github.io/facet-diamond-tool/widget-demo.html>
 
+ES module delivery is available at
+`https://esm.sh/gh/JacobiusMakes/facet-diamond-tool@v0.3.0/facet-widget.js`. The same standalone
+file and an npm-ready package archive are attached to the v0.3.0 GitHub Release.
+
 ## Sandboxed iframe
 
 Publishers can place the private-by-default size checker inside an article without an SDK,

@@ -56,6 +56,9 @@ redirecting to the calculator. Inventory clicks use `share_target_match`. The pa
 
 The full source registry, permitted intent fields, prohibited analytics fields, and permanent
 surface names are in [attribution-registry.json](attribution-registry.json).
+Machine-readable discovery is available through [llms.txt](llms.txt), [tools.json](tools.json),
+and [robots.txt](robots.txt). These describe each public utility and its privacy boundary without
+requiring a crawler to infer behavior from marketing copy.
 
 ## Publisher web component
 

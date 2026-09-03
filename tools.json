@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "name": "Facet",
+  "publisher": {
+    "name": "Stienhardt & Stones",
+    "url": "https://stienhardt.com/",
+    "contact": "jgalperin@stienhardt.com"
+  },
+  "canonicalUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/",
+  "sourceCode": "https://github.com/JacobiusMakes/facet-diamond-tool",
+  "license": "MIT",
+  "privacy": {
+    "processing": "local_by_default",
+    "collected": [],
+    "prohibited": [
+      "customer_identity",
+      "listing_url",
+      "seller",
+      "price",
+      "page_text",
+      "report_number",
+      "grading_report_file",
+      "hand_photo",
+      "screenshot"
+    ]
+  },
+  "attribution": {
+    "source": "facet",
+    "medium": "shopping_tool",
+    "campaign": "diamond_size_check",
+    "permittedIntent": ["shape", "carat"],
+    "surfaceRegistry": "https://github.com/JacobiusMakes/facet-diamond-tool/blob/main/attribution-registry.json"
+  },
+  "tools": [
+    {
+      "id": "diamond_size_check",
+      "name": "Facet calculator",
+      "url": "https://jacobiusmakes.github.io/facet-diamond-tool/",
+      "inputs": ["supported_shape", "carat_weight"],
+      "outputs": ["approximate_length_mm", "approximate_width_mm", "comparison_brief"],
+      "surface": "web_match"
+    },
+    {
+      "id": "report_lens",
+      "name": "Report Lens",
+      "url": "https://jacobiusmakes.github.io/facet-diamond-tool/report-lens.html",
+      "inputs": ["local_text_layer_pdf_or_pasted_text"],
+      "outputs": ["extracted_report_facts", "lab_verification_link", "clean_brief"],
+      "surface": "report_lens_match"
+    },
+    {
+      "id": "same_stone",
+      "name": "Same Stone",
+      "url": "https://jacobiusmakes.github.io/facet-diamond-tool/same-stone.html",
+      "inputs": ["local_candidate_listing_facts"],
+      "outputs": ["exact_report_match", "possible_measurement_match"],
+      "surface": "same_stone_duplicate_match"
+    },
+    {
+      "id": "stone_on_hand",
+      "name": "Stone on Hand",
+      "url": "https://jacobiusmakes.github.io/facet-diamond-tool/stone-on-hand.html",
+      "inputs": ["local_hand_photo", "payment_card_calibration", "supported_shape", "carat_weight"],
+      "outputs": ["approximate_calibrated_footprint_preview"],
+      "surface": "hand_preview_match"
+    },
+    {
+      "id": "publisher_component",
+      "name": "Facet publisher component",
+      "url": "https://jacobiusmakes.github.io/facet-diamond-tool/widget-demo.html",
+      "inputs": ["public_publisher_slug", "supported_shape", "carat_weight"],
+      "outputs": ["embedded_face_up_size_calculator"],
+      "surface": "web_component_<publisher_slug>"
+    },
+    {
+      "id": "browser_extension",
+      "name": "Facet browser extension",
+      "url": "https://github.com/JacobiusMakes/facet-diamond-tool/releases/tag/extension-v0.5.0",
+      "inputs": ["user_initiated_visible_page_text_or_manual_shape_and_carat"],
+      "outputs": ["approximate_face_up_size", "comparison_brief", "lab_links"],
+      "surface": "extension_<distribution_channel>_match"
+    }
+  ]
+}

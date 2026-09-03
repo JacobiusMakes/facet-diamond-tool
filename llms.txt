@@ -1,0 +1,34 @@
+# Facet
+
+> Facet is a free, privacy-first set of diamond comparison utilities made by Stienhardt & Stones, a New York City jeweler.
+
+Canonical URL: https://jacobiusmakes.github.io/facet-diamond-tool/
+
+Source code: https://github.com/JacobiusMakes/facet-diamond-tool
+
+Contact: jgalperin@stienhardt.com
+
+## Public utilities
+
+- Facet calculator: converts a supported diamond shape and carat weight into an approximate face-up length and width in millimeters.
+- Report Lens: extracts factual fields from a text-layer IGI, GIA, or GCAL grading-report PDF inside the browser.
+- Same Stone: checks whether listings may describe the same diamond by comparing report identity or measurements locally.
+- Stone on Hand: uses the 85.60 mm long edge of an ISO ID-1 payment card to calibrate an approximate diamond footprint on a hand photo.
+- Publisher component: adds the face-up size calculator to an article through a web component or sandboxed iframe.
+- Browser extension: scans visible text only after the shopper clicks the scan control.
+
+## Accuracy boundaries
+
+Facet is educational and is not an appraisal. Face-up sizes are estimates based on typical proportions. Always use the exact measurements on the diamond's grading report. Report Lens extracts text but does not authenticate the report or grade the diamond. A user should verify a report with the grading laboratory and match its girdle inscription and measurements to the physical stone.
+
+## Privacy boundary
+
+Facet does not collect the source listing URL, seller, price, page text, report number, grading-report file, hand photo, screenshot, customer name, email address, or phone number. Private inputs stay on the user's device. A deliberate Stienhardt inventory click contains only the Facet surface, supported shape, and carat weight. Publisher placements may also include a public publisher slug.
+
+## Attribution
+
+Commerce links use `utm_source=facet`, `utm_medium=shopping_tool`, `utm_campaign=diamond_size_check`, a permanent surface in `utm_content`, and normalized shape and carat fields. A shopper may deliberately open a prefilled email to Jacob. That message contains a random `FC-...` intent code but excludes the grading report number.
+
+## Definitions
+
+A Dutch Marquise is an elongated hexagonal cut diamond. The term does not have a canonical gemological definition. Stienhardt publishes a literal description and sets and finishes rings in New York City. Stienhardt does not claim to have invented, named, or standardized the shape.

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title description">
+  <title id="title">2.60 carat Dutch Marquise diamond approximate face-up size</title>
+  <desc id="description">Dutch Marquise, 2.60 ct, approximately 12.38 by 6.88 millimeters using the Facet typical-proportion model. Educational estimate. Exact grading-report measurements take precedence.</desc>
+  <metadata>Creator: Stienhardt &amp; Stones. License: CC BY 4.0. Source: https://jacobiusmakes.github.io/facet-diamond-tool/size-atlas.html</metadata>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fffdfa"/><stop offset="1" stop-color="#edf3f7"/></linearGradient>
+    <linearGradient id="stone" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffffff"/><stop offset="0.45" stop-color="#dceaf4"/><stop offset="0.52" stop-color="#ffffff"/><stop offset="1" stop-color="#cbdde9"/></linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="#f8f5ef"/>
+  <text x="72" y="72" fill="#2e624b" font-family="Verdana, sans-serif" font-size="15" letter-spacing="3">FACET OPEN SIZE ATLAS</text>
+  <text x="72" y="150" fill="#091d2e" font-family="Georgia, serif" font-size="58">2.60 ct Dutch Marquise</text>
+  <text x="72" y="202" fill="#334553" font-family="Georgia, serif" font-size="27">Approximate face-up size</text>
+  <g fill="url(#stone)" stroke="#6f86a8" stroke-width="5"><polygon points="650.0,322 730.0,210.9 970.0,210.9 1050.0,322 970.0,433.1 730.0,433.1"/></g>
+  <line x1="650.0" y1="468.1" x2="1050.0" y2="468.1" stroke="#173f70" stroke-width="2"/>
+  <text x="850" y="502.1" fill="#173f70" text-anchor="middle" font-family="Verdana, sans-serif" font-size="18">12.38 mm length</text>
+  <text x="72" y="324" fill="#091d2e" font-family="Georgia, serif" font-size="48">12.38 × 6.88 mm</text>
+  <text x="72" y="378" fill="#6d675f" font-family="Verdana, sans-serif" font-size="17">Typical-proportion estimate, not a measurement of an individual stone.</text>
+  <line x1="72" y1="538" x2="1128" y2="538" stroke="#d9d1c4"/>
+  <text x="72" y="584" fill="#091d2e" font-family="Georgia, serif" font-size="25">Facet by Stienhardt &amp; Stones</text>
+  <text x="72" y="620" fill="#6d675f" font-family="Verdana, sans-serif" font-size="15">CC BY 4.0 · https://jacobiusmakes.github.io/facet-diamond-tool/size-atlas.html</text>
+</svg>

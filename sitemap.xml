@@ -79,6 +79,18 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://jacobiusmakes.github.io/facet-diamond-tool/size-atlas.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jacobiusmakes.github.io/facet-diamond-tool/data/size-atlas.json</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://jacobiusmakes.github.io/facet-diamond-tool/data/face-up-size-reference.json</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>

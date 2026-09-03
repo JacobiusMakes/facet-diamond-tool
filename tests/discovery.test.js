@@ -11,7 +11,7 @@ const reportLens = fs.readFileSync(path.join(root, "report-lens.html"), "utf8");
 assert.equal(tools.name, "Facet");
 assert.equal(tools.privacy.processing, "local_by_default");
 assert.deepEqual(tools.privacy.collected, []);
-assert.equal(tools.tools.length, 10);
+assert.equal(tools.tools.length, 11);
 for (const tool of tools.tools) {
   assert.match(tool.url, /^https:\/\//);
   assert.ok(tool.inputs.length > 0);
@@ -26,5 +26,6 @@ assert.match(reportLens, /"@type":"WebApplication"/);
 assert.match(reportLens, /"name":"Report Lens by Facet"/);
 assert.ok(tools.tools.some((tool) => tool.id === "face_up_size_dataset"));
 assert.ok(tools.tools.some((tool) => tool.id === "spread_check"));
+assert.ok(tools.tools.some((tool) => tool.id === "diamond_size_atlas"));
 
 console.log("machine-readable discovery tests passed");

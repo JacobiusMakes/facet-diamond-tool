@@ -4,7 +4,7 @@ A quiet diamond-shopping companion. On any listing, anywhere: how big the stone 
 millimeters (the number carat weight hides), a one-click scan of the page for the carat and
 shape, a reusable comparison brief, and the grading labs' own verification pages.
 
-Facet is usable now in fifteen forms:
+Facet is usable now in sixteen forms:
 
 1. The public calculator at <https://jacobiusmakes.github.io/facet-diamond-tool/>.
 2. An installable web app offered directly by the calculator on supported browsers.
@@ -21,6 +21,7 @@ Facet is usable now in fifteen forms:
 13. Stone Card, a local shareable PNG with a size estimate and measurable Facet return QR.
 14. A citation-ready open size dataset in CSV and JSON, with 84 reproducible rows under CC BY 4.0.
 15. Spread Check, a local grading-report dimension comparison that reports a numeric plan-area difference without inventing a cut grade.
+16. The Diamond Size Atlas, 84 open-license SVG diagrams with an image sitemap and attributable return path.
 
 The extension never names or targets a competitor, never sends page text, and never tracks in
 the background. It runs only when clicked (`activeTab`) and stores nothing. The bookmarklet sends
@@ -74,6 +75,11 @@ compares their product with the model's expected length-width product for the sa
 The coefficient for a given outline cancels in the comparison, so the result is stated as a
 plan-area proxy difference. It is not a cut grade, light-performance grade, or quality verdict.
 Inventory clicks use `spread_check_match`.
+
+The [Diamond Size Atlas](size-atlas.html) converts the open dataset into 84 reusable SVG diagrams.
+Each asset names its shape, carat weight, approximate millimeter dimensions, model limitation,
+source, and CC BY 4.0 license. `image-sitemap.xml` exposes the collection to image crawlers.
+An atlas row returns through `via=atlas`; a later inventory click uses `size_atlas_reference`.
 
 Link Mint creates a publisher-specific Facet link from a public publication slug, supported shape,
 and carat weight. It can download a QR PNG without sending the link to a QR service. Stone Card

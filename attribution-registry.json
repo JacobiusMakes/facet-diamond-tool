@@ -55,6 +55,7 @@
     "report_lens_match": { "state": "live", "kind": "grading_report_reader" },
     "dataset_reference": { "state": "live", "kind": "open_data_reference" },
     "spread_check_match": { "state": "live", "kind": "report_dimension_comparison" },
+    "size_atlas_reference": { "state": "live", "kind": "open_visual_reference" },
     "report_lens_intent": { "state": "live", "kind": "email_intent_bridge" },
     "web_intent": { "state": "live", "kind": "email_intent_bridge" },
     "extension_match": { "state": "live", "kind": "browser_extension" },

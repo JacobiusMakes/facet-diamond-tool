@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://jacobiusmakes.github.io/facet-diamond-tool/sitemap.xml
+Sitemap: https://jacobiusmakes.github.io/facet-diamond-tool/image-sitemap.xml

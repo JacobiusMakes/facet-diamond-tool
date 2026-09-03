@@ -19,6 +19,7 @@ Contact: jgalperin@stienhardt.com
 - Stone Card: creates a local shareable PNG containing a diamond size estimate and a Facet return QR for partner and group-chat sharing.
 - Open size dataset: provides 84 reproducible CSV and JSON rows of approximate face-up dimensions for four supported shapes from 1.0 to 3.0 carats under CC BY 4.0.
 - Spread Check: compares exact grading-report length and width with the typical-proportion model and returns a numeric face-up plan-area difference. It does not assign a cut or quality grade.
+- Diamond Size Atlas: provides 84 downloadable CC BY 4.0 SVG diagrams with explicit shape, carat, approximate millimeter dimensions, method boundaries, and machine-readable image discovery metadata.
 - Browser extension: scans visible text only after the shopper clicks the scan control.
 
 ## Accuracy boundaries

@@ -1,0 +1,850 @@
+{
+  "schemaVersion": 1,
+  "version": "1.0.0",
+  "published": "2026-09-03",
+  "name": "Facet Diamond Size Atlas",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "canonicalUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/size-atlas.html",
+  "images": [
+    {
+      "shape": "round",
+      "label": "Round",
+      "carat": "1.00",
+      "lengthMm": 6.5,
+      "widthMm": 6.5,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/round-1-00-carat-diamond-size.svg",
+      "download": "assets/size-atlas/round-1-00-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=round&carat=1.00"
+    },
+    {
+      "shape": "round",
+      "label": "Round",
+      "carat": "1.10",
+      "lengthMm": 6.71,
+      "widthMm": 6.71,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/round-1-10-carat-diamond-size.svg",
+      "download": "assets/size-atlas/round-1-10-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=round&carat=1.10"
+    },
+    {
+      "shape": "round",
+      "label": "Round",
+      "carat": "1.20",
+      "lengthMm": 6.91,
+      "widthMm": 6.91,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/round-1-20-carat-diamond-size.svg",
+      "download": "assets/size-atlas/round-1-20-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=round&carat=1.20"
+    },
+    {
+      "shape": "round",
+      "label": "Round",
+      "carat": "1.30",
+      "lengthMm": 7.09,
+      "widthMm": 7.09,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/round-1-30-carat-diamond-size.svg",
+      "download": "assets/size-atlas/round-1-30-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=round&carat=1.30"
+    },
+    {
+      "shape": "round",
+      "label": "Round",
+      "carat": "1.40",
+      "lengthMm": 7.27,
+      "widthMm": 7.27,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/round-1-40-carat-diamond-size.svg",
+      "download": "assets/size-atlas/round-1-40-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=round&carat=1.40"
+    },
+    {
+      "shape": "round",
+      "label": "Round",
+      "carat": "1.50",
+      "lengthMm": 7.44,
+      "widthMm": 7.44,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/round-1-50-carat-diamond-size.svg",
+      "download": "assets/size-atlas/round-1-50-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=round&carat=1.50"
+    },
+    {
+      "shape": "round",
+      "label": "Round",
+      "carat": "1.60",
+      "lengthMm": 7.6,
+      "widthMm": 7.6,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/round-1-60-carat-diamond-size.svg",
+      "download": "assets/size-atlas/round-1-60-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=round&carat=1.60"
+    },
+    {
+      "shape": "round",
+      "label": "Round",
+      "carat": "1.70",
+      "lengthMm": 7.76,
+      "widthMm": 7.76,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/round-1-70-carat-diamond-size.svg",
+      "download": "assets/size-atlas/round-1-70-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=round&carat=1.70"
+    },
+    {
+      "shape": "round",
+      "label": "Round",
+      "carat": "1.80",
+      "lengthMm": 7.91,
+      "widthMm": 7.91,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/round-1-80-carat-diamond-size.svg",
+      "download": "assets/size-atlas/round-1-80-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=round&carat=1.80"
+    },
+    {
+      "shape": "round",
+      "label": "Round",
+      "carat": "1.90",
+      "lengthMm": 8.05,
+      "widthMm": 8.05,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/round-1-90-carat-diamond-size.svg",
+      "download": "assets/size-atlas/round-1-90-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=round&carat=1.90"
+    },
+    {
+      "shape": "round",
+      "label": "Round",
+      "carat": "2.00",
+      "lengthMm": 8.19,
+      "widthMm": 8.19,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/round-2-00-carat-diamond-size.svg",
+      "download": "assets/size-atlas/round-2-00-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=round&carat=2.00"
+    },
+    {
+      "shape": "round",
+      "label": "Round",
+      "carat": "2.10",
+      "lengthMm": 8.32,
+      "widthMm": 8.32,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/round-2-10-carat-diamond-size.svg",
+      "download": "assets/size-atlas/round-2-10-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=round&carat=2.10"
+    },
+    {
+      "shape": "round",
+      "label": "Round",
+      "carat": "2.20",
+      "lengthMm": 8.45,
+      "widthMm": 8.45,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/round-2-20-carat-diamond-size.svg",
+      "download": "assets/size-atlas/round-2-20-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=round&carat=2.20"
+    },
+    {
+      "shape": "round",
+      "label": "Round",
+      "carat": "2.30",
+      "lengthMm": 8.58,
+      "widthMm": 8.58,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/round-2-30-carat-diamond-size.svg",
+      "download": "assets/size-atlas/round-2-30-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=round&carat=2.30"
+    },
+    {
+      "shape": "round",
+      "label": "Round",
+      "carat": "2.40",
+      "lengthMm": 8.7,
+      "widthMm": 8.7,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/round-2-40-carat-diamond-size.svg",
+      "download": "assets/size-atlas/round-2-40-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=round&carat=2.40"
+    },
+    {
+      "shape": "round",
+      "label": "Round",
+      "carat": "2.50",
+      "lengthMm": 8.82,
+      "widthMm": 8.82,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/round-2-50-carat-diamond-size.svg",
+      "download": "assets/size-atlas/round-2-50-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=round&carat=2.50"
+    },
+    {
+      "shape": "round",
+      "label": "Round",
+      "carat": "2.60",
+      "lengthMm": 8.94,
+      "widthMm": 8.94,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/round-2-60-carat-diamond-size.svg",
+      "download": "assets/size-atlas/round-2-60-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=round&carat=2.60"
+    },
+    {
+      "shape": "round",
+      "label": "Round",
+      "carat": "2.70",
+      "lengthMm": 9.05,
+      "widthMm": 9.05,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/round-2-70-carat-diamond-size.svg",
+      "download": "assets/size-atlas/round-2-70-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=round&carat=2.70"
+    },
+    {
+      "shape": "round",
+      "label": "Round",
+      "carat": "2.80",
+      "lengthMm": 9.16,
+      "widthMm": 9.16,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/round-2-80-carat-diamond-size.svg",
+      "download": "assets/size-atlas/round-2-80-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=round&carat=2.80"
+    },
+    {
+      "shape": "round",
+      "label": "Round",
+      "carat": "2.90",
+      "lengthMm": 9.27,
+      "widthMm": 9.27,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/round-2-90-carat-diamond-size.svg",
+      "download": "assets/size-atlas/round-2-90-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=round&carat=2.90"
+    },
+    {
+      "shape": "round",
+      "label": "Round",
+      "carat": "3.00",
+      "lengthMm": 9.37,
+      "widthMm": 9.37,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/round-3-00-carat-diamond-size.svg",
+      "download": "assets/size-atlas/round-3-00-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=round&carat=3.00"
+    },
+    {
+      "shape": "oval",
+      "label": "Oval",
+      "carat": "1.00",
+      "lengthMm": 8,
+      "widthMm": 5.5,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/oval-1-00-carat-diamond-size.svg",
+      "download": "assets/size-atlas/oval-1-00-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=oval&carat=1.00"
+    },
+    {
+      "shape": "oval",
+      "label": "Oval",
+      "carat": "1.10",
+      "lengthMm": 8.26,
+      "widthMm": 5.68,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/oval-1-10-carat-diamond-size.svg",
+      "download": "assets/size-atlas/oval-1-10-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=oval&carat=1.10"
+    },
+    {
+      "shape": "oval",
+      "label": "Oval",
+      "carat": "1.20",
+      "lengthMm": 8.5,
+      "widthMm": 5.84,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/oval-1-20-carat-diamond-size.svg",
+      "download": "assets/size-atlas/oval-1-20-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=oval&carat=1.20"
+    },
+    {
+      "shape": "oval",
+      "label": "Oval",
+      "carat": "1.30",
+      "lengthMm": 8.73,
+      "widthMm": 6,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/oval-1-30-carat-diamond-size.svg",
+      "download": "assets/size-atlas/oval-1-30-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=oval&carat=1.30"
+    },
+    {
+      "shape": "oval",
+      "label": "Oval",
+      "carat": "1.40",
+      "lengthMm": 8.95,
+      "widthMm": 6.15,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/oval-1-40-carat-diamond-size.svg",
+      "download": "assets/size-atlas/oval-1-40-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=oval&carat=1.40"
+    },
+    {
+      "shape": "oval",
+      "label": "Oval",
+      "carat": "1.50",
+      "lengthMm": 9.16,
+      "widthMm": 6.3,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/oval-1-50-carat-diamond-size.svg",
+      "download": "assets/size-atlas/oval-1-50-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=oval&carat=1.50"
+    },
+    {
+      "shape": "oval",
+      "label": "Oval",
+      "carat": "1.60",
+      "lengthMm": 9.36,
+      "widthMm": 6.43,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/oval-1-60-carat-diamond-size.svg",
+      "download": "assets/size-atlas/oval-1-60-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=oval&carat=1.60"
+    },
+    {
+      "shape": "oval",
+      "label": "Oval",
+      "carat": "1.70",
+      "lengthMm": 9.55,
+      "widthMm": 6.56,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/oval-1-70-carat-diamond-size.svg",
+      "download": "assets/size-atlas/oval-1-70-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=oval&carat=1.70"
+    },
+    {
+      "shape": "oval",
+      "label": "Oval",
+      "carat": "1.80",
+      "lengthMm": 9.73,
+      "widthMm": 6.69,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/oval-1-80-carat-diamond-size.svg",
+      "download": "assets/size-atlas/oval-1-80-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=oval&carat=1.80"
+    },
+    {
+      "shape": "oval",
+      "label": "Oval",
+      "carat": "1.90",
+      "lengthMm": 9.91,
+      "widthMm": 6.81,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/oval-1-90-carat-diamond-size.svg",
+      "download": "assets/size-atlas/oval-1-90-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=oval&carat=1.90"
+    },
+    {
+      "shape": "oval",
+      "label": "Oval",
+      "carat": "2.00",
+      "lengthMm": 10.08,
+      "widthMm": 6.93,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/oval-2-00-carat-diamond-size.svg",
+      "download": "assets/size-atlas/oval-2-00-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=oval&carat=2.00"
+    },
+    {
+      "shape": "oval",
+      "label": "Oval",
+      "carat": "2.10",
+      "lengthMm": 10.24,
+      "widthMm": 7.04,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/oval-2-10-carat-diamond-size.svg",
+      "download": "assets/size-atlas/oval-2-10-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=oval&carat=2.10"
+    },
+    {
+      "shape": "oval",
+      "label": "Oval",
+      "carat": "2.20",
+      "lengthMm": 10.4,
+      "widthMm": 7.15,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/oval-2-20-carat-diamond-size.svg",
+      "download": "assets/size-atlas/oval-2-20-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=oval&carat=2.20"
+    },
+    {
+      "shape": "oval",
+      "label": "Oval",
+      "carat": "2.30",
+      "lengthMm": 10.56,
+      "widthMm": 7.26,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/oval-2-30-carat-diamond-size.svg",
+      "download": "assets/size-atlas/oval-2-30-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=oval&carat=2.30"
+    },
+    {
+      "shape": "oval",
+      "label": "Oval",
+      "carat": "2.40",
+      "lengthMm": 10.71,
+      "widthMm": 7.36,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/oval-2-40-carat-diamond-size.svg",
+      "download": "assets/size-atlas/oval-2-40-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=oval&carat=2.40"
+    },
+    {
+      "shape": "oval",
+      "label": "Oval",
+      "carat": "2.50",
+      "lengthMm": 10.86,
+      "widthMm": 7.46,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/oval-2-50-carat-diamond-size.svg",
+      "download": "assets/size-atlas/oval-2-50-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=oval&carat=2.50"
+    },
+    {
+      "shape": "oval",
+      "label": "Oval",
+      "carat": "2.60",
+      "lengthMm": 11,
+      "widthMm": 7.56,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/oval-2-60-carat-diamond-size.svg",
+      "download": "assets/size-atlas/oval-2-60-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=oval&carat=2.60"
+    },
+    {
+      "shape": "oval",
+      "label": "Oval",
+      "carat": "2.70",
+      "lengthMm": 11.14,
+      "widthMm": 7.66,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/oval-2-70-carat-diamond-size.svg",
+      "download": "assets/size-atlas/oval-2-70-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=oval&carat=2.70"
+    },
+    {
+      "shape": "oval",
+      "label": "Oval",
+      "carat": "2.80",
+      "lengthMm": 11.28,
+      "widthMm": 7.75,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/oval-2-80-carat-diamond-size.svg",
+      "download": "assets/size-atlas/oval-2-80-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=oval&carat=2.80"
+    },
+    {
+      "shape": "oval",
+      "label": "Oval",
+      "carat": "2.90",
+      "lengthMm": 11.41,
+      "widthMm": 7.84,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/oval-2-90-carat-diamond-size.svg",
+      "download": "assets/size-atlas/oval-2-90-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=oval&carat=2.90"
+    },
+    {
+      "shape": "oval",
+      "label": "Oval",
+      "carat": "3.00",
+      "lengthMm": 11.54,
+      "widthMm": 7.93,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/oval-3-00-carat-diamond-size.svg",
+      "download": "assets/size-atlas/oval-3-00-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=oval&carat=3.00"
+    },
+    {
+      "shape": "emerald",
+      "label": "Emerald",
+      "carat": "1.00",
+      "lengthMm": 7,
+      "widthMm": 5,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/emerald-1-00-carat-diamond-size.svg",
+      "download": "assets/size-atlas/emerald-1-00-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=emerald&carat=1.00"
+    },
+    {
+      "shape": "emerald",
+      "label": "Emerald",
+      "carat": "1.10",
+      "lengthMm": 7.23,
+      "widthMm": 5.16,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/emerald-1-10-carat-diamond-size.svg",
+      "download": "assets/size-atlas/emerald-1-10-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=emerald&carat=1.10"
+    },
+    {
+      "shape": "emerald",
+      "label": "Emerald",
+      "carat": "1.20",
+      "lengthMm": 7.44,
+      "widthMm": 5.31,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/emerald-1-20-carat-diamond-size.svg",
+      "download": "assets/size-atlas/emerald-1-20-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=emerald&carat=1.20"
+    },
+    {
+      "shape": "emerald",
+      "label": "Emerald",
+      "carat": "1.30",
+      "lengthMm": 7.64,
+      "widthMm": 5.46,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/emerald-1-30-carat-diamond-size.svg",
+      "download": "assets/size-atlas/emerald-1-30-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=emerald&carat=1.30"
+    },
+    {
+      "shape": "emerald",
+      "label": "Emerald",
+      "carat": "1.40",
+      "lengthMm": 7.83,
+      "widthMm": 5.59,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/emerald-1-40-carat-diamond-size.svg",
+      "download": "assets/size-atlas/emerald-1-40-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=emerald&carat=1.40"
+    },
+    {
+      "shape": "emerald",
+      "label": "Emerald",
+      "carat": "1.50",
+      "lengthMm": 8.01,
+      "widthMm": 5.72,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/emerald-1-50-carat-diamond-size.svg",
+      "download": "assets/size-atlas/emerald-1-50-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=emerald&carat=1.50"
+    },
+    {
+      "shape": "emerald",
+      "label": "Emerald",
+      "carat": "1.60",
+      "lengthMm": 8.19,
+      "widthMm": 5.85,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/emerald-1-60-carat-diamond-size.svg",
+      "download": "assets/size-atlas/emerald-1-60-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=emerald&carat=1.60"
+    },
+    {
+      "shape": "emerald",
+      "label": "Emerald",
+      "carat": "1.70",
+      "lengthMm": 8.35,
+      "widthMm": 5.97,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/emerald-1-70-carat-diamond-size.svg",
+      "download": "assets/size-atlas/emerald-1-70-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=emerald&carat=1.70"
+    },
+    {
+      "shape": "emerald",
+      "label": "Emerald",
+      "carat": "1.80",
+      "lengthMm": 8.52,
+      "widthMm": 6.08,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/emerald-1-80-carat-diamond-size.svg",
+      "download": "assets/size-atlas/emerald-1-80-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=emerald&carat=1.80"
+    },
+    {
+      "shape": "emerald",
+      "label": "Emerald",
+      "carat": "1.90",
+      "lengthMm": 8.67,
+      "widthMm": 6.19,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/emerald-1-90-carat-diamond-size.svg",
+      "download": "assets/size-atlas/emerald-1-90-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=emerald&carat=1.90"
+    },
+    {
+      "shape": "emerald",
+      "label": "Emerald",
+      "carat": "2.00",
+      "lengthMm": 8.82,
+      "widthMm": 6.3,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/emerald-2-00-carat-diamond-size.svg",
+      "download": "assets/size-atlas/emerald-2-00-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=emerald&carat=2.00"
+    },
+    {
+      "shape": "emerald",
+      "label": "Emerald",
+      "carat": "2.10",
+      "lengthMm": 8.96,
+      "widthMm": 6.4,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/emerald-2-10-carat-diamond-size.svg",
+      "download": "assets/size-atlas/emerald-2-10-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=emerald&carat=2.10"
+    },
+    {
+      "shape": "emerald",
+      "label": "Emerald",
+      "carat": "2.20",
+      "lengthMm": 9.1,
+      "widthMm": 6.5,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/emerald-2-20-carat-diamond-size.svg",
+      "download": "assets/size-atlas/emerald-2-20-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=emerald&carat=2.20"
+    },
+    {
+      "shape": "emerald",
+      "label": "Emerald",
+      "carat": "2.30",
+      "lengthMm": 9.24,
+      "widthMm": 6.6,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/emerald-2-30-carat-diamond-size.svg",
+      "download": "assets/size-atlas/emerald-2-30-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=emerald&carat=2.30"
+    },
+    {
+      "shape": "emerald",
+      "label": "Emerald",
+      "carat": "2.40",
+      "lengthMm": 9.37,
+      "widthMm": 6.69,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/emerald-2-40-carat-diamond-size.svg",
+      "download": "assets/size-atlas/emerald-2-40-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=emerald&carat=2.40"
+    },
+    {
+      "shape": "emerald",
+      "label": "Emerald",
+      "carat": "2.50",
+      "lengthMm": 9.5,
+      "widthMm": 6.79,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/emerald-2-50-carat-diamond-size.svg",
+      "download": "assets/size-atlas/emerald-2-50-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=emerald&carat=2.50"
+    },
+    {
+      "shape": "emerald",
+      "label": "Emerald",
+      "carat": "2.60",
+      "lengthMm": 9.63,
+      "widthMm": 6.88,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/emerald-2-60-carat-diamond-size.svg",
+      "download": "assets/size-atlas/emerald-2-60-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=emerald&carat=2.60"
+    },
+    {
+      "shape": "emerald",
+      "label": "Emerald",
+      "carat": "2.70",
+      "lengthMm": 9.75,
+      "widthMm": 6.96,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/emerald-2-70-carat-diamond-size.svg",
+      "download": "assets/size-atlas/emerald-2-70-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=emerald&carat=2.70"
+    },
+    {
+      "shape": "emerald",
+      "label": "Emerald",
+      "carat": "2.80",
+      "lengthMm": 9.87,
+      "widthMm": 7.05,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/emerald-2-80-carat-diamond-size.svg",
+      "download": "assets/size-atlas/emerald-2-80-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=emerald&carat=2.80"
+    },
+    {
+      "shape": "emerald",
+      "label": "Emerald",
+      "carat": "2.90",
+      "lengthMm": 9.98,
+      "widthMm": 7.13,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/emerald-2-90-carat-diamond-size.svg",
+      "download": "assets/size-atlas/emerald-2-90-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=emerald&carat=2.90"
+    },
+    {
+      "shape": "emerald",
+      "label": "Emerald",
+      "carat": "3.00",
+      "lengthMm": 10.1,
+      "widthMm": 7.21,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/emerald-3-00-carat-diamond-size.svg",
+      "download": "assets/size-atlas/emerald-3-00-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=emerald&carat=3.00"
+    },
+    {
+      "shape": "dutch_marquise",
+      "label": "Dutch Marquise",
+      "carat": "1.00",
+      "lengthMm": 9,
+      "widthMm": 5,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/dutch-marquise-1-00-carat-diamond-size.svg",
+      "download": "assets/size-atlas/dutch-marquise-1-00-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=dutch_marquise&carat=1.00"
+    },
+    {
+      "shape": "dutch_marquise",
+      "label": "Dutch Marquise",
+      "carat": "1.10",
+      "lengthMm": 9.29,
+      "widthMm": 5.16,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/dutch-marquise-1-10-carat-diamond-size.svg",
+      "download": "assets/size-atlas/dutch-marquise-1-10-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=dutch_marquise&carat=1.10"
+    },
+    {
+      "shape": "dutch_marquise",
+      "label": "Dutch Marquise",
+      "carat": "1.20",
+      "lengthMm": 9.56,
+      "widthMm": 5.31,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/dutch-marquise-1-20-carat-diamond-size.svg",
+      "download": "assets/size-atlas/dutch-marquise-1-20-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=dutch_marquise&carat=1.20"
+    },
+    {
+      "shape": "dutch_marquise",
+      "label": "Dutch Marquise",
+      "carat": "1.30",
+      "lengthMm": 9.82,
+      "widthMm": 5.46,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/dutch-marquise-1-30-carat-diamond-size.svg",
+      "download": "assets/size-atlas/dutch-marquise-1-30-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=dutch_marquise&carat=1.30"
+    },
+    {
+      "shape": "dutch_marquise",
+      "label": "Dutch Marquise",
+      "carat": "1.40",
+      "lengthMm": 10.07,
+      "widthMm": 5.59,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/dutch-marquise-1-40-carat-diamond-size.svg",
+      "download": "assets/size-atlas/dutch-marquise-1-40-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=dutch_marquise&carat=1.40"
+    },
+    {
+      "shape": "dutch_marquise",
+      "label": "Dutch Marquise",
+      "carat": "1.50",
+      "lengthMm": 10.3,
+      "widthMm": 5.72,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/dutch-marquise-1-50-carat-diamond-size.svg",
+      "download": "assets/size-atlas/dutch-marquise-1-50-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=dutch_marquise&carat=1.50"
+    },
+    {
+      "shape": "dutch_marquise",
+      "label": "Dutch Marquise",
+      "carat": "1.60",
+      "lengthMm": 10.53,
+      "widthMm": 5.85,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/dutch-marquise-1-60-carat-diamond-size.svg",
+      "download": "assets/size-atlas/dutch-marquise-1-60-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=dutch_marquise&carat=1.60"
+    },
+    {
+      "shape": "dutch_marquise",
+      "label": "Dutch Marquise",
+      "carat": "1.70",
+      "lengthMm": 10.74,
+      "widthMm": 5.97,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/dutch-marquise-1-70-carat-diamond-size.svg",
+      "download": "assets/size-atlas/dutch-marquise-1-70-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=dutch_marquise&carat=1.70"
+    },
+    {
+      "shape": "dutch_marquise",
+      "label": "Dutch Marquise",
+      "carat": "1.80",
+      "lengthMm": 10.95,
+      "widthMm": 6.08,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/dutch-marquise-1-80-carat-diamond-size.svg",
+      "download": "assets/size-atlas/dutch-marquise-1-80-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=dutch_marquise&carat=1.80"
+    },
+    {
+      "shape": "dutch_marquise",
+      "label": "Dutch Marquise",
+      "carat": "1.90",
+      "lengthMm": 11.15,
+      "widthMm": 6.19,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/dutch-marquise-1-90-carat-diamond-size.svg",
+      "download": "assets/size-atlas/dutch-marquise-1-90-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=dutch_marquise&carat=1.90"
+    },
+    {
+      "shape": "dutch_marquise",
+      "label": "Dutch Marquise",
+      "carat": "2.00",
+      "lengthMm": 11.34,
+      "widthMm": 6.3,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/dutch-marquise-2-00-carat-diamond-size.svg",
+      "download": "assets/size-atlas/dutch-marquise-2-00-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=dutch_marquise&carat=2.00"
+    },
+    {
+      "shape": "dutch_marquise",
+      "label": "Dutch Marquise",
+      "carat": "2.10",
+      "lengthMm": 11.53,
+      "widthMm": 6.4,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/dutch-marquise-2-10-carat-diamond-size.svg",
+      "download": "assets/size-atlas/dutch-marquise-2-10-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=dutch_marquise&carat=2.10"
+    },
+    {
+      "shape": "dutch_marquise",
+      "label": "Dutch Marquise",
+      "carat": "2.20",
+      "lengthMm": 11.71,
+      "widthMm": 6.5,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/dutch-marquise-2-20-carat-diamond-size.svg",
+      "download": "assets/size-atlas/dutch-marquise-2-20-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=dutch_marquise&carat=2.20"
+    },
+    {
+      "shape": "dutch_marquise",
+      "label": "Dutch Marquise",
+      "carat": "2.30",
+      "lengthMm": 11.88,
+      "widthMm": 6.6,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/dutch-marquise-2-30-carat-diamond-size.svg",
+      "download": "assets/size-atlas/dutch-marquise-2-30-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=dutch_marquise&carat=2.30"
+    },
+    {
+      "shape": "dutch_marquise",
+      "label": "Dutch Marquise",
+      "carat": "2.40",
+      "lengthMm": 12.05,
+      "widthMm": 6.69,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/dutch-marquise-2-40-carat-diamond-size.svg",
+      "download": "assets/size-atlas/dutch-marquise-2-40-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=dutch_marquise&carat=2.40"
+    },
+    {
+      "shape": "dutch_marquise",
+      "label": "Dutch Marquise",
+      "carat": "2.50",
+      "lengthMm": 12.21,
+      "widthMm": 6.79,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/dutch-marquise-2-50-carat-diamond-size.svg",
+      "download": "assets/size-atlas/dutch-marquise-2-50-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=dutch_marquise&carat=2.50"
+    },
+    {
+      "shape": "dutch_marquise",
+      "label": "Dutch Marquise",
+      "carat": "2.60",
+      "lengthMm": 12.38,
+      "widthMm": 6.88,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/dutch-marquise-2-60-carat-diamond-size.svg",
+      "download": "assets/size-atlas/dutch-marquise-2-60-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=dutch_marquise&carat=2.60"
+    },
+    {
+      "shape": "dutch_marquise",
+      "label": "Dutch Marquise",
+      "carat": "2.70",
+      "lengthMm": 12.53,
+      "widthMm": 6.96,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/dutch-marquise-2-70-carat-diamond-size.svg",
+      "download": "assets/size-atlas/dutch-marquise-2-70-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=dutch_marquise&carat=2.70"
+    },
+    {
+      "shape": "dutch_marquise",
+      "label": "Dutch Marquise",
+      "carat": "2.80",
+      "lengthMm": 12.69,
+      "widthMm": 7.05,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/dutch-marquise-2-80-carat-diamond-size.svg",
+      "download": "assets/size-atlas/dutch-marquise-2-80-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=dutch_marquise&carat=2.80"
+    },
+    {
+      "shape": "dutch_marquise",
+      "label": "Dutch Marquise",
+      "carat": "2.90",
+      "lengthMm": 12.83,
+      "widthMm": 7.13,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/dutch-marquise-2-90-carat-diamond-size.svg",
+      "download": "assets/size-atlas/dutch-marquise-2-90-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=dutch_marquise&carat=2.90"
+    },
+    {
+      "shape": "dutch_marquise",
+      "label": "Dutch Marquise",
+      "carat": "3.00",
+      "lengthMm": 12.98,
+      "widthMm": 7.21,
+      "image": "https://jacobiusmakes.github.io/facet-diamond-tool/assets/size-atlas/dutch-marquise-3-00-carat-diamond-size.svg",
+      "download": "assets/size-atlas/dutch-marquise-3-00-carat-diamond-size.svg",
+      "facetUrl": "https://jacobiusmakes.github.io/facet-diamond-tool/?via=atlas&shape=dutch_marquise&carat=3.00"
+    }
+  ]
+}

@@ -112,6 +112,15 @@
       "inputs": ["supported_shape", "carat_weight", "grading_report_length_mm", "grading_report_width_mm"],
       "outputs": ["reported_vs_typical_plan_area_delta_pct", "reusable_comparison_summary"],
       "surface": "spread_check_match"
+    },
+    {
+      "id": "diamond_size_atlas",
+      "name": "Facet Diamond Size Atlas",
+      "url": "https://jacobiusmakes.github.io/facet-diamond-tool/size-atlas.html",
+      "inputs": ["supported_shape", "carat_weight_from_1.0_to_3.0"],
+      "outputs": ["open_license_svg_diagram", "approximate_length_mm", "approximate_width_mm"],
+      "surface": "size_atlas_reference",
+      "license": "CC-BY-4.0"
     }
   ]
 }

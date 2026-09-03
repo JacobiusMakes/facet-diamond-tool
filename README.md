@@ -80,6 +80,7 @@ The [Diamond Size Atlas](size-atlas.html) converts the open dataset into 84 reus
 Each asset names its shape, carat weight, approximate millimeter dimensions, model limitation,
 source, and CC BY 4.0 license. `image-sitemap.xml` exposes the collection to image crawlers.
 An atlas row returns through `via=atlas`; a later inventory click uses `size_atlas_reference`.
+Reuse terms and the required credit line are in [ATLAS-LICENSE.txt](ATLAS-LICENSE.txt).
 
 Link Mint creates a publisher-specific Facet link from a public publication slug, supported shape,
 and carat weight. It can download a QR PNG without sending the link to a QR service. Stone Card

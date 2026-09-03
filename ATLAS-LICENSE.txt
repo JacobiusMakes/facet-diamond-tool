@@ -1,0 +1,17 @@
+Facet Diamond Size Atlas v1.0.0
+
+The SVG files in assets/size-atlas and the catalog in data/size-atlas.json are
+licensed under the Creative Commons Attribution 4.0 International license:
+https://creativecommons.org/licenses/by/4.0/
+
+Required attribution:
+
+Facet by Stienhardt & Stones
+https://jacobiusmakes.github.io/facet-diamond-tool/size-atlas.html
+
+You may share and adapt these assets for any purpose, including commercial use,
+provided that you give appropriate credit, link to the license, and indicate if
+changes were made. The diagrams are educational estimates and are not
+measurements of individual diamonds.
+
+The software source code remains licensed under the repository's MIT License.

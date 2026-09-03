@@ -1,6 +1,6 @@
 importScripts("./core.js");
 
-const CACHE = "facet-v11";
+const CACHE = "facet-v12";
 const ASSETS = [
   "./",
   "./index.html",
@@ -22,6 +22,9 @@ const ASSETS = [
   "./dataset.js",
   "./data/face-up-size-reference.json",
   "./data/face-up-size-reference.csv",
+  "./spread-check.html",
+  "./spread-check.js",
+  "./spread-check-core.js",
   "./vendor/qrcode/qrcode.js",
   "./qr-canvas.js",
   "./facet-widget.js",

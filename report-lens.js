@@ -13,6 +13,7 @@ const title = document.getElementById("result-title");
 const explanation = document.getElementById("explanation");
 const verify = document.getElementById("verify");
 const browse = document.getElementById("browse");
+const spread = document.getElementById("spread");
 const ask = document.getElementById("ask");
 const copy = document.getElementById("copy");
 let activeReport = null;
@@ -82,10 +83,19 @@ function render(report) {
 
   const canMatch = report.commerceShape && report.carat !== null;
   browse.hidden = !canMatch;
+  spread.hidden = !(canMatch && report.measurements);
   ask.hidden = !canMatch;
   if (canMatch) {
     browse.href = FacetCore.trackedCollectionUrl({ shape: report.commerceShape, carat: report.carat, content: "report_lens_match" });
     browse.textContent = "Browse " + report.shapeLabel + " diamonds";
+    if (report.measurements) {
+      const spreadUrl = new URL("spread-check.html", location.href);
+      spreadUrl.searchParams.set("shape", report.commerceShape);
+      spreadUrl.searchParams.set("carat", report.carat.toFixed(2));
+      spreadUrl.searchParams.set("length", report.measurements.length.toFixed(2));
+      spreadUrl.searchParams.set("width", report.measurements.width.toFixed(2));
+      spread.href = spreadUrl.toString();
+    }
     ask.href = FacetCore.intentEmailUrl({
       shape: report.commerceShape,
       carat: report.carat,

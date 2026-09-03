@@ -73,6 +73,12 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://jacobiusmakes.github.io/facet-diamond-tool/spread-check.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://jacobiusmakes.github.io/facet-diamond-tool/data/face-up-size-reference.json</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>

@@ -54,6 +54,7 @@
     "hand_preview_shared_match": { "state": "live", "kind": "shared_preview" },
     "report_lens_match": { "state": "live", "kind": "grading_report_reader" },
     "dataset_reference": { "state": "live", "kind": "open_data_reference" },
+    "spread_check_match": { "state": "live", "kind": "report_dimension_comparison" },
     "report_lens_intent": { "state": "live", "kind": "email_intent_bridge" },
     "web_intent": { "state": "live", "kind": "email_intent_bridge" },
     "extension_match": { "state": "live", "kind": "browser_extension" },

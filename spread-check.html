@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Facet spread check for diamond report dimensions</title>
+  <meta name="description" content="Compare a diamond's exact grading-report length and width with a typical face-up size estimate for its shape and carat weight.">
+  <link rel="canonical" href="https://jacobiusmakes.github.io/facet-diamond-tool/spread-check.html">
+  <style>
+    :root{--ink:#091d2e;--blue:#173f70;--paper:#f8f5ef;--card:#fffdfa;--line:#d9d1c4;--muted:#6d675f;--green:#2e624b}
+    *{box-sizing:border-box}html{background:var(--paper);color:var(--ink);font:17px/1.6 Georgia,'Times New Roman',serif}body{margin:0}.wrap{width:min(1000px,calc(100% - 32px));margin:auto}a{color:var(--blue)}header{display:flex;justify-content:space-between;align-items:center;padding:24px 0;border-bottom:1px solid var(--line)}.brand{text-decoration:none;color:var(--ink);font-size:20px}.brand small,.back{font:10px/1.3 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+    main{display:grid;grid-template-columns:.92fr 1.08fr;gap:56px;padding:70px 0 76px;align-items:start}.eyebrow{font:11px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.18em;color:var(--green)}h1{font-size:clamp(42px,6vw,68px);font-weight:400;line-height:1;letter-spacing:-.035em;margin:18px 0 24px}.lede{font-size:19px;line-height:1.55;color:#263847}.boundary{padding:16px;border-left:3px solid var(--blue);background:#eef3f7;font-size:14px;color:#334553;margin-top:28px}
+    .tool{background:var(--card);border:1px solid var(--line);box-shadow:0 18px 48px rgba(9,29,46,.08);padding:28px}.tool h2{font-size:26px;font-weight:400;margin:0 0 6px}.sub{font-size:14px;color:var(--muted);margin:0 0 20px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:13px}label{display:block;font:600 10px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:0 0 7px}input,select{width:100%;padding:11px;border:1px solid var(--line);background:white;color:var(--ink);font:16px Georgia,serif}.result{border-top:1px solid var(--line);margin-top:22px;padding-top:22px}.result strong{display:block;font-size:38px;font-weight:400;line-height:1.1}.result p{margin:8px 0 0;color:#334553}.details{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin:18px 0}.details div{background:white;padding:13px}.details span{display:block;font:9px/1.2 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.09em;color:var(--muted)}.details b{font-weight:400}.actions{display:grid;grid-template-columns:1fr 1fr;gap:9px}.button,button{display:block;width:100%;border:1px solid var(--ink);border-radius:3px;padding:12px;background:var(--ink);color:white;text-align:center;text-decoration:none;cursor:pointer;font:600 10px/1.2 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.09em}button.secondary{background:transparent;color:var(--ink)}.status{min-height:18px;font:11px/1.5 Verdana,sans-serif;color:var(--green)}footer{border-top:1px solid var(--line);padding:28px 0 42px;font:11px/1.6 Verdana,sans-serif;color:var(--muted)}
+    @media(max-width:760px){main{grid-template-columns:1fr;gap:34px;padding-top:44px}.fields,.actions{grid-template-columns:1fr}header{align-items:flex-start}}
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Facet Spread Check","applicationCategory":"EducationalApplication","operatingSystem":"Any","description":"A local diamond grading-report dimension comparison against a typical face-up size model.","url":"https://jacobiusmakes.github.io/facet-diamond-tool/spread-check.html","author":{"@type":"Organization","name":"Stienhardt & Stones","url":"https://stienhardt.com/"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+  </script>
+</head>
+<body>
+  <div class="wrap">
+    <header><a class="brand" href="./">Facet <small>by Stienhardt</small></a><a class="back" href="report-lens.html">Read a report</a></header>
+    <main>
+      <section><p class="eyebrow">Grading-report utility</p><h1>Does this stone face up small or large for its weight?</h1><p class="lede">Enter the exact length and width printed on the grading report. Facet compares their plan-area proxy with the typical-proportion estimate for the same shape and carat weight.</p><p class="boundary">This is a dimensional comparison, not a cut grade. A larger face-up outline can come with tradeoffs in depth, light behavior, girdle, durability, or proportion. Review the entire report and the stone itself.</p></section>
+      <section class="tool" aria-label="Diamond spread check">
+        <h2>Compare report dimensions</h2><p class="sub">Nothing entered here is uploaded or stored.</p>
+        <div class="fields">
+          <div><label for="shape">Shape</label><select id="shape"><option value="round">Round</option><option value="oval" selected>Oval</option><option value="emerald">Emerald</option><option value="dutch_marquise">Dutch Marquise</option></select></div>
+          <div><label for="carat">Carat weight</label><input id="carat" type="number" min="0.1" max="20" step="0.01" value="1.50"></div>
+          <div><label for="length">Report length, mm</label><input id="length" type="number" min="0.1" max="40" step="0.01" value="9.50"></div>
+          <div><label for="width">Report width, mm</label><input id="width" type="number" min="0.1" max="40" step="0.01" value="6.40"></div>
+        </div>
+        <div class="result"><strong id="delta">+5.5%</strong><p id="interpretation">larger face-up plan-area proxy than the typical estimate</p></div>
+        <div class="details"><div><span>Reported</span><b id="reported">9.50 x 6.40 mm</b></div><div><span>Typical estimate</span><b id="expected">9.16 x 6.30 mm</b></div></div>
+        <div class="actions"><a class="button" id="match" href="#">Browse this shape</a><button class="secondary" id="copy" type="button">Copy spread check</button></div>
+        <p class="status" id="status" aria-live="polite"></p>
+      </section>
+    </main>
+    <footer>Facet uses a reproducible typical-proportion model. Exact grading-report dimensions take precedence. Facet is educational and is not an appraisal.</footer>
+  </div>
+  <script src="core.js"></script>
+  <script src="spread-check-core.js"></script>
+  <script src="spread-check.js"></script>
+</body>
+</html>

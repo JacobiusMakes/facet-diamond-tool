@@ -104,6 +104,14 @@
       "outputs": ["csv_download", "json_download", "approximate_length_mm", "approximate_width_mm"],
       "surface": "dataset_reference",
       "license": "CC-BY-4.0"
+    },
+    {
+      "id": "spread_check",
+      "name": "Facet Spread Check",
+      "url": "https://jacobiusmakes.github.io/facet-diamond-tool/spread-check.html",
+      "inputs": ["supported_shape", "carat_weight", "grading_report_length_mm", "grading_report_width_mm"],
+      "outputs": ["reported_vs_typical_plan_area_delta_pct", "reusable_comparison_summary"],
+      "surface": "spread_check_match"
     }
   ]
 }

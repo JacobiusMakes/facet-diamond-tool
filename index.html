@@ -75,7 +75,7 @@
   <div class="wrap">
     <header>
       <a class="brand" href="./"><span class="mark"><span>F</span></span><span><strong>Facet</strong><br><span class="by">By Stienhardt</span></span></a>
-      <nav><a href="report-lens.html">Report Lens</a><a href="stone-on-hand.html">Stone on Hand</a><a href="#how">How it works</a><a href="privacy.html">Privacy</a><a href="https://github.com/JacobiusMakes/facet-diamond-tool">Source</a></nav>
+      <nav><a href="report-lens.html">Report Lens</a><a href="stone-on-hand.html">Stone on Hand</a><a href="link-mint.html">Link Mint</a><a href="#how">How it works</a><a href="privacy.html">Privacy</a><a href="https://github.com/JacobiusMakes/facet-diamond-tool">Source</a></nav>
     </header>
 
     <main>
@@ -121,7 +121,7 @@
         <article><h3>Compare what the eye sees</h3><p>Two stones can share a carat weight and face up at different sizes. Facet makes the millimeter estimate visible so weight does not masquerade as size.</p></article>
         <article><h3>Carry one clean brief</h3><p>Copy the shape, weight, estimated dimensions, and verification checks into a note. Use the same brief when you compare listings or ask a jeweler a question.</p></article>
         <article><h3>Keep the seller out of the check</h3><p>Verify the report number on the grading lab's own site. Then match the girdle inscription and exact measurements to the stone itself.</p></article>
-        <article><h3>Put it inside a useful article</h3><p>Publishers can use the <a href="widget-demo.html">one-tag web component</a> or sandboxed iframe. Each placement gets a distinct public attribution slug.</p></article>
+        <article><h3>Put it inside a useful article</h3><p>Publishers can use the <a href="widget-demo.html">one-tag web component</a>, sandboxed iframe, or <a href="link-mint.html">scriptless Link Mint</a>. Each placement gets a distinct public attribution slug.</p></article>
       </section>
 
       <section class="utility">
@@ -162,6 +162,7 @@
       if (params.get('via') === 'print') document.getElementById('via-note').textContent = 'You came from the true-size print sheet. Enter any shape and carat weight to continue the comparison.';
       if (params.get('via') === 'sheet') document.getElementById('via-note').textContent = 'You came from your shortlist workbook. Confirm this candidate before comparing.';
       if (params.get('via') === 'share_target') document.getElementById('via-note').textContent = params.get('found') === '1' ? 'Facet found these details in the text you shared. Confirm them before comparing.' : 'Facet could not identify both fields in the shared text. Enter the shape and carat weight shown on the listing.';
+      if (params.get('via') === 'publisher') document.getElementById('via-note').textContent = 'This private size check was shared by a publisher. Confirm the shape and carat weight before comparing.';
       let activeIntentKey = '';
       let activeIntentCode = '';
       let surfaceOverride = '';
@@ -186,8 +187,11 @@
           print: 'print_chart_match',
           sheet: 'shortlist_sheet_match',
         };
-        const partner = (params.get('partner') || 'publisher').replace(/[^a-z0-9_-]/gi, '_').toLowerCase().slice(0, 48);
-        const surface = surfaceOverride || (params.get('via') === 'widget' ? 'web_component_' + partner : (surfaceByEntry[params.get('via')] || 'web_match'));
+        const partner = FacetCore.sanitizePublisher(params.get('partner'));
+        const publisherSurface = params.get('via') === 'widget'
+          ? 'web_component_' + partner
+          : (params.get('via') === 'publisher' ? 'publisher_link_' + partner : '');
+        const surface = surfaceOverride || publisherSurface || surfaceByEntry[params.get('via')] || 'web_match';
         match.href = trackedCollectionUrl({ shape: result.shape, carat: result.carat, content: surface });
         match.textContent = 'Browse ' + SHAPES[result.shape].label + ' diamonds';
         const nextIntentKey = result.shape + ':' + result.carat.toFixed(2) + ':' + surface;

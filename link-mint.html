@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Facet Link Mint: make a measurable diamond utility link</title>
+  <meta name="description" content="Create a publisher-specific Facet diamond size link for newsletters, documents, and platforms that remove scripts.">
+  <meta property="og:title" content="Facet Link Mint">
+  <meta property="og:description" content="One useful diamond size link. Publisher-level attribution. No reader IDs or tracking script.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jacobiusmakes.github.io/facet-diamond-tool/link-mint.html">
+  <link rel="icon" href="icons/icon128.png" type="image/png">
+  <style>
+    :root{--ink:#091d2e;--blue:#173f70;--paper:#f8f5ef;--card:#fffdfa;--line:#d9d1c4;--muted:#6d675f;--green:#2e624b}*{box-sizing:border-box}html{background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif}body{margin:0}.wrap{width:min(920px,calc(100% - 32px));margin:auto}a{color:var(--blue)}header{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid var(--line)}.brand{text-decoration:none;color:var(--ink);font-size:20px}.brand small{display:block;font:9px Verdana,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}nav a{font:10px Verdana,sans-serif;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;margin-left:20px}.hero{padding:68px 0 34px}.eyebrow{font:10px Verdana,sans-serif;text-transform:uppercase;letter-spacing:.16em;color:var(--green)}h1{font-size:clamp(44px,7vw,72px);font-weight:400;line-height:1;letter-spacing:-.035em;margin:17px 0 21px}.lede{font-size:20px;line-height:1.55;max-width:760px;color:#314453}.mint{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:20px 0 64px}.card{background:var(--card);border:1px solid var(--line);border-radius:7px;padding:26px}.card h2{font-size:25px;font-weight:400;margin:0 0 18px}label{display:block;font:600 9px Verdana,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:14px 0 6px}input,select{width:100%;padding:11px;border:1px solid var(--line);border-radius:3px;background:#fff;color:var(--ink);font:15px Georgia,serif}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.output{display:block;overflow-wrap:anywhere;padding:14px;border-radius:4px;background:#091d2e;color:#eef4f9;font:11px/1.6 Consolas,monospace;min-height:104px}.buttons{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}button,.button{display:block;width:100%;padding:11px;border:1px solid var(--ink);border-radius:3px;background:var(--ink);color:white;text-decoration:none;text-align:center;font:600 9px Verdana,sans-serif;text-transform:uppercase;letter-spacing:.1em;cursor:pointer}.button.secondary{background:transparent;color:var(--ink)}.note{font:12px/1.55 Verdana,sans-serif;color:var(--muted)}.feedback{min-height:18px;color:var(--green);font:11px Verdana,sans-serif}.contract{border-top:1px solid var(--line);padding:34px 0 52px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}.contract h3{font-size:19px;font-weight:400;margin:0 0 7px}.contract p{font-size:13px;line-height:1.6;color:#334553;margin:0}footer{border-top:1px solid var(--line);padding:26px 0 42px;font:10px/1.6 Verdana,sans-serif;color:var(--muted)}@media(max-width:720px){nav{display:none}.mint,.contract{grid-template-columns:1fr}.row{grid-template-columns:1fr}}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Facet Link Mint","applicationCategory":"BusinessApplication","operatingSystem":"Any","description":"A local link generator for scriptless publisher placement of the Facet diamond size utility.","url":"https://jacobiusmakes.github.io/facet-diamond-tool/link-mint.html","author":{"@type":"Organization","name":"Stienhardt & Stones","url":"https://stienhardt.com/"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body>
+  <div class="wrap">
+    <header><a class="brand" href="./">Facet<small>By Stienhardt</small></a><nav><a href="widget-demo.html">Embed kit</a><a href="privacy.html">Privacy</a><a href="https://github.com/JacobiusMakes/facet-diamond-tool">Source</a></nav></header>
+    <main>
+      <section class="hero"><p class="eyebrow">Facet Link Mint</p><h1>A useful link you can actually measure.</h1><p class="lede">Make a Facet size-check link for a newsletter, article, PDF, social bio, or any platform that removes scripts. Attribution identifies the publication, never the reader.</p></section>
+      <section class="mint">
+        <div class="card">
+          <h2>Set the starting check</h2>
+          <label for="publisher">Public publisher slug</label><input id="publisher" value="your-publication" maxlength="48" autocomplete="off">
+          <div class="row"><div><label for="shape">Starting shape</label><select id="shape"><option value="round">Round</option><option value="oval" selected>Oval</option><option value="emerald">Emerald</option><option value="dutch_marquise">Dutch Marquise</option></select></div><div><label for="carat">Starting carat</label><input id="carat" type="number" min="0.1" max="20" step="0.01" value="1.50"></div></div>
+          <p class="note">Use a publication or placement name that is already public. Do not put a person's name, email address, campaign recipient, or customer ID in the slug.</p>
+        </div>
+        <div class="card">
+          <h2>Copy the link</h2>
+          <output class="output" id="output"></output>
+          <div class="buttons"><button id="copy" type="button">Copy link</button><a class="button secondary" id="open" target="_blank" rel="noopener">Open test link</a></div>
+          <p class="feedback" id="feedback" aria-live="polite"></p>
+          <p class="note"><strong>No reader identifier.</strong> The link carries only the public publisher slug, supported shape, and carat weight. It sets no Facet cookie.</p>
+        </div>
+      </section>
+      <section class="contract"><article><h3>Works where scripts do not</h3><p>Use it in Substack, Medium, email, a PDF, a QR code, or a normal hyperlink.</p></article><article><h3>Intent survives</h3><p>If a reader later opens matching inventory, the visit records <code>publisher_link_&lt;slug&gt;</code>, shape, and carat.</p></article><article><h3>Private by design</h3><p>No source article URL, recipient, report number, listing, seller, or price enters the link.</p></article></section>
+    </main>
+    <footer>MIT licensed. Built by Stienhardt & Stones. Contact: <a href="mailto:jgalperin@stienhardt.com">jgalperin@stienhardt.com</a>.</footer>
+  </div>
+  <script src="core.js"></script>
+  <script>
+    (() => {
+      const publisher = document.getElementById('publisher');
+      const shape = document.getElementById('shape');
+      const carat = document.getElementById('carat');
+      const output = document.getElementById('output');
+      const open = document.getElementById('open');
+      const feedback = document.getElementById('feedback');
+      function render() {
+        const url = FacetCore.publisherLinkUrl({ publisher: publisher.value, shape: shape.value, carat: carat.value });
+        output.textContent = url;
+        open.href = url;
+      }
+      publisher.addEventListener('input', render);
+      shape.addEventListener('change', render);
+      carat.addEventListener('input', render);
+      document.getElementById('copy').addEventListener('click', async () => {
+        try { await navigator.clipboard.writeText(output.textContent); feedback.textContent = 'Publisher link copied.'; }
+        catch (error) { feedback.textContent = 'Copy was blocked. Select the link above.'; }
+      });
+      render();
+    })();
+  </script>
+</body>
+</html>

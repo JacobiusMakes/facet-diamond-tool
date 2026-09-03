@@ -151,6 +151,28 @@
     return ["github", "chrome", "edge", "firefox"].includes(clean) ? clean : "github";
   }
 
+  function sanitizePublisher(value) {
+    const clean = String(value || "")
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9_-]+/g, "_")
+      .replace(/^_+|_+$/g, "")
+      .slice(0, 48);
+    return clean || "publisher";
+  }
+
+  function publisherLinkUrl(options) {
+    const publisher = sanitizePublisher(options && options.publisher);
+    const shape = normalizeShape(options && options.shape) || "oval";
+    const carat = clampCarat(options && options.carat) || 1.5;
+    const url = new URL("https://jacobiusmakes.github.io/facet-diamond-tool/");
+    url.searchParams.set("via", "publisher");
+    url.searchParams.set("partner", publisher);
+    url.searchParams.set("shape", shape);
+    url.searchParams.set("carat", carat.toFixed(2));
+    return url.toString();
+  }
+
   function extensionSurface(channel, action) {
     const cleanAction = sanitizeSurface(action, "match");
     return "extension_" + extensionChannel(channel) + "_" + cleanAction;
@@ -234,6 +256,8 @@
     trackedCollectionUrl,
     comparisonBrief,
     sanitizeSurface,
+    sanitizePublisher,
+    publisherLinkUrl,
     extensionChannel,
     extensionSurface,
     trackedPageUrl,

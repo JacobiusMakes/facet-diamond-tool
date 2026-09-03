@@ -75,6 +75,7 @@
     "extension_firefox_credit": { "state": "release", "kind": "browser_extension_credit" },
     "extension_firefox_appointment": { "state": "release", "kind": "browser_extension_appointment" },
     "web_component_<publisher_slug>": { "state": "live", "kind": "publisher_component" },
+    "publisher_link_<publisher_slug>": { "state": "live", "kind": "scriptless_publisher_link" },
     "embed_<publisher_slug>": { "state": "live", "kind": "publisher_iframe" }
   }
 }

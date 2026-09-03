@@ -1,6 +1,6 @@
 importScripts("./core.js");
 
-const CACHE = "facet-v9";
+const CACHE = "facet-v10";
 const ASSETS = [
   "./",
   "./index.html",
@@ -15,6 +15,7 @@ const ASSETS = [
   "./stone-on-hand.html",
   "./hand-preview-core.js",
   "./widget-demo.html",
+  "./link-mint.html",
   "./facet-widget.js",
   "./privacy.html",
   "./embed.html",

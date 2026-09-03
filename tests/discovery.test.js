@@ -11,7 +11,7 @@ const reportLens = fs.readFileSync(path.join(root, "report-lens.html"), "utf8");
 assert.equal(tools.name, "Facet");
 assert.equal(tools.privacy.processing, "local_by_default");
 assert.deepEqual(tools.privacy.collected, []);
-assert.equal(tools.tools.length, 6);
+assert.equal(tools.tools.length, 7);
 for (const tool of tools.tools) {
   assert.match(tool.url, /^https:\/\//);
   assert.ok(tool.inputs.length > 0);

@@ -55,6 +55,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://jacobiusmakes.github.io/facet-diamond-tool/link-mint.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://jacobiusmakes.github.io/facet-diamond-tool/output/pdf/facet-diamond-size-chart.pdf</loc>
     <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>

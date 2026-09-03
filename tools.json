@@ -79,6 +79,14 @@
       "inputs": ["user_initiated_visible_page_text_or_manual_shape_and_carat"],
       "outputs": ["approximate_face_up_size", "comparison_brief", "lab_links"],
       "surface": "extension_<distribution_channel>_match"
+    },
+    {
+      "id": "publisher_link_mint",
+      "name": "Facet Link Mint",
+      "url": "https://jacobiusmakes.github.io/facet-diamond-tool/link-mint.html",
+      "inputs": ["public_publisher_slug", "supported_shape", "carat_weight"],
+      "outputs": ["scriptless_attributed_facet_link"],
+      "surface": "publisher_link_<publisher_slug>"
     }
   ]
 }

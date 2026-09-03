@@ -146,6 +146,28 @@
     return clean || fallback || "web_match";
   }
 
+  function extensionChannel(value) {
+    const clean = String(value || "").trim().toLowerCase();
+    return ["github", "chrome", "edge", "firefox"].includes(clean) ? clean : "github";
+  }
+
+  function extensionSurface(channel, action) {
+    const cleanAction = sanitizeSurface(action, "match");
+    return "extension_" + extensionChannel(channel) + "_" + cleanAction;
+  }
+
+  function trackedPageUrl(path, content) {
+    let url = new URL(String(path || "/"), "https://stienhardt.com");
+    if (url.origin !== "https://stienhardt.com") url = new URL("https://stienhardt.com/");
+    url.search = "";
+    url.hash = "";
+    url.searchParams.set("utm_source", "facet");
+    url.searchParams.set("utm_medium", "shopping_tool");
+    url.searchParams.set("utm_campaign", "diamond_size_check");
+    url.searchParams.set("utm_content", sanitizeSurface(content, "extension_github_credit"));
+    return url.toString();
+  }
+
   function intentCode(shape, carat, entropy) {
     const key = normalizeShape(shape);
     const weight = clampCarat(carat);
@@ -212,6 +234,9 @@
     trackedCollectionUrl,
     comparisonBrief,
     sanitizeSurface,
+    extensionChannel,
+    extensionSurface,
+    trackedPageUrl,
     intentCode,
     intentEmailUrl,
   });

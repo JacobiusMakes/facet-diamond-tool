@@ -1,4 +1,4 @@
-# Chrome Web Store listing: Facet
+# Browser extension store listing: Facet
 
 **Name:** Facet: diamond size and report check
 
@@ -33,3 +33,12 @@ hand-sets and finishes rings in the city, by appointment. We built this because 
 question comes up in every appointment: "how big is that, really."
 
 **Category:** Shopping. **Language:** English. **Privacy:** no user data collected.
+
+**Permission justification:** `activeTab` and `scripting` are used only after the shopper clicks
+"Scan this page." Facet reads visible listing text in that active tab to identify a carat weight
+and supported shape. It does not retain or transmit the text.
+
+**Store packages:** Use the package whose filename names the destination store. Each build has the
+same functionality but carries a distinct public distribution label in deliberate Stienhardt
+links and coded email requests. This makes store performance measurable without identifying the
+shopper or collecting their browsing history.

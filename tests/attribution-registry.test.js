@@ -14,6 +14,11 @@ assert.ok(registry.surfaces.report_lens_match);
 assert.ok(registry.surfaces.report_lens_intent);
 assert.ok(registry.surfaces.share_target_match);
 assert.ok(registry.surfaces.pasted_listing_match);
+for (const channel of ["github", "chrome", "edge", "firefox"]) {
+  for (const action of ["match", "intent", "credit", "appointment"]) {
+    assert.ok(registry.surfaces[`extension_${channel}_${action}`]);
+  }
+}
 assert.ok(registry.prohibitedAnalyticsFields.includes("report_number"));
 assert.ok(registry.prohibitedAnalyticsFields.includes("listing_url"));
 

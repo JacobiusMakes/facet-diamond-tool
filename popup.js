@@ -1,6 +1,8 @@
 // Facet popup. Same face-up anchors and method as diamond-mcp (facts.json, 2026-07-10).
-const { SHAPES, faceUpSize, parseListing, trackedCollectionUrl, comparisonBrief, intentCode, intentEmailUrl } = FacetCore;
+const { SHAPES, faceUpSize, parseListing, trackedCollectionUrl, trackedPageUrl, comparisonBrief, extensionChannel, extensionSurface, intentCode, intentEmailUrl } = FacetCore;
 const PX_PER_MM = 4; // the ruler's 10 mm box is 40px wide
+const distributionChannel = extensionChannel(globalThis.FacetExtensionConfig && globalThis.FacetExtensionConfig.channel);
+const distributionSurface = (action) => extensionSurface(distributionChannel, action);
 
 const ct = document.getElementById("ct");
 const shape = document.getElementById("shape");
@@ -9,6 +11,9 @@ const ctlbl = document.getElementById("ctlbl");
 const stone = document.getElementById("stone");
 const matchLink = document.getElementById("match");
 const askLink = document.getElementById("ask");
+const reportLensLink = document.getElementById("report-lens");
+const creditLink = document.getElementById("credit");
+const appointmentLink = document.getElementById("appointment");
 let activeIntentKey = "";
 let activeIntentCode = "";
 
@@ -23,15 +28,18 @@ function render() {
   stone.style.clipPath = result.shape === "dutch_marquise"
     ? "polygon(0 50%, 20% 0, 80% 0, 100% 50%, 80% 100%, 20% 100%)"
     : (result.shape === "emerald" ? "polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%)" : "none");
-  matchLink.href = trackedCollectionUrl({ shape: result.shape, carat: result.carat, content: "extension_match" });
+  matchLink.href = trackedCollectionUrl({ shape: result.shape, carat: result.carat, content: distributionSurface("match") });
   matchLink.textContent = "Browse " + SHAPES[result.shape].label + " diamonds";
   const nextIntentKey = result.shape + ":" + result.carat.toFixed(2);
   if (nextIntentKey !== activeIntentKey) {
     activeIntentKey = nextIntentKey;
     activeIntentCode = intentCode(result.shape, result.carat);
   }
-  askLink.href = intentEmailUrl({ shape: result.shape, carat: result.carat, surface: "extension_intent", code: activeIntentCode });
+  askLink.href = intentEmailUrl({ shape: result.shape, carat: result.carat, surface: distributionSurface("intent"), code: activeIntentCode });
 }
+reportLensLink.href = "https://jacobiusmakes.github.io/facet-diamond-tool/report-lens.html?via=" + encodeURIComponent("extension_" + distributionChannel);
+creditLink.href = trackedPageUrl("/", distributionSurface("credit"));
+appointmentLink.href = trackedPageUrl("/pages/book-an-appointment", distributionSurface("appointment"));
 ct.addEventListener("input", render);
 shape.addEventListener("change", render);
 render();

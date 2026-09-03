@@ -38,6 +38,12 @@ assert.match(brief, /grading report/);
 
 assert.equal(core.sanitizeSurface(" Report Lens Match! "), "report_lens_match");
 assert.equal(core.sanitizeSurface("", "fallback_surface"), "fallback_surface");
+assert.equal(core.extensionChannel("CHROME"), "chrome");
+assert.equal(core.extensionChannel("unknown"), "github");
+assert.equal(core.extensionSurface("firefox", "match"), "extension_firefox_match");
+const trackedPage = new URL(core.trackedPageUrl("/pages/book-an-appointment", "extension_edge_appointment"));
+assert.equal(trackedPage.pathname, "/pages/book-an-appointment");
+assert.equal(trackedPage.searchParams.get("utm_content"), "extension_edge_appointment");
 
 const code = core.intentCode("oval", 2.25, "K7R4Q");
 assert.equal(code, "FC-OV-225-K7R4Q");

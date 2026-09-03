@@ -1,7 +1,7 @@
-﻿{
+{
     "manifest_version":  3,
     "name":  "Facet: diamond size and report check",
-    "version":  "0.4.0",
+    "version":  "0.5.0",
     "description":  "Decode diamond size on any listing, create a comparison brief, and verify reports on the grading lab\u0027s own site.",
     "action":  {
                    "default_popup":  "popup.html",

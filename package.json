@@ -12,7 +12,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "node tests/core.test.js && node tests/report-lens.test.js && node tests/attribution-registry.test.js && node tests/same-stone.test.js && node tests/hand-preview.test.js && node tests/widget.test.js && node tests/wordpress.test.js && node tests/version-links.test.js"
+    "test": "node tests/core.test.js && node tests/report-lens.test.js && node tests/attribution-registry.test.js && node tests/same-stone.test.js && node tests/hand-preview.test.js && node tests/widget.test.js && node tests/extension-distribution.test.js && node tests/wordpress.test.js && node tests/version-links.test.js"
   },
   "repository": {
     "type": "git",

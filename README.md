@@ -95,11 +95,13 @@ Dutch Marquise 9.0x5.0 at 1 carat; cube-root scaling), same honesty note.
 
 ## Browser store submission
 
-- Upload the release ZIP at the Chrome Web Store developer dashboard, category Shopping,
+- Upload the matching store-specific release ZIP at the Chrome Web Store, Edge Add-ons, or
+  Firefox Add-ons dashboard, category Shopping,
   single purpose: "shows diamond face-up size and lab verification links". Privacy: no data
   collected. Justify `activeTab` + `scripting`: user-initiated page scan.
-- Store listing copy is in `LISTING.md`. Same package works for Edge Add-ons (free) and
-  Firefox (manifest v3 supported) with no code changes.
+- Store listing copy is in `LISTING.md`. Each package records Chrome, Edge, Firefox, or direct
+  GitHub distribution separately in its commerce links and email intent source. The Firefox
+  build includes the required add-on ID and an explicit `none` data-collection declaration.
 
 ## Test
 

@@ -1,5 +1,5 @@
 // Facet popup. Same face-up anchors and method as diamond-mcp (facts.json, 2026-07-10).
-const { SHAPES, faceUpSize, parseListing, trackedCollectionUrl, comparisonBrief } = FacetCore;
+const { SHAPES, faceUpSize, parseListing, trackedCollectionUrl, comparisonBrief, intentCode, intentEmailUrl } = FacetCore;
 const PX_PER_MM = 4; // the ruler's 10 mm box is 40px wide
 
 const ct = document.getElementById("ct");
@@ -8,6 +8,9 @@ const mm = document.getElementById("mm");
 const ctlbl = document.getElementById("ctlbl");
 const stone = document.getElementById("stone");
 const matchLink = document.getElementById("match");
+const askLink = document.getElementById("ask");
+let activeIntentKey = "";
+let activeIntentCode = "";
 
 function render() {
   const result = faceUpSize(shape.value, ct.value) || faceUpSize("oval", 1);
@@ -22,6 +25,12 @@ function render() {
     : (result.shape === "emerald" ? "polygon(10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%, 0 10%)" : "none");
   matchLink.href = trackedCollectionUrl({ shape: result.shape, carat: result.carat, content: "extension_match" });
   matchLink.textContent = "Browse " + SHAPES[result.shape].label + " diamonds";
+  const nextIntentKey = result.shape + ":" + result.carat.toFixed(2);
+  if (nextIntentKey !== activeIntentKey) {
+    activeIntentKey = nextIntentKey;
+    activeIntentCode = intentCode(result.shape, result.carat);
+  }
+  askLink.href = intentEmailUrl({ shape: result.shape, carat: result.carat, surface: "extension_intent", code: activeIntentCode });
 }
 ct.addEventListener("input", render);
 shape.addEventListener("change", render);

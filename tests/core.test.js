@@ -36,4 +36,24 @@ assert.match(brief, /Round/);
 assert.match(brief, /2\.00 ct/);
 assert.match(brief, /grading report/);
 
+assert.equal(core.sanitizeSurface(" Report Lens Match! "), "report_lens_match");
+assert.equal(core.sanitizeSurface("", "fallback_surface"), "fallback_surface");
+
+const code = core.intentCode("oval", 2.25, "K7R4Q");
+assert.equal(code, "FC-OV-225-K7R4Q");
+
+const email = new URL(core.intentEmailUrl({
+  shape: "oval",
+  carat: 2.25,
+  surface: "report_lens_match",
+  code,
+  measurements: { length: 11.13, width: 7.42 },
+  details: "Color: F; clarity: VS1",
+}));
+assert.equal(email.protocol, "mailto:");
+assert.equal(email.pathname, "jgalperin@stienhardt.com");
+assert.match(email.searchParams.get("subject"), /FC-OV-225-K7R4Q/);
+assert.match(email.searchParams.get("body"), /11\.13 x 7\.42 mm/);
+assert.match(email.searchParams.get("body"), /Source: report_lens_match/);
+
 console.log("Facet core tests passed");

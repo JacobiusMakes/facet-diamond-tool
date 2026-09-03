@@ -136,6 +136,72 @@
     ].join("\n");
   }
 
+  function sanitizeSurface(value, fallback) {
+    const clean = String(value || "")
+      .trim()
+      .toLowerCase()
+      .replace(/[^a-z0-9_-]+/g, "_")
+      .replace(/^_+|_+$/g, "")
+      .slice(0, 64);
+    return clean || fallback || "web_match";
+  }
+
+  function intentCode(shape, carat, entropy) {
+    const key = normalizeShape(shape);
+    const weight = clampCarat(carat);
+    if (!key || weight === null) return null;
+    const prefixes = {
+      round: "RD",
+      oval: "OV",
+      emerald: "EM",
+      dutch_marquise: "DM",
+    };
+    const alphabet = "23456789ABCDEFGHJKMNPQRSTUVWXYZ";
+    let seed = String(entropy || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
+    if (!seed) {
+      const bytes = new Uint8Array(5);
+      if (typeof crypto !== "undefined" && crypto.getRandomValues) {
+        crypto.getRandomValues(bytes);
+      } else {
+        for (let index = 0; index < bytes.length; index += 1) bytes[index] = Math.floor(Math.random() * 256);
+      }
+      seed = Array.from(bytes, (byte) => alphabet[byte % alphabet.length]).join("");
+    }
+    seed = seed.slice(0, 5).padEnd(5, "X");
+    const centicarats = String(Math.round(weight * 100)).padStart(3, "0");
+    return "FC-" + prefixes[key] + "-" + centicarats + "-" + seed;
+  }
+
+  function intentEmailUrl(options) {
+    const shape = normalizeShape(options && options.shape);
+    const carat = clampCarat(options && options.carat);
+    if (!shape || carat === null) return null;
+    const surface = sanitizeSurface(options && options.surface, "web_match");
+    const code = String((options && options.code) || intentCode(shape, carat)).replace(/[^A-Z0-9-]/gi, "").slice(0, 32);
+    const result = faceUpSize(shape, carat);
+    const suppliedMeasurements = options && options.measurements;
+    const measurements = suppliedMeasurements && Number.isFinite(Number(suppliedMeasurements.length)) && Number.isFinite(Number(suppliedMeasurements.width))
+      ? Number(suppliedMeasurements.length).toFixed(2) + " x " + Number(suppliedMeasurements.width).toFixed(2) + " mm (grading report)"
+      : result.lengthMm.toFixed(1) + " x " + result.widthMm.toFixed(1) + " mm (typical estimate)";
+    const details = options && options.details ? String(options.details).slice(0, 1200) : "";
+    const body = [
+      "Hi Jacob,",
+      "",
+      "I used Facet and would like help finding or evaluating a diamond with these specifications:",
+      "",
+      "Intent code: " + code,
+      "Source: " + surface,
+      "Shape: " + SHAPES[shape].label,
+      "Carat weight: " + carat.toFixed(2) + " ct",
+      "Measurements: " + measurements,
+      details ? "Other report details: " + details : "",
+      "",
+      "Please tell me what else you need. I understand Facet is educational and not an appraisal.",
+    ].filter(Boolean).join("\n");
+    const subject = "Facet diamond request " + code;
+    return "mailto:jgalperin@stienhardt.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  }
+
   const api = Object.freeze({
     ANCHORS,
     SHAPES,
@@ -145,6 +211,9 @@
     parseListing,
     trackedCollectionUrl,
     comparisonBrief,
+    sanitizeSurface,
+    intentCode,
+    intentEmailUrl,
   });
 
   root.FacetCore = api;

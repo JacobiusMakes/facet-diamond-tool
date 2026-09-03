@@ -4,7 +4,7 @@ A quiet diamond-shopping companion. On any listing, anywhere: how big the stone 
 millimeters (the number carat weight hides), a one-click scan of the page for the carat and
 shape, a reusable comparison brief, and the grading labs' own verification pages.
 
-Facet is usable now in nine forms:
+Facet is usable now in eleven forms:
 
 1. The public calculator at <https://jacobiusmakes.github.io/facet-diamond-tool/>.
 2. An installable web app offered directly by the calculator on supported browsers.
@@ -15,6 +15,8 @@ Facet is usable now in nine forms:
 7. Same Stone, a local-only duplicate listing detector for report and measurement matches across sellers.
 8. Stone on Hand, a credit-card-calibrated diamond footprint preview that keeps the hand photo on-device.
 9. A drop-in web component that publishers and developers can install with one script tag.
+10. Report Lens, a local-only text-layer PDF reader for IGI, GIA, and GCAL grading reports.
+11. An operating-system share target that reduces explicitly shared listing text to shape and carat before the Facet page opens.
 
 The extension never names or targets a competitor, never sends page text, and never tracks in
 the background. It runs only when clicked (`activeTab`) and stores nothing. The bookmarklet sends
@@ -41,6 +43,19 @@ report number, or notes.
 A compact iframe and a drop-in web component are documented in [EMBED.md](EMBED.md) for publishers
 that want to place the tool in an article. The component is also available from jsDelivr using the
 repository release tag. Shared briefs and each publisher slug remain separate in `utm_content`.
+
+Report Lens reads a text-layer PDF with a bundled copy of Mozilla PDF.js. The PDF, extracted text,
+and report number stay in the browser. The inventory route carries only `report_lens_match`, shape,
+and carat. A report-based request to Jacob uses `report_lens_intent` plus a random `FC-...` code in
+the shopper's email. The report number is deliberately excluded from the prefilled message.
+
+On supported installed-PWA platforms, Facet is registered as a POST share target. The service
+worker extracts the shape and carat from explicitly shared text and strips the listing URL before
+redirecting to the calculator. Inventory clicks use `share_target_match`. The paste fallback uses
+`pasted_listing_match` and performs the same extraction in the page.
+
+The full source registry, permitted intent fields, prohibited analytics fields, and permanent
+surface names are in [attribution-registry.json](attribution-registry.json).
 
 ## Publisher web component
 
@@ -96,3 +111,6 @@ and Dutch Marquise. More shapes belong only after their anchors are reviewed.
 New and materially updated public pages are submitted through IndexNow using the repository's
 path-scoped verification key. IndexNow acceptance means the update was received, not that a search
 engine promises to crawl or rank it.
+
+PDF extraction uses Mozilla PDF.js 6.3.289 under the Apache License 2.0. The vendored license is at
+`vendor/pdfjs/LICENSE.pdfjs`.

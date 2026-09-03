@@ -19,6 +19,11 @@ GCAL), with the three checks that matter: confirm the report number on the lab's
 match the girdle inscription, match the measurements to the stone in front of you. Never
 trust a screenshot or a seller's PDF.
 
+For a text-layer PDF, the extension also opens Report Lens, a local-only report reader that
+extracts the factual fields into one clean view. The file and report number stay in the browser.
+If the shopper wants human help, Facet can prepare an email request with the selected shape,
+carat, and a random request code. Nothing is sent unless the shopper sends that email.
+
 The size math uses vetted anchors for typical proportions (a 1 carat round is about 6.5 mm)
 scaled by the cube root of weight. It is education, not appraisal: always check the exact
 millimeters on the stone's own report.

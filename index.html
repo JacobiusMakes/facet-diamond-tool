@@ -38,7 +38,8 @@
     .tool .sub{font-size:14px;color:var(--muted);margin:0 0 20px}
     label{display:block;font:600 10px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:7px}
     .fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    input,select{width:100%;font:16px Georgia,serif;color:var(--ink);background:white;border:1px solid var(--line);border-radius:3px;padding:12px}
+    input,select,textarea{width:100%;font:16px Georgia,serif;color:var(--ink);background:white;border:1px solid var(--line);border-radius:3px;padding:12px}
+    textarea{min-height:92px;resize:vertical;font-size:13px;line-height:1.45}
     .answer{border-top:1px solid var(--line);margin-top:22px;padding-top:22px;display:grid;grid-template-columns:1fr 150px;gap:14px;align-items:center}
     .answer b{font-size:30px;font-weight:400;display:block}
     .answer small{font:11px/1.5 Verdana,sans-serif;color:var(--muted)}
@@ -47,12 +48,13 @@
     .ruler{position:absolute;bottom:3px;left:3px;width:70px;height:10px;border-left:1px solid var(--muted);border-right:1px solid var(--muted);border-bottom:1px solid var(--muted)}
     .ruler:after{content:'10 mm';position:absolute;left:79px;top:-4px;font:10px Verdana,sans-serif;color:var(--muted);white-space:nowrap}
     .note{font-size:12px;line-height:1.5;color:var(--muted);margin:13px 0 0}
-    .actions{display:grid;grid-template-columns:1.15fr .85fr;gap:10px;margin-top:18px}
+    .actions{display:grid;grid-template-columns:1.15fr .85fr;gap:10px;margin-top:18px}.actions #intent{grid-column:1/-1}
     button,.button{display:block;width:100%;border:1px solid var(--ink);border-radius:3px;padding:12px 14px;background:var(--ink);color:white;text-align:center;text-decoration:none;cursor:pointer;font:600 10px/1.2 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.1em}
     button.secondary,.button.secondary{color:var(--ink);background:transparent}
     .feedback{min-height:18px;margin:8px 0 0;font:11px/1.4 Verdana,sans-serif;color:var(--green)}
     .bookmark{margin:18px 0 0;padding:14px;border:1px dashed var(--blue2);background:#f5f8fb;font-size:13px;line-height:1.45}
     .bookmark .drag{display:inline-block;margin:8px 6px 0 0;background:white;border:1px solid var(--blue);border-radius:20px;padding:7px 12px;text-decoration:none;font:600 10px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.08em}
+    .catcher{margin-top:14px;border-top:1px solid var(--line);padding-top:13px}.catcher summary{cursor:pointer;font:600 10px/1.3 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--blue)}.catcher label{margin-top:13px}.catcher button{margin-top:8px}
     .sections{border-top:1px solid var(--line);padding:58px 0 74px;display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
     .sections h3{font-size:20px;font-weight:400;margin:0 0 10px}
     .sections p{font-size:15px;line-height:1.6;color:#334553;margin:0}
@@ -73,7 +75,7 @@
   <div class="wrap">
     <header>
       <a class="brand" href="./"><span class="mark"><span>F</span></span><span><strong>Facet</strong><br><span class="by">By Stienhardt</span></span></a>
-      <nav><a href="stone-on-hand.html">Stone on Hand</a><a href="#how">How it works</a><a href="privacy.html">Privacy</a><a href="https://github.com/JacobiusMakes/facet-diamond-tool">Source</a></nav>
+      <nav><a href="report-lens.html">Report Lens</a><a href="stone-on-hand.html">Stone on Hand</a><a href="#how">How it works</a><a href="privacy.html">Privacy</a><a href="https://github.com/JacobiusMakes/facet-diamond-tool">Source</a></nav>
     </header>
 
     <main>
@@ -100,11 +102,18 @@
           <div class="actions">
             <a id="match" class="button" href="#">Browse this shape</a>
             <button class="secondary" id="copy" type="button">Copy comparison brief</button>
+            <a id="intent" class="button secondary" href="#">Ask Jacob about this stone</a>
           </div>
           <button class="secondary" id="share" type="button">Share this size check</button>
           <button class="secondary" id="install" type="button" hidden>Install Facet on this device</button>
           <p class="feedback" id="feedback" aria-live="polite"></p>
-          <div class="bookmark"><strong>Use Facet while you shop:</strong> drag this button to your bookmarks bar, then click it on a diamond listing. The scan runs in your browser and sends Facet only the shape and carat it finds.<br><a class="drag" id="bookmarklet" href="#">Facet this listing</a> <a href="same-stone.html">Detect duplicate listings</a> <a href="https://github.com/JacobiusMakes/facet-diamond-tool/releases/latest">Get the browser extension</a> <a href="output/pdf/facet-diamond-size-chart.pdf">Print the true-size comparison sheet</a> <a href="outputs/facet-acquisition-2026-09-02/facet-diamond-shortlist.xlsx">Download the diamond shortlist workbook</a></div>
+          <details class="catcher">
+            <summary>Paste listing text privately</summary>
+            <label for="listing-text">Text from a diamond listing</label>
+            <textarea id="listing-text" placeholder="Paste the listing title or specifications"></textarea>
+            <button class="secondary" id="decode-text" type="button">Find shape and carat</button>
+          </details>
+          <div class="bookmark"><strong>Use Facet while you shop:</strong> drag this button to your bookmarks bar, then click it on a diamond listing. The scan runs in your browser and sends Facet only the shape and carat it finds.<br><a class="drag" id="bookmarklet" href="#">Facet this listing</a> <a href="report-lens.html">Read a grading report</a> <a href="same-stone.html">Detect duplicate listings</a> <a href="https://github.com/JacobiusMakes/facet-diamond-tool/releases/latest">Get the browser extension</a> <a href="output/pdf/facet-diamond-size-chart.pdf">Print the true-size comparison sheet</a> <a href="outputs/facet-acquisition-2026-09-02/facet-diamond-shortlist.xlsx">Download the diamond shortlist workbook</a></div>
         </div>
       </section>
 
@@ -135,13 +144,14 @@
   <script src="core.js"></script>
   <script>
     (() => {
-      const { SHAPES, faceUpSize, trackedCollectionUrl, comparisonBrief, normalizeShape } = FacetCore;
+      const { SHAPES, faceUpSize, trackedCollectionUrl, comparisonBrief, normalizeShape, sanitizeSurface, intentCode, intentEmailUrl } = FacetCore;
       const carat = document.getElementById('carat');
       const shape = document.getElementById('shape');
       const measurement = document.getElementById('measurement');
       const weightLabel = document.getElementById('weight-label');
       const stone = document.getElementById('stone');
       const match = document.getElementById('match');
+      const intent = document.getElementById('intent');
       const feedback = document.getElementById('feedback');
       const params = new URLSearchParams(location.search);
       const startingShape = normalizeShape(params.get('shape'));
@@ -151,6 +161,10 @@
       if (params.get('via') === 'bookmarklet') document.getElementById('via-note').textContent = 'Facet found these details on the listing. Confirm them before comparing.';
       if (params.get('via') === 'print') document.getElementById('via-note').textContent = 'You came from the true-size print sheet. Enter any shape and carat weight to continue the comparison.';
       if (params.get('via') === 'sheet') document.getElementById('via-note').textContent = 'You came from your shortlist workbook. Confirm this candidate before comparing.';
+      if (params.get('via') === 'share_target') document.getElementById('via-note').textContent = params.get('found') === '1' ? 'Facet found these details in the text you shared. Confirm them before comparing.' : 'Facet could not identify both fields in the shared text. Enter the shape and carat weight shown on the listing.';
+      let activeIntentKey = '';
+      let activeIntentCode = '';
+      let surfaceOverride = '';
 
       function render() {
         const result = faceUpSize(shape.value, carat.value) || faceUpSize('oval', 1.5);
@@ -167,13 +181,21 @@
           bookmarklet: 'bookmarklet_match',
           pwa: 'pwa_match',
           share: 'shared_brief_match',
+          share_target: 'share_target_match',
+          pwa_shortcut: 'pwa_shortcut_match',
           print: 'print_chart_match',
           sheet: 'shortlist_sheet_match',
         };
         const partner = (params.get('partner') || 'publisher').replace(/[^a-z0-9_-]/gi, '_').toLowerCase().slice(0, 48);
-        const surface = params.get('via') === 'widget' ? 'web_component_' + partner : (surfaceByEntry[params.get('via')] || 'web_match');
+        const surface = surfaceOverride || (params.get('via') === 'widget' ? 'web_component_' + partner : (surfaceByEntry[params.get('via')] || 'web_match'));
         match.href = trackedCollectionUrl({ shape: result.shape, carat: result.carat, content: surface });
         match.textContent = 'Browse ' + SHAPES[result.shape].label + ' diamonds';
+        const nextIntentKey = result.shape + ':' + result.carat.toFixed(2) + ':' + surface;
+        if (nextIntentKey !== activeIntentKey) {
+          activeIntentKey = nextIntentKey;
+          activeIntentCode = intentCode(result.shape, result.carat);
+        }
+        intent.href = intentEmailUrl({ shape: result.shape, carat: result.carat, surface: sanitizeSurface(surface), code: activeIntentCode });
       }
       carat.addEventListener('input', render);
       shape.addEventListener('change', render);
@@ -207,6 +229,19 @@
         } catch (error) {
           if (error && error.name !== 'AbortError') feedback.textContent = 'Sharing was blocked by the browser.';
         }
+      });
+
+      document.getElementById('decode-text').addEventListener('click', () => {
+        const parsed = FacetCore.parseListing(document.getElementById('listing-text').value);
+        if (!parsed || !parsed.shape) {
+          feedback.textContent = 'Facet could not find both a supported shape and carat weight. Enter them above.';
+          return;
+        }
+        shape.value = parsed.shape;
+        carat.value = parsed.carat.toFixed(2);
+        surfaceOverride = 'pasted_listing_match';
+        render();
+        feedback.textContent = 'Shape and carat found locally. Confirm them against the listing.';
       });
 
       const bookmarkletCode = "javascript:(()=>{const t=(document.body&&document.body.innerText||'').slice(0,250000),r=/(\\d{1,2}(?:\\.\\d{1,3})?)\\s*(?:ct\\b|cts\\b|carat\\b|carats\\b|-carat\\b)/gi,a=[['dutch_marquise',['hexagonal modified brilliant','dutch marquise','elongated hexagon']],['emerald',['emerald cut','emerald']],['oval',['oval brilliant','oval']],['round',['round brilliant','round']]];let m=null,s=null,c;while(c=r.exec(t)){if(!m)m=c;const n=t.slice(Math.max(0,c.index-180),c.index+180).toLowerCase(),z=a.find(e=>e[1].some(x=>n.includes(x)));if(z){m=c;s=z;break}}const u=new URL('https://jacobiusmakes.github.io/facet-diamond-tool/');if(m)u.searchParams.set('carat',m[1]);if(s)u.searchParams.set('shape',s[0]);u.searchParams.set('via','bookmarklet');window.open(u.toString(),'_blank','noopener')})()";

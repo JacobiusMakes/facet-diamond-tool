@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Report Lens: read a diamond grading report privately</title>
+  <meta name="description" content="Extract the factual fields from a diamond grading report in your browser, verify it with the grading lab, and carry a clean request to a jeweler.">
+  <meta name="theme-color" content="#091d2e">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon128.png" type="image/png">
+  <style>
+    :root{--ink:#091d2e;--blue:#173f70;--blue2:#6f86a8;--paper:#f8f5ef;--card:#fffdfa;--line:#d9d1c4;--muted:#6d675f;--green:#2e624b;--warn:#8a5a18}
+    *{box-sizing:border-box}html{background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif}body{margin:0}a{color:var(--blue)}
+    .wrap{width:min(1040px,calc(100% - 32px));margin:auto}header{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}.mark{width:30px;height:30px;display:grid;place-items:center;border:1px solid var(--blue2);transform:rotate(45deg);background:#fff}.mark span{transform:rotate(-45deg);font:11px Verdana,sans-serif}.brand strong{font-size:20px;font-weight:400}.by{font:10px/1.3 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+    nav a{font:11px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.09em;text-decoration:none;margin-left:20px}.hero{padding:62px 0 34px;max-width:790px}.eyebrow{font:11px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.18em;color:var(--green);margin:0 0 18px}h1{font-size:clamp(42px,6vw,72px);font-weight:400;line-height:1;letter-spacing:-.035em;margin:0 0 20px}.lede{font-size:19px;line-height:1.55;color:#263847;margin:0}.privacy{font:12px/1.5 Verdana,sans-serif;color:var(--green);margin-top:18px}
+    .workspace{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;padding:20px 0 70px}.card{background:var(--card);border:1px solid var(--line);border-radius:7px;padding:25px;box-shadow:0 14px 42px rgba(9,29,46,.06)}.card h2{font-size:25px;font-weight:400;margin:0 0 8px}.sub{font:13px/1.55 Verdana,sans-serif;color:var(--muted);margin:0 0 18px}
+    .drop{position:relative;border:1px dashed var(--blue2);background:#f5f8fb;border-radius:5px;padding:26px 18px;text-align:center;cursor:pointer}.drop strong{display:block;font-size:18px;font-weight:400;margin-bottom:7px}.drop span{font:11px/1.45 Verdana,sans-serif;color:var(--muted)}.drop input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+    .or{font:10px/1 Verdana,sans-serif;text-align:center;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin:18px 0}label{display:block;font:600 10px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:7px}textarea{width:100%;min-height:145px;resize:vertical;border:1px solid var(--line);border-radius:3px;background:white;color:var(--ink);padding:12px;font:14px/1.5 Georgia,serif}
+    button,.button{display:block;width:100%;border:1px solid var(--ink);border-radius:3px;padding:12px 14px;background:var(--ink);color:white;text-align:center;text-decoration:none;cursor:pointer;font:600 10px/1.2 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.1em}.secondary{background:transparent;color:var(--ink)}.actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}.status{min-height:34px;margin:13px 0 0;font:12px/1.45 Verdana,sans-serif;color:var(--green)}
+    .empty{border:1px dashed var(--line);border-radius:5px;padding:44px 22px;text-align:center;color:var(--muted);font-size:16px;line-height:1.6}.result[hidden],.empty[hidden]{display:none}.result-top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;padding-bottom:18px;border-bottom:1px solid var(--line)}.result-top h2{margin:0}.quality{font:600 9px/1 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.1em;padding:7px 9px;border-radius:20px;background:#e7f1eb;color:var(--green)}.quality.partial{background:#f7edd9;color:var(--warn)}
+    .facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin:18px 0}.fact{background:white;padding:13px}.fact span{display:block;font:9px/1.2 Verdana,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:5px}.fact b{font-size:17px;font-weight:400}.explain{font-size:14px;line-height:1.6;color:#334553}.explain strong{color:var(--ink)}.notice{font:11px/1.5 Verdana,sans-serif;color:var(--muted);background:#f5f1ea;border-left:3px solid var(--line);padding:12px;margin:18px 0}.result-actions{display:grid;gap:9px}.result-actions .button[hidden]{display:none}
+    footer{padding:28px 0 42px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:24px;font:11px/1.6 Verdana,sans-serif;color:var(--muted)}footer p{margin:0;max-width:720px}
+    @media(max-width:760px){nav{display:none}.workspace{grid-template-columns:1fr}.hero{padding-top:46px}.actions{grid-template-columns:1fr}.facts{grid-template-columns:1fr}.result-top,footer{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="./"><span class="mark"><span>F</span></span><span><strong>Facet</strong><br><span class="by">By Stienhardt</span></span></a>
+      <nav><a href="./">Size check</a><a href="same-stone.html">Same Stone</a><a href="privacy.html">Privacy</a></nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Report Lens</p>
+        <h1>Read the report before you judge the stone.</h1>
+        <p class="lede">Open a text-layer diamond grading report and pull the factual fields into one clean view. Then verify the report on the grading lab's own site.</p>
+        <p class="privacy">Your report is processed on this device. The file and report number are not uploaded, stored, or included in Stienhardt links.</p>
+      </section>
+
+      <section class="workspace">
+        <div class="card">
+          <h2>Open a report</h2>
+          <p class="sub">Works with text-layer PDF reports from IGI, GIA, and GCAL. For a scanned image, paste any text your phone can copy from the image.</p>
+          <div class="drop" id="drop-zone">
+            <strong>Choose or drop a PDF</strong>
+            <span>PDF only, up to 15 MB. Processing stays in this browser.</span>
+            <input id="report-file" type="file" accept="application/pdf,.pdf">
+          </div>
+          <p class="or">or paste report text</p>
+          <label for="report-text">Report text</label>
+          <textarea id="report-text" placeholder="Paste the text copied from a grading report"></textarea>
+          <div class="actions">
+            <button id="analyze-text" type="button">Read pasted text</button>
+            <button id="clear" class="secondary" type="button">Clear report</button>
+          </div>
+          <p class="status" id="status" aria-live="polite"></p>
+        </div>
+
+        <div class="card">
+          <div class="empty" id="empty">The report facts will appear here. Facet extracts fields, it does not authenticate the document or grade the diamond.</div>
+          <div class="result" id="result" hidden>
+            <div class="result-top"><div><p class="eyebrow">Extracted facts</p><h2 id="result-title">Diamond report</h2></div><span class="quality" id="quality">Strong extraction</span></div>
+            <div class="facts" id="facts"></div>
+            <p class="explain" id="explanation"></p>
+            <p class="notice">Extraction is a convenience, not verification. Confirm every field against the original report, then use the lab's official report-check service and match the girdle inscription to the stone.</p>
+            <div class="result-actions">
+              <a class="button secondary" id="verify" target="_blank" rel="noopener" hidden>Verify on the lab's site</a>
+              <a class="button" id="browse" target="_blank" rel="noopener" hidden>Browse matching diamonds</a>
+              <a class="button secondary" id="ask" hidden>Ask Jacob about these specifications</a>
+              <button class="secondary" id="copy" type="button">Copy clean report brief</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Report Lens is an open-source education tool made by Stienhardt & Stones, a New York City jeweler that sources certified Lab Grown Diamonds and hand-sets and finishes rings in NYC. Report Lens is not an appraisal and does not independently verify a grading report.</p>
+      <p><a href="privacy.html">Privacy</a><br><a href="mailto:jgalperin@stienhardt.com">Contact</a></p>
+    </footer>
+  </div>
+  <script src="core.js"></script>
+  <script src="report-lens-core.js"></script>
+  <script type="module" src="report-lens.js"></script>
+</body>
+</html>

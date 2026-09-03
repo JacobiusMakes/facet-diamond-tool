@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Facet Stone Card: share a diamond size check</title>
+  <meta name="description" content="Make a private, shareable diamond size card with an attributed Facet return QR. The image is generated on your device.">
+  <meta property="og:title" content="Facet Stone Card">
+  <meta property="og:description" content="Turn a diamond shape and carat weight into a clean size card for a partner or group chat.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jacobiusmakes.github.io/facet-diamond-tool/stone-card.html">
+  <link rel="icon" href="icons/icon128.png" type="image/png">
+  <style>
+    :root{--ink:#091d2e;--blue:#173f70;--paper:#f8f5ef;--card:#fffdfa;--line:#d9d1c4;--muted:#6d675f;--green:#2e624b}*{box-sizing:border-box}html{background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif}body{margin:0}.wrap{width:min(1060px,calc(100% - 32px));margin:auto}a{color:var(--blue)}header{display:flex;align-items:center;justify-content:space-between;padding:24px 0;border-bottom:1px solid var(--line)}.brand{text-decoration:none;color:var(--ink);font-size:20px}.brand small{display:block;font:9px Verdana,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}nav a{font:10px Verdana,sans-serif;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;margin-left:20px}.hero{padding:62px 0 34px}.eyebrow{font:10px Verdana,sans-serif;text-transform:uppercase;letter-spacing:.16em;color:var(--green)}h1{font-size:clamp(44px,6vw,72px);font-weight:400;line-height:1;letter-spacing:-.035em;margin:17px 0 21px}.lede{font-size:20px;line-height:1.55;max-width:760px;color:#314453}.workspace{display:grid;grid-template-columns:340px 1fr;gap:30px;padding:18px 0 64px;align-items:start}.panel{background:var(--card);border:1px solid var(--line);border-radius:7px;padding:24px;position:sticky;top:18px}.panel h2{font-size:24px;font-weight:400;margin:0 0 16px}label{display:block;font:600 9px Verdana,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:14px 0 6px}input,select{width:100%;padding:11px;border:1px solid var(--line);border-radius:3px;background:#fff;color:var(--ink);font:15px Georgia,serif}.buttons{display:grid;gap:9px;margin-top:18px}button,.button{display:block;width:100%;padding:12px;border:1px solid var(--ink);border-radius:3px;background:var(--ink);color:white;text-decoration:none;text-align:center;font:600 9px Verdana,sans-serif;text-transform:uppercase;letter-spacing:.1em;cursor:pointer}button.secondary{background:transparent;color:var(--ink)}.feedback{min-height:18px;color:var(--green);font:11px/1.4 Verdana,sans-serif}.note{font:12px/1.55 Verdana,sans-serif;color:var(--muted)}.return{overflow-wrap:anywhere;font:10px/1.45 Consolas,monospace}.preview{display:grid;place-items:center}.preview canvas{display:block;width:min(100%,600px);height:auto;background:#fff;border:1px solid var(--line);box-shadow:0 20px 48px rgba(9,29,46,.08)}footer{border-top:1px solid var(--line);padding:27px 0 43px;font:10px/1.6 Verdana,sans-serif;color:var(--muted)}@media(max-width:780px){nav{display:none}.workspace{grid-template-columns:1fr}.panel{position:static}}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Facet Stone Card","applicationCategory":"LifestyleApplication","operatingSystem":"Any","description":"A local diamond size card and return QR generator.","url":"https://jacobiusmakes.github.io/facet-diamond-tool/stone-card.html","author":{"@type":"Organization","name":"Stienhardt & Stones","url":"https://stienhardt.com/"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+</head>
+<body>
+  <div class="wrap">
+    <header><a class="brand" href="./">Facet<small>By Stienhardt</small></a><nav><a href="./">Size check</a><a href="report-lens.html">Report Lens</a><a href="privacy.html">Privacy</a><a href="https://github.com/JacobiusMakes/facet-diamond-tool">Source</a></nav></header>
+    <main>
+      <section class="hero"><p class="eyebrow">Facet Stone Card</p><h1>Send the size, not the sales pitch.</h1><p class="lede">Make a clean diamond size card for a partner, family member, or group chat. The PNG and QR are generated on this device.</p></section>
+      <section class="workspace">
+        <div class="panel">
+          <h2>Choose the stone</h2>
+          <label for="shape">Shape</label><select id="shape"><option value="round">Round</option><option value="oval" selected>Oval</option><option value="emerald">Emerald</option><option value="dutch_marquise">Dutch Marquise</option></select>
+          <label for="carat">Carat weight</label><input id="carat" type="number" min="0.1" max="20" step="0.01" value="1.50">
+          <div class="buttons"><button id="download" type="button">Download PNG</button><button class="secondary" id="share" type="button">Share card</button></div>
+          <p class="feedback" id="feedback" aria-live="polite"></p>
+          <p class="note">The card contains shape, carat, an approximate face-up size, and a Facet return QR. It contains no person, listing, seller, price, or report number.</p>
+          <p class="return" id="return-url"></p>
+        </div>
+        <div class="preview"><canvas id="card" width="1200" height="1500" aria-label="Preview of the shareable Facet Stone Card"></canvas></div>
+      </section>
+    </main>
+    <footer>Facet is educational and not an appraisal. Always check the exact millimeters on the diamond's grading report. Contact: <a href="mailto:jgalperin@stienhardt.com">jgalperin@stienhardt.com</a>.</footer>
+  </div>
+  <script src="core.js"></script>
+  <script src="vendor/qrcode/qrcode.js"></script>
+  <script src="qr-canvas.js"></script>
+  <script src="stone-card.js"></script>
+</body>
+</html>

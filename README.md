@@ -4,7 +4,7 @@ A quiet diamond-shopping companion. On any listing, anywhere: how big the stone 
 millimeters (the number carat weight hides), a one-click scan of the page for the carat and
 shape, a reusable comparison brief, and the grading labs' own verification pages.
 
-Facet is usable now in eleven forms:
+Facet is usable now in thirteen forms:
 
 1. The public calculator at <https://jacobiusmakes.github.io/facet-diamond-tool/>.
 2. An installable web app offered directly by the calculator on supported browsers.
@@ -17,6 +17,8 @@ Facet is usable now in eleven forms:
 9. A drop-in web component that publishers and developers can install with one script tag.
 10. Report Lens, a local-only text-layer PDF reader for IGI, GIA, and GCAL grading reports.
 11. An operating-system share target that reduces explicitly shared listing text to shape and carat before the Facet page opens.
+12. Link Mint, a scriptless publisher-link and local QR generator for newsletters, documents, print, and platforms that remove scripts.
+13. Stone Card, a local shareable PNG with a size estimate and measurable Facet return QR.
 
 The extension never names or targets a competitor, never sends page text, and never tracks in
 the background. It runs only when clicked (`activeTab`) and stores nothing. The bookmarklet sends
@@ -59,6 +61,11 @@ surface names are in [attribution-registry.json](attribution-registry.json).
 Machine-readable discovery is available through [llms.txt](llms.txt), [tools.json](tools.json),
 and [robots.txt](robots.txt). These describe each public utility and its privacy boundary without
 requiring a crawler to infer behavior from marketing copy.
+
+Link Mint creates a publisher-specific Facet link from a public publication slug, supported shape,
+and carat weight. It can download a QR PNG without sending the link to a QR service. Stone Card
+creates a portrait PNG for partner or group-chat sharing. Its QR returns through `share_card_match`,
+then preserves the supported shape and carat in any deliberate inventory visit or coded email request.
 
 ## Publisher web component
 

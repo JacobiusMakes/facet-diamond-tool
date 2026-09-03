@@ -105,6 +105,7 @@
             <a id="intent" class="button secondary" href="#">Ask Jacob about this stone</a>
           </div>
           <button class="secondary" id="share" type="button">Share this size check</button>
+          <a class="button secondary" id="stone-card" href="stone-card.html">Make a shareable Stone Card</a>
           <button class="secondary" id="install" type="button" hidden>Install Facet on this device</button>
           <p class="feedback" id="feedback" aria-live="polite"></p>
           <details class="catcher">
@@ -152,6 +153,7 @@
       const stone = document.getElementById('stone');
       const match = document.getElementById('match');
       const intent = document.getElementById('intent');
+      const stoneCard = document.getElementById('stone-card');
       const feedback = document.getElementById('feedback');
       const params = new URLSearchParams(location.search);
       const startingShape = normalizeShape(params.get('shape'));
@@ -163,6 +165,7 @@
       if (params.get('via') === 'sheet') document.getElementById('via-note').textContent = 'You came from your shortlist workbook. Confirm this candidate before comparing.';
       if (params.get('via') === 'share_target') document.getElementById('via-note').textContent = params.get('found') === '1' ? 'Facet found these details in the text you shared. Confirm them before comparing.' : 'Facet could not identify both fields in the shared text. Enter the shape and carat weight shown on the listing.';
       if (params.get('via') === 'publisher') document.getElementById('via-note').textContent = 'This private size check was shared by a publisher. Confirm the shape and carat weight before comparing.';
+      if (params.get('via') === 'share_card') document.getElementById('via-note').textContent = 'You opened a shared Stone Card. Confirm the shape and carat weight before comparing.';
       let activeIntentKey = '';
       let activeIntentCode = '';
       let surfaceOverride = '';
@@ -186,6 +189,7 @@
           pwa_shortcut: 'pwa_shortcut_match',
           print: 'print_chart_match',
           sheet: 'shortlist_sheet_match',
+          share_card: 'share_card_match',
         };
         const partner = FacetCore.sanitizePublisher(params.get('partner'));
         const publisherSurface = params.get('via') === 'widget'
@@ -200,6 +204,7 @@
           activeIntentCode = intentCode(result.shape, result.carat);
         }
         intent.href = intentEmailUrl({ shape: result.shape, carat: result.carat, surface: sanitizeSurface(surface), code: activeIntentCode });
+        stoneCard.href = 'stone-card.html?shape=' + encodeURIComponent(result.shape) + '&carat=' + encodeURIComponent(result.carat.toFixed(2));
       }
       carat.addEventListener('input', render);
       shape.addEventListener('change', render);

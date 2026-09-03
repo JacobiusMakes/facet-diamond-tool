@@ -173,6 +173,16 @@
     return url.toString();
   }
 
+  function shareCardUrl(shapeValue, caratValue) {
+    const shape = normalizeShape(shapeValue) || "oval";
+    const carat = clampCarat(caratValue) || 1.5;
+    const url = new URL("https://jacobiusmakes.github.io/facet-diamond-tool/");
+    url.searchParams.set("via", "share_card");
+    url.searchParams.set("shape", shape);
+    url.searchParams.set("carat", carat.toFixed(2));
+    return url.toString();
+  }
+
   function extensionSurface(channel, action) {
     const cleanAction = sanitizeSurface(action, "match");
     return "extension_" + extensionChannel(channel) + "_" + cleanAction;
@@ -258,6 +268,7 @@
     sanitizeSurface,
     sanitizePublisher,
     publisherLinkUrl,
+    shareCardUrl,
     extensionChannel,
     extensionSurface,
     trackedPageUrl,

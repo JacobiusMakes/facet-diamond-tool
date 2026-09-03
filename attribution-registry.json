@@ -43,6 +43,7 @@
     "pwa_shortcut_match": { "state": "live", "kind": "installed_web_app_shortcut" },
     "bookmarklet_match": { "state": "live", "kind": "bookmarklet" },
     "shared_brief_match": { "state": "live", "kind": "shared_brief" },
+    "share_card_match": { "state": "live", "kind": "shared_image" },
     "share_target_match": { "state": "live", "kind": "operating_system_share_target" },
     "pasted_listing_match": { "state": "live", "kind": "local_listing_text" },
     "print_chart_match": { "state": "live", "kind": "print" },

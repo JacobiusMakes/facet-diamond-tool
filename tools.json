@@ -87,6 +87,14 @@
       "inputs": ["public_publisher_slug", "supported_shape", "carat_weight"],
       "outputs": ["scriptless_attributed_facet_link", "local_qr_png"],
       "surface": "publisher_link_<publisher_slug>"
+    },
+    {
+      "id": "stone_card",
+      "name": "Facet Stone Card",
+      "url": "https://jacobiusmakes.github.io/facet-diamond-tool/stone-card.html",
+      "inputs": ["supported_shape", "carat_weight"],
+      "outputs": ["local_shareable_png", "facet_return_qr"],
+      "surface": "share_card_match"
     }
   ]
 }

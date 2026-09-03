@@ -22,6 +22,7 @@ for (const channel of ["github", "chrome", "edge", "firefox"]) {
 assert.ok(registry.prohibitedAnalyticsFields.includes("report_number"));
 assert.ok(registry.prohibitedAnalyticsFields.includes("listing_url"));
 assert.ok(registry.surfaces["publisher_link_<publisher_slug>"]);
+assert.ok(registry.surfaces.share_card_match);
 
 assert.equal(manifest.share_target.method, "POST");
 assert.equal(manifest.share_target.enctype, "multipart/form-data");

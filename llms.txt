@@ -16,6 +16,7 @@ Contact: jgalperin@stienhardt.com
 - Stone on Hand: uses the 85.60 mm long edge of an ISO ID-1 payment card to calibrate an approximate diamond footprint on a hand photo.
 - Publisher component: adds the face-up size calculator to an article through a web component or sandboxed iframe.
 - Link Mint: creates a scriptless publisher-specific Facet link and local QR PNG for newsletters, documents, print, and platforms that remove embeds.
+- Stone Card: creates a local shareable PNG containing a diamond size estimate and a Facet return QR for partner and group-chat sharing.
 - Browser extension: scans visible text only after the shopper clicks the scan control.
 
 ## Accuracy boundaries

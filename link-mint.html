@@ -42,6 +42,7 @@
   </div>
   <script src="core.js"></script>
   <script src="vendor/qrcode/qrcode.js"></script>
+  <script src="qr-canvas.js"></script>
   <script>
     (() => {
       const publisher = document.getElementById('publisher');
@@ -51,30 +52,11 @@
       const open = document.getElementById('open');
       const canvas = document.getElementById('qr');
       const feedback = document.getElementById('feedback');
-      function drawQr(url) {
-        const code = qrcode(0, 'M');
-        code.addData(url);
-        code.make();
-        const count = code.getModuleCount();
-        const quiet = 4;
-        const unit = Math.floor(canvas.width / (count + quiet * 2));
-        const drawn = unit * (count + quiet * 2);
-        const offset = Math.floor((canvas.width - drawn) / 2);
-        const context = canvas.getContext('2d');
-        context.fillStyle = '#ffffff';
-        context.fillRect(0, 0, canvas.width, canvas.height);
-        context.fillStyle = '#091d2e';
-        for (let row = 0; row < count; row += 1) {
-          for (let column = 0; column < count; column += 1) {
-            if (code.isDark(row, column)) context.fillRect(offset + (column + quiet) * unit, offset + (row + quiet) * unit, unit, unit);
-          }
-        }
-      }
       function render() {
         const url = FacetCore.publisherLinkUrl({ publisher: publisher.value, shape: shape.value, carat: carat.value });
         output.textContent = url;
         open.href = url;
-        drawQr(url);
+        FacetQr.draw(canvas, url);
       }
       publisher.addEventListener('input', render);
       shape.addEventListener('change', render);
@@ -83,16 +65,9 @@
         try { await navigator.clipboard.writeText(output.textContent); feedback.textContent = 'Publisher link copied.'; }
         catch (error) { feedback.textContent = 'Copy was blocked. Select the link above.'; }
       });
-      document.getElementById('download').addEventListener('click', () => {
-        canvas.toBlob((blob) => {
-          if (!blob) { feedback.textContent = 'QR download was blocked.'; return; }
-          const anchor = document.createElement('a');
-          anchor.href = URL.createObjectURL(blob);
-          anchor.download = 'facet-' + FacetCore.sanitizePublisher(publisher.value) + '-qr.png';
-          anchor.click();
-          URL.revokeObjectURL(anchor.href);
-          feedback.textContent = 'QR PNG downloaded.';
-        }, 'image/png');
+      document.getElementById('download').addEventListener('click', async () => {
+        const saved = await FacetQr.download(canvas, 'facet-' + FacetCore.sanitizePublisher(publisher.value) + '-qr.png');
+        feedback.textContent = saved ? 'QR PNG downloaded.' : 'QR download was blocked.';
       });
       render();
     })();

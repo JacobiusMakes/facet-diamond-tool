@@ -29,6 +29,16 @@ choose to open a prefilled message to jgalperin@stienhardt.com containing the co
 measurements, and selected report fields. The message leaves the device only if the shopper sends
 it through their own email service.
 
+Link Mint creates a normal Facet link from a public publisher slug, supported shape, and carat
+weight. It can render a QR PNG on the user's device with bundled code. No link is sent to a QR
+service. A publisher should never put a reader name, email address, recipient ID, or customer ID
+in the public slug.
+
+Stone Card creates a shareable PNG on the user's device. The image contains only the supported
+shape, carat weight, approximate face-up size, general accuracy notice, and a Facet return QR. It
+contains no person, listing, seller, price, or report number. A recipient who scans the QR enters
+Facet through the aggregate `share_card_match` surface.
+
 Links from Facet to stienhardt.com include campaign parameters so Stienhardt can measure visits
 and orders attributed to the tool. Those parameters contain the selected shape and carat weight,
 not identity or browsing history. Stienhardt's own privacy policy applies after a user chooses to

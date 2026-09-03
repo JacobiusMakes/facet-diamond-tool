@@ -95,6 +95,15 @@
       "inputs": ["supported_shape", "carat_weight"],
       "outputs": ["local_shareable_png", "facet_return_qr"],
       "surface": "share_card_match"
+    },
+    {
+      "id": "face_up_size_dataset",
+      "name": "Facet Approximate Diamond Face-Up Size Reference",
+      "url": "https://jacobiusmakes.github.io/facet-diamond-tool/dataset.html",
+      "inputs": ["supported_shape", "carat_weight_from_1.0_to_3.0"],
+      "outputs": ["csv_download", "json_download", "approximate_length_mm", "approximate_width_mm"],
+      "surface": "dataset_reference",
+      "license": "CC-BY-4.0"
     }
   ]
 }

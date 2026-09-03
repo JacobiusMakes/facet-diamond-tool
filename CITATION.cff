@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use the Facet model or dataset, cite it using this metadata."
+title: "Facet Approximate Diamond Face-Up Size Reference"
+type: dataset
+version: 1.0.0
+date-released: 2026-09-03
+authors:
+  - family-names: "Galperin"
+    given-names: "Jacob"
+    affiliation: "Stienhardt & Stones"
+    email: "jgalperin@stienhardt.com"
+url: "https://jacobiusmakes.github.io/facet-diamond-tool/dataset.html"
+repository-code: "https://github.com/JacobiusMakes/facet-diamond-tool"
+license: CC-BY-4.0
+abstract: "A reproducible reference of approximate face-up dimensions for round, oval, emerald, and Dutch Marquise diamonds from 1.0 to 3.0 carats."

@@ -67,6 +67,24 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://jacobiusmakes.github.io/facet-diamond-tool/dataset.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jacobiusmakes.github.io/facet-diamond-tool/data/face-up-size-reference.json</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jacobiusmakes.github.io/facet-diamond-tool/data/face-up-size-reference.csv</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://jacobiusmakes.github.io/facet-diamond-tool/output/pdf/facet-diamond-size-chart.pdf</loc>
     <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>

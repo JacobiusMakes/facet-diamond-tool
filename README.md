@@ -4,7 +4,7 @@ A quiet diamond-shopping companion. On any listing, anywhere: how big the stone 
 millimeters (the number carat weight hides), a one-click scan of the page for the carat and
 shape, a reusable comparison brief, and the grading labs' own verification pages.
 
-Facet is usable now in thirteen forms:
+Facet is usable now in fourteen forms:
 
 1. The public calculator at <https://jacobiusmakes.github.io/facet-diamond-tool/>.
 2. An installable web app offered directly by the calculator on supported browsers.
@@ -19,6 +19,7 @@ Facet is usable now in thirteen forms:
 11. An operating-system share target that reduces explicitly shared listing text to shape and carat before the Facet page opens.
 12. Link Mint, a scriptless publisher-link and local QR generator for newsletters, documents, print, and platforms that remove scripts.
 13. Stone Card, a local shareable PNG with a size estimate and measurable Facet return QR.
+14. A citation-ready open size dataset in CSV and JSON, with 84 reproducible rows under CC BY 4.0.
 
 The extension never names or targets a competitor, never sends page text, and never tracks in
 the background. It runs only when clicked (`activeTab`) and stores nothing. The bookmarklet sends
@@ -61,6 +62,11 @@ surface names are in [attribution-registry.json](attribution-registry.json).
 Machine-readable discovery is available through [llms.txt](llms.txt), [tools.json](tools.json),
 and [robots.txt](robots.txt). These describe each public utility and its privacy boundary without
 requiring a crawler to infer behavior from marketing copy.
+
+The [open size dataset](dataset.html) publishes the same approximate model as 84 rows spanning
+1.0 to 3.0 carats in 0.1 carat increments. CSV and JSON downloads are licensed under CC BY 4.0,
+and [CITATION.cff](CITATION.cff) gives GitHub and research tools a machine-readable citation.
+Each row returns to Facet through `via=data`; a later inventory click uses `dataset_reference`.
 
 Link Mint creates a publisher-specific Facet link from a public publication slug, supported shape,
 and carat weight. It can download a QR PNG without sending the link to a QR service. Stone Card

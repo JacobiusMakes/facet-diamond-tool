@@ -3,7 +3,7 @@
  * Plugin Name: Facet Diamond Size
  * Plugin URI: https://jacobiusmakes.github.io/facet-diamond-tool/widget-demo.html
  * Description: Add a private diamond face-up size calculator with the [facet_diamond_size] shortcode.
- * Version: 0.1.1
+ * Version: 0.2.0
  * Author: Stienhardt & Stones
  * Author URI: https://stienhardt.com/
  * License: MIT
@@ -22,6 +22,7 @@ function facet_diamond_size_shortcode($attributes) {
             'shape' => 'oval',
             'carat' => '1.50',
             'theme' => 'light',
+            'commerce' => 'off',
         ),
         $attributes,
         'facet_diamond_size'
@@ -46,21 +47,23 @@ function facet_diamond_size_shortcode($attributes) {
     }
 
     $theme = $attributes['theme'] === 'dark' ? 'dark' : 'light';
+    $commerce = in_array(strtolower((string) $attributes['commerce']), array('on', 'yes', 'true', '1'), true) ? 'on' : 'off';
 
     wp_enqueue_script(
         'facet-diamond-size',
-        'https://cdn.jsdelivr.net/gh/JacobiusMakes/facet-diamond-tool@v0.3.1/facet-widget.js',
+        plugins_url('assets/facet-widget.js', __FILE__),
         array(),
-        '0.3.1',
+        '0.4.1',
         true
     );
 
     return sprintf(
-        '<facet-diamond-size publisher="%1$s" shape="%2$s" carat="%3$s" theme="%4$s"></facet-diamond-size>',
+        '<facet-diamond-size publisher="%1$s" shape="%2$s" carat="%3$s" theme="%4$s" commerce="%5$s"></facet-diamond-size>',
         esc_attr(substr($publisher, 0, 48)),
         esc_attr($shape),
         esc_attr(number_format($carat, 2, '.', '')),
-        esc_attr($theme)
+        esc_attr($theme),
+        esc_attr($commerce)
     );
 }
 add_shortcode('facet_diamond_size', 'facet_diamond_size_shortcode');

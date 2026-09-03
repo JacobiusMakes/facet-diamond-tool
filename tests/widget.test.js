@@ -1,11 +1,15 @@
 const assert = require("node:assert/strict");
 const widget = require("../facet-widget.js");
 
-assert.equal(widget.VERSION, "0.3.1");
+assert.equal(widget.VERSION, "0.4.1");
 assert.equal(widget.sanitizePublisher("Gemology Weekly!"), "gemology_weekly");
 assert.equal(widget.sanitizePublisher(""), "publisher");
 assert.equal(widget.normalizeShape("Dutch Marquise"), "dutch_marquise");
 assert.equal(widget.clampCarat("99"), 20);
+assert.equal(widget.commerceEnabled(), true);
+assert.equal(widget.commerceEnabled("on"), true);
+assert.equal(widget.commerceEnabled("off"), false);
+assert.equal(widget.commerceEnabled("no"), false);
 
 const result = widget.faceUpSize("oval", 1.5);
 assert.equal(result.lengthMm.toFixed(1), "9.2");

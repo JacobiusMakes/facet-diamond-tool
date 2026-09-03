@@ -85,7 +85,7 @@
       "name": "Facet Link Mint",
       "url": "https://jacobiusmakes.github.io/facet-diamond-tool/link-mint.html",
       "inputs": ["public_publisher_slug", "supported_shape", "carat_weight"],
-      "outputs": ["scriptless_attributed_facet_link"],
+      "outputs": ["scriptless_attributed_facet_link", "local_qr_png"],
       "surface": "publisher_link_<publisher_slug>"
     }
   ]

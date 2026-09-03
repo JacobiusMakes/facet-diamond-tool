@@ -121,3 +121,7 @@ engine promises to crawl or rank it.
 
 PDF extraction uses Mozilla PDF.js 6.3.289 under the Apache License 2.0. The vendored license is at
 `vendor/pdfjs/LICENSE.pdfjs`.
+
+Link Mint QR generation uses qrcode-generator 2.0.4 by Kazuhiko Arase under the MIT License. It is
+bundled locally so a generated publisher link is never sent to a QR service. The vendored license is
+at `vendor/qrcode/LICENSE.qrcode`.

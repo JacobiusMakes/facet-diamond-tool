@@ -16,6 +16,7 @@ const ASSETS = [
   "./hand-preview-core.js",
   "./widget-demo.html",
   "./link-mint.html",
+  "./vendor/qrcode/qrcode.js",
   "./facet-widget.js",
   "./privacy.html",
   "./embed.html",

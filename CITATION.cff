@@ -7,7 +7,7 @@ date-released: 2026-09-03
 authors:
   - family-names: "Galperin"
     given-names: "Jacob"
-    affiliation: "Stienhardt & Stones"
+    affiliation: "Stienhardt"
     email: "jgalperin@stienhardt.com"
 url: "https://jacobiusmakes.github.io/facet-diamond-tool/dataset.html"
 repository-code: "https://github.com/JacobiusMakes/facet-diamond-tool"

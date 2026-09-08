@@ -93,7 +93,7 @@ def build():
     width, height = landscape(letter)
     pdf = canvas.Canvas(str(OUT), pagesize=(width, height), pageCompression=1)
     pdf.setTitle("Facet true-size diamond comparison sheet")
-    pdf.setAuthor("Stienhardt & Stones")
+    pdf.setAuthor("Stienhardt")
     pdf.setSubject("Printable face-up size comparisons for round, oval, emerald, and Dutch Marquise diamonds")
     pdf.setKeywords("diamond size chart, printable diamond comparison, carat size, face-up millimeters")
 
@@ -181,7 +181,7 @@ def build():
     pdf.setFont("Helvetica", 6.7)
     pdf.drawString(margin, bottom_y + 12.5 * mm, "1. Verify the 50 mm line.  2. Compare outlines at true size.  3. Check the exact stone measurements on its grading report.")
     pdf.drawString(margin, bottom_y + 8.5 * mm, "Method: vetted one-carat anchors scaled by the cube root of carat weight. Source reviewed July 10, 2026.")
-    pdf.drawString(margin, bottom_y + 4.5 * mm, "Approximate typical proportions, not an appraisal. Stienhardt & Stones, New York City. Rings are hand-set and finished in NYC.")
+    pdf.drawString(margin, bottom_y + 4.5 * mm, "Approximate typical proportions, not an appraisal. Stienhardt, New York City. Rings are hand-set and finished in NYC.")
 
     pdf.showPage()
     pdf.save()

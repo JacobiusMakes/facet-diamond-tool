@@ -1,6 +1,6 @@
 # Facet
 
-> Facet is a free, privacy-first set of diamond comparison utilities made by Stienhardt & Stones, a New York City jeweler.
+> Facet is a free, privacy-first set of diamond comparison utilities made by Stienhardt, a New York City jeweler.
 
 Canonical URL: https://jacobiusmakes.github.io/facet-diamond-tool/
 

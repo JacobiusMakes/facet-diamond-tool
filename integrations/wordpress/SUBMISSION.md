@@ -24,15 +24,15 @@ Facet sets no cookie, makes no background analytics request, and stores no custo
 
 ## External services answer
 
-The default plugin output uses no external service. With the optional `commerce="on"` setting, a reader may deliberately click an ordinary outbound link to Stienhardt & Stones. No data is sent until that click. The destination receives the publisher slug, selected shape, and carat weight in the link query string. No cookie, report number, listing URL, price, seller, or personal information is included.
+The default plugin output uses no external service. With the optional `commerce="on"` setting, a reader may deliberately click an ordinary outbound link to Stienhardt. No data is sent until that click. The destination receives the publisher slug, selected shape, and carat weight in the link query string. No cookie, report number, listing URL, price, seller, or personal information is included.
 
-Service: Stienhardt & Stones inventory pages, <https://stienhardt.com/>
+Service: Stienhardt inventory pages, <https://stienhardt.com/>
 
 Privacy policy: <https://stienhardt.com/policies/privacy-policy>
 
 ## Ownership and originality answer
 
-Stienhardt & Stones owns and maintains the plugin code. Facet is released under the MIT License. The package includes its source code and license.
+Stienhardt owns and maintains the plugin code. Facet is released under the MIT License. The package includes its source code and license.
 
 ## Submission sequence
 

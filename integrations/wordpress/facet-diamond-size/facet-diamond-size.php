@@ -4,7 +4,7 @@
  * Plugin URI: https://jacobiusmakes.github.io/facet-diamond-tool/widget-demo.html
  * Description: Add a private diamond face-up size calculator with the [facet_diamond_size] shortcode.
  * Version: 0.2.0
- * Author: Stienhardt & Stones
+ * Author: Stienhardt
  * Author URI: https://stienhardt.com/
  * License: MIT
  * Requires at least: 6.0

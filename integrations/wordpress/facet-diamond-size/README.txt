@@ -16,7 +16,7 @@ face-up size in millimeters. It sets no cookie and stores no customer data.
 The default calculator contains no external link. A site owner can explicitly
 turn on an attributed inventory link with the commerce shortcode option.
 
-Facet is made by Stienhardt & Stones, a New York City jeweler that sources
+Facet is made by Stienhardt, a New York City jeweler that sources
 certified Lab Grown Diamonds and hand-sets and finishes rings in NYC.
 
 == Installation ==

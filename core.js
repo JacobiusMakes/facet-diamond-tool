@@ -5,7 +5,7 @@
     round: [6.5, 6.5],
     oval: [8.0, 5.5],
     emerald: [7.0, 5.0],
-    dutch_marquise: [9.0, 5.0],
+    dutch_marquise: [9.4, 5.1],
   });
 
   const SHAPES = Object.freeze({

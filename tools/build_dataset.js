@@ -38,7 +38,7 @@ const dataset = {
   contact: "jgalperin@stienhardt.com",
   license: "https://creativecommons.org/licenses/by/4.0/",
   canonicalUrl: "https://jacobiusmakes.github.io/facet-diamond-tool/dataset.html",
-  method: "Cube-root scaling from one-carat face-up anchors: round 6.5 x 6.5 mm, oval 8.0 x 5.5 mm, emerald 7.0 x 5.0 mm, and Dutch Marquise 9.0 x 5.0 mm.",
+  method: "Cube-root scaling from one-carat face-up anchors: round 6.5 x 6.5 mm, oval 8.0 x 5.5 mm, emerald 7.0 x 5.0 mm, and Dutch Marquise 9.4 x 5.1 mm (scaled to 1 carat from a certified reference stone, IGI report LG799689559, 9.49 x 5.15 mm at 1.03 ct).",
   limitations: "Illustrative estimates based on typical proportions, not observations of individual diamonds. Always use the exact measurements on the grading report.",
   fields: [
     "shape_slug",
